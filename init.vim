@@ -36,7 +36,7 @@
 "" SETTINGS
 "
 " // ONE LINE SETUP for REMOTE LINUX
-"set number relativenumber expandtab tabstop=2 shiftwidth=2 autoindent
+"set number relativenumber autoindent expandtab tabstop=2 shiftwidth=2
 
 "colorcolumn=80,120 "//doesn't work
 "cursorline "//doesn't work
