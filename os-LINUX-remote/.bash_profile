@@ -77,7 +77,7 @@ alias glshow='echo "// git log -p"; git log -p'
 
 #alias gcm='echo "// git commit -m <text>"; git commit -m ' 
 # GIT COMMIT IF GIT COMMIT SCRIPT FILE EXISTS
-alias gcm='echo "// trying commit script"; [ -f ~/dotfiles/.gitcommit.sh ] && sh ~/dotfiles/.gitcommit.sh || echo "> no ~/dotfiles/.gitcommit.sh file"'
+alias gcm='echo "// trying commit script"; [ -f ~/dotfiles/SCRIPTS/.gitcommit.sh ] && sh ~/dotfiles/SCRIPTS/.gitcommit.sh || echo "> no ~/dotfiles/SCRIPTS/.gitcommit.sh file"'
 
 
 #// to push changes into the stash
