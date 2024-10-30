@@ -12,6 +12,7 @@ alias ssha='eval $(ssh-agent); ssh-add'
 # modifying the bash prompt to something simpler
 # PS1="\u@\W\$"
 color_prompt=yes
+#color_prompt=no
 if [ "$color_prompt" = yes ]; then
   #PS1="\[\033[35m\]@\W\[\033[37m\]\$ "
   #PS1 = ${debian_chroot:+($debian_chroot)}\u@\h:\w\$
@@ -23,6 +24,9 @@ if [ "$color_prompt" = yes ]; then
 else
   PS1="@\W\$ "
 fi
+
+#I want to keep colors but simplify the prompt
+PS1="\[\033[34m\]@\W\[\033[37m\]\$ "
 
 # modifying 'ls' command to default display all directory info
 alias ls='ls -aFG'
@@ -61,9 +65,20 @@ alias gdc='echo "// git diff --cached"; git diff --cached' #// to see staged (ad
 alias ga='echo "// git add <files>"; git add ' 
 alias gaa='echo "// git add . (ALL)"; git add .;' 
 alias grs='echo "// git restore --staged <files> to UNSTAGE"; git restore --staged ' 
+
+# // git log FILES to see which files were updated
+alias glf='echo "// git log --name-only --oneline"; git log --name-only --oneline'
+
+# // git log PATCHES to see the diffs in each
+alias glp='echo "// git log -p"; git log -p'
+# // can add --author='Reinhardt' to see changes  by specific people
+# // just another alias to make t easier to view changes
+alias glshow='echo "// git log -p"; git log -p'
+
 #alias gcm='echo "// git commit -m <text>"; git commit -m ' 
 # GIT COMMIT IF GIT COMMIT SCRIPT FILE EXISTS
-alias gcm='echo "// trying commit script"; [ -f ~/dotfiles/SCRIPTS/.gitcommit.sh ] && sh ~/dotfiles/SCRIPTS/.gitcommit.sh || echo "> no ~/dotfiles/SCRIPTS/.gitcommit.sh file"'
+alias gcm='echo "// trying commit script"; [ -f ~/dotfiles/.gitcommit.sh ] && sh ~/dotfiles/.gitcommit.sh || echo "> no ~/dotfiles/.gitcommit.sh file"'
+
 
 #// to push changes into the stash
 alias gspush='echo "// git stash push"; git stash push'
@@ -173,6 +188,9 @@ alias tkill='echo "// tmux kill-session -t <name>"; tmux kill-session -t '
 
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --heading'
+
+# SYNC IF SYNC FILE EXISTS
+alias sy='echo "// trying sync script"; [ -f .sync.sh ] && sh .sync.sh || echo "> no .sync.sh file"'
 
 
 # END OF FILE
