@@ -189,8 +189,6 @@ alias tkill='echo "// tmux kill-session -t <name>"; tmux kill-session -t '
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --heading'
 
-# SYNC IF SYNC FILE EXISTS
-alias sy='echo "// trying sync script"; [ -f .sync.sh ] && sh .sync.sh || echo "> no .sync.sh file"'
 
 
 # END OF FILE
