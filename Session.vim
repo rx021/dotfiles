@@ -17,7 +17,6 @@ set nomodeline
 set printoptions=paper:a4
 set ruler
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-set window=35
 set winminheight=0
 set winminwidth=0
 let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
@@ -33,27 +32,37 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
+badd +1 README.md
+badd +1 LANGUAGES/elixir.md
+badd +1 init.vim
+badd +31 SCRIPTS/.sync.sh
+badd +1 .gitignore
 badd +6 LIBRARIES/google-maps.md
 badd +1 TOOLS/laravel-vapor.md
 badd +1 FRAMEWORKS/next-react.md
 badd +1 LIBRARIES/stripe.md
 badd +1 LANGUAGES/javascript.md
 badd +1 MAC/config-sh.sh
-badd +230 MAC/apps-01-install.sh
-badd +251 MAC/.zshrc
-badd +171 .tmux.conf
-badd +1 init.vim
-badd +68 ANDROID/.bash_profile
+badd +1 MAC/apps-01-install.sh
+badd +1 MAC/.zshrc
+badd +168 .tmux.conf
+badd +1 ANDROID/.bash_profile
 badd +10 ANDROID/apps-01-install.sh
 badd +1 config-tmux.sh
 badd +1 config-vim.sh
 badd +98 tmux-new-session.sh
 badd +1 REMOTE-LINUX/apps-01-install.sh
 badd +15 .sync.sh
-badd +2 .gitcommit.sh
+badd +1 .gitcommit.sh
 badd +1 c-lang.md
-badd +0 .gitignore
 badd +45 ~/Downloads/README.md
+badd +0 SCRIPTS/.gitcommit.sh
+badd +1 os-MAC/.zshrc
+badd +0 os-ANDROID/.bash_profile
+badd +0 SCRIPTS/tmux-new-session.sh
+badd +1 os-MAC/apps-01-install.sh
+badd +0 os-LINUX-remote/apps-01-install.sh
+badd +0 LANGUAGES/c-lang.md
 argglobal
 %argdel
 set stal=2
@@ -67,11 +76,10 @@ let s:save_splitright = &splitright
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
-1wincmd h
-wincmd w
 wincmd _ | wincmd |
-split
-1wincmd k
+vsplit
+2wincmd h
+wincmd w
 wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
@@ -82,11 +90,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 71 + 71) / 142)
-exe '2resize ' . ((&lines * 16 + 18) / 36)
-exe 'vert 2resize ' . ((&columns * 70 + 71) / 142)
-exe '3resize ' . ((&lines * 16 + 18) / 36)
-exe 'vert 3resize ' . ((&columns * 70 + 71) / 142)
+exe 'vert 1resize ' . ((&columns * 47 + 71) / 142)
+exe 'vert 2resize ' . ((&columns * 46 + 71) / 142)
+exe 'vert 3resize ' . ((&columns * 47 + 71) / 142)
 argglobal
 balt TOOLS/laravel-vapor.md
 setlocal keymap=
@@ -218,16 +224,155 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 16) / 33)
+let s:l = 2 - ((1 * winheight(0) + 8) / 17)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 2
+normal! 0
+wincmd w
+argglobal
+if bufexists(fnamemodify("LANGUAGES/javascript.md", ":p")) | buffer LANGUAGES/javascript.md | else | edit LANGUAGES/javascript.md | endif
+balt c-lang.md
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinscopedecls=public,protected,private
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'markdown'
+setlocal filetype=markdown
+endif
+setlocal fillchars=
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal nofoldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=indent
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatoptions=tcq
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispoptions=
+setlocal lispwords=
+setlocal nolist
+setlocal listchars=
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=8
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal nosmoothscroll
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'markdown'
+setlocal syntax=markdown
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal thesaurusfunc=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal varsofttabstop=
+setlocal vartabstop=
+setlocal virtualedit=
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+let s:l = 1 - ((0 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 0
+lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("c-lang.md", ":p")) | buffer c-lang.md | else | edit c-lang.md | endif
-balt ~/Downloads/README.md
+if bufexists(fnamemodify("~/dotfiles/LANGUAGES/c-lang.md", ":p")) | buffer ~/dotfiles/LANGUAGES/c-lang.md | else | edit ~/dotfiles/LANGUAGES/c-lang.md | endif
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -359,172 +504,26 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 5 - ((4 * winheight(0) + 8) / 16)
+let s:l = 3 - ((2 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 5
+keepjumps 3
 normal! 0
 lcd ~/dotfiles
 wincmd w
-argglobal
-if bufexists(fnamemodify("~/dotfiles/LANGUAGES/javascript.md", ":p")) | buffer ~/dotfiles/LANGUAGES/javascript.md | else | edit ~/dotfiles/LANGUAGES/javascript.md | endif
-balt ~/dotfiles/c-lang.md
-setlocal keymap=
-setlocal noarabic
-setlocal noautoindent
-setlocal backupcopy=
-setlocal balloonexpr=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinscopedecls=public,protected,private
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'markdown'
-setlocal filetype=markdown
-endif
-setlocal fillchars=
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=indent
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatoptions=tcq
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispoptions=
-setlocal lispwords=
-setlocal nolist
-setlocal listchars=
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-setlocal nonumber
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=8
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal nosmoothscroll
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'markdown'
-setlocal syntax=markdown
-endif
-setlocal tabstop=8
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal thesaurusfunc=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal varsofttabstop=
-setlocal vartabstop=
-setlocal virtualedit=
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 8) / 16)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-lcd ~/dotfiles
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 71 + 71) / 142)
-exe '2resize ' . ((&lines * 16 + 18) / 36)
-exe 'vert 2resize ' . ((&columns * 70 + 71) / 142)
-exe '3resize ' . ((&lines * 16 + 18) / 36)
-exe 'vert 3resize ' . ((&columns * 70 + 71) / 142)
+3wincmd w
+exe 'vert 1resize ' . ((&columns * 47 + 71) / 142)
+exe 'vert 2resize ' . ((&columns * 46 + 71) / 142)
+exe 'vert 3resize ' . ((&columns * 47 + 71) / 142)
 tabnext
-edit ~/dotfiles/REMOTE-LINUX/apps-01-install.sh
+edit ~/dotfiles/os-LINUX-remote/apps-01-install.sh
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
-wincmd w
-wincmd _ | wincmd |
-split
-1wincmd k
 wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
@@ -536,12 +535,8 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe 'vert 1resize ' . ((&columns * 71 + 71) / 142)
-exe '2resize ' . ((&lines * 7 + 18) / 36)
 exe 'vert 2resize ' . ((&columns * 70 + 71) / 142)
-exe '3resize ' . ((&lines * 25 + 18) / 36)
-exe 'vert 3resize ' . ((&columns * 70 + 71) / 142)
 argglobal
-balt ~/dotfiles/MAC/apps-01-install.sh
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -583,12 +578,12 @@ endif
 setlocal fillchars=
 setlocal fixendofline
 setlocal foldcolumn=0
-setlocal nofoldenable
+setlocal foldenable
 setlocal foldexpr=0
 setlocal foldignore=#
 setlocal foldlevel=0
 setlocal foldmarker={{{,}}}
-setlocal foldmethod=indent
+setlocal foldmethod=manual
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
@@ -671,16 +666,18 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 9 - ((6 * winheight(0) + 16) / 33)
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 9
+keepjumps 1
 normal! 0
+lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/MAC/apps-01-install.sh", ":p")) | buffer ~/dotfiles/MAC/apps-01-install.sh | else | edit ~/dotfiles/MAC/apps-01-install.sh | endif
-balt ~/dotfiles/MAC/config-sh.sh
+if bufexists(fnamemodify("~/dotfiles/os-MAC/apps-01-install.sh", ":p")) | buffer ~/dotfiles/os-MAC/apps-01-install.sh | else | edit ~/dotfiles/os-MAC/apps-01-install.sh | endif
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -722,12 +719,12 @@ endif
 setlocal fillchars=
 setlocal fixendofline
 setlocal foldcolumn=0
-setlocal nofoldenable
+setlocal foldenable
 setlocal foldexpr=0
 setlocal foldignore=#
 setlocal foldlevel=0
 setlocal foldmarker={{{,}}}
-setlocal foldmethod=indent
+setlocal foldmethod=manual
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
@@ -810,159 +807,20 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 113 - ((0 * winheight(0) + 3) / 7)
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 113
+keepjumps 1
 normal! 0
-wincmd w
-argglobal
-if bufexists(fnamemodify("~/dotfiles/MAC/apps-01-install.sh", ":p")) | buffer ~/dotfiles/MAC/apps-01-install.sh | else | edit ~/dotfiles/MAC/apps-01-install.sh | endif
-balt ~/dotfiles/MAC/config-sh.sh
-setlocal keymap=
-setlocal noarabic
-setlocal noautoindent
-setlocal backupcopy=
-setlocal balloonexpr=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinscopedecls=public,protected,private
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'sh'
-setlocal filetype=sh
-endif
-setlocal fillchars=
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=indent
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatoptions=tcq
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispoptions=
-setlocal lispwords=
-setlocal nolist
-setlocal listchars=
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-setlocal nonumber
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=8
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal nosmoothscroll
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'sh'
-setlocal syntax=sh
-endif
-setlocal tabstop=8
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal thesaurusfunc=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal varsofttabstop=
-setlocal vartabstop=
-setlocal virtualedit=
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-let s:l = 230 - ((1 * winheight(0) + 12) / 25)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 230
-normal! 024|
+lcd ~/dotfiles
 wincmd w
 exe 'vert 1resize ' . ((&columns * 71 + 71) / 142)
-exe '2resize ' . ((&lines * 7 + 18) / 36)
 exe 'vert 2resize ' . ((&columns * 70 + 71) / 142)
-exe '3resize ' . ((&lines * 25 + 18) / 36)
-exe 'vert 3resize ' . ((&columns * 70 + 71) / 142)
 tabnext
-edit ~/dotfiles/ANDROID/.bash_profile
+edit ~/dotfiles/os-ANDROID/.bash_profile
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -972,10 +830,6 @@ wincmd _ | wincmd |
 vsplit
 2wincmd h
 wincmd w
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
@@ -987,13 +841,9 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe 'vert 1resize ' . ((&columns * 47 + 71) / 142)
-exe '2resize ' . ((&lines * 7 + 18) / 36)
 exe 'vert 2resize ' . ((&columns * 47 + 71) / 142)
-exe '3resize ' . ((&lines * 25 + 18) / 36)
-exe 'vert 3resize ' . ((&columns * 47 + 71) / 142)
-exe 'vert 4resize ' . ((&columns * 46 + 71) / 142)
+exe 'vert 3resize ' . ((&columns * 46 + 71) / 142)
 argglobal
-balt ~/dotfiles/ANDROID/apps-01-install.sh
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -1035,12 +885,12 @@ endif
 setlocal fillchars=
 setlocal fixendofline
 setlocal foldcolumn=0
-setlocal nofoldenable
+setlocal foldenable
 setlocal foldexpr=0
 setlocal foldignore=#
 setlocal foldlevel=0
 setlocal foldmarker={{{,}}}
-setlocal foldmethod=indent
+setlocal foldmethod=manual
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
@@ -1123,436 +973,301 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 68 - ((11 * winheight(0) + 16) / 33)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 68
-normal! 0
-wincmd w
-argglobal
-if bufexists(fnamemodify("~/dotfiles/MAC/.zshrc", ":p")) | buffer ~/dotfiles/MAC/.zshrc | else | edit ~/dotfiles/MAC/.zshrc | endif
-balt ~/dotfiles/MAC/apps-01-install.sh
-setlocal keymap=
-setlocal noarabic
-setlocal noautoindent
-setlocal backupcopy=
-setlocal balloonexpr=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinscopedecls=public,protected,private
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'zsh'
-setlocal filetype=zsh
-endif
-setlocal fillchars=
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=indent
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatoptions=tcq
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispoptions=
-setlocal lispwords=
-setlocal nolist
-setlocal listchars=
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-setlocal nonumber
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=8
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal nosmoothscroll
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'zsh'
-setlocal syntax=zsh
-endif
-setlocal tabstop=8
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal thesaurusfunc=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal varsofttabstop=
-setlocal vartabstop=
-setlocal virtualedit=
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-let s:l = 159 - ((0 * winheight(0) + 3) / 7)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 159
-normal! 0
-wincmd w
-argglobal
-if bufexists(fnamemodify("~/dotfiles/MAC/.zshrc", ":p")) | buffer ~/dotfiles/MAC/.zshrc | else | edit ~/dotfiles/MAC/.zshrc | endif
-balt ~/dotfiles/MAC/apps-01-install.sh
-setlocal keymap=
-setlocal noarabic
-setlocal noautoindent
-setlocal backupcopy=
-setlocal balloonexpr=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinscopedecls=public,protected,private
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'zsh'
-setlocal filetype=zsh
-endif
-setlocal fillchars=
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=indent
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatoptions=tcq
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispoptions=
-setlocal lispwords=
-setlocal nolist
-setlocal listchars=
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-setlocal nonumber
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=8
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal nosmoothscroll
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'zsh'
-setlocal syntax=zsh
-endif
-setlocal tabstop=8
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal thesaurusfunc=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal varsofttabstop=
-setlocal vartabstop=
-setlocal virtualedit=
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-let s:l = 162 - ((1 * winheight(0) + 12) / 25)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 162
-normal! 08|
-wincmd w
-argglobal
-if bufexists(fnamemodify("~/dotfiles/.gitcommit.sh", ":p")) | buffer ~/dotfiles/.gitcommit.sh | else | edit ~/dotfiles/.gitcommit.sh | endif
-balt ~/dotfiles/.sync.sh
-setlocal keymap=
-setlocal noarabic
-setlocal noautoindent
-setlocal backupcopy=
-setlocal balloonexpr=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinscopedecls=public,protected,private
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'sh'
-setlocal filetype=sh
-endif
-setlocal fillchars=
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=indent
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatoptions=tcq
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispoptions=
-setlocal lispwords=
-setlocal nolist
-setlocal listchars=
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-setlocal nonumber
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=8
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal nosmoothscroll
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'sh'
-setlocal syntax=sh
-endif
-setlocal tabstop=8
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal thesaurusfunc=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal varsofttabstop=
-setlocal vartabstop=
-setlocal virtualedit=
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 16) / 33)
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 0
+lcd ~/dotfiles
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/dotfiles/os-MAC/.zshrc", ":p")) | buffer ~/dotfiles/os-MAC/.zshrc | else | edit ~/dotfiles/os-MAC/.zshrc | endif
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinscopedecls=public,protected,private
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'zsh'
+setlocal filetype=zsh
+endif
+setlocal fillchars=
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatoptions=tcq
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispoptions=
+setlocal lispwords=
+setlocal nolist
+setlocal listchars=
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=8
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal nosmoothscroll
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'zsh'
+setlocal syntax=zsh
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal thesaurusfunc=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal varsofttabstop=
+setlocal vartabstop=
+setlocal virtualedit=
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 2 - ((1 * winheight(0) + 8) / 17)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 2
+normal! 0
+lcd ~/dotfiles
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/dotfiles/SCRIPTS/.gitcommit.sh", ":p")) | buffer ~/dotfiles/SCRIPTS/.gitcommit.sh | else | edit ~/dotfiles/SCRIPTS/.gitcommit.sh | endif
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinscopedecls=public,protected,private
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'sh'
+setlocal filetype=sh
+endif
+setlocal fillchars=
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatoptions=tcq
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispoptions=
+setlocal lispwords=
+setlocal nolist
+setlocal listchars=
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=8
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal nosmoothscroll
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'sh'
+setlocal syntax=sh
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal thesaurusfunc=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal varsofttabstop=
+setlocal vartabstop=
+setlocal virtualedit=
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 8) / 17)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
+lcd ~/dotfiles
 wincmd w
 exe 'vert 1resize ' . ((&columns * 47 + 71) / 142)
-exe '2resize ' . ((&lines * 7 + 18) / 36)
 exe 'vert 2resize ' . ((&columns * 47 + 71) / 142)
-exe '3resize ' . ((&lines * 25 + 18) / 36)
-exe 'vert 3resize ' . ((&columns * 47 + 71) / 142)
-exe 'vert 4resize ' . ((&columns * 46 + 71) / 142)
+exe 'vert 3resize ' . ((&columns * 46 + 71) / 142)
 tabnext
 edit ~/dotfiles/init.vim
 let s:save_splitbelow = &splitbelow
@@ -1708,11 +1423,11 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 237 - ((0 * winheight(0) + 16) / 33)
+let s:l = 238 - ((1 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 237
+keepjumps 238
 normal! 0
 wincmd w
 argglobal
@@ -1847,16 +1562,15 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 171 - ((0 * winheight(0) + 16) / 33)
+let s:l = 168 - ((1 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 171
+keepjumps 168
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/tmux-new-session.sh", ":p")) | buffer ~/dotfiles/tmux-new-session.sh | else | edit ~/dotfiles/tmux-new-session.sh | endif
-balt ~/dotfiles/config-vim.sh
+if bufexists(fnamemodify("~/dotfiles/SCRIPTS/tmux-new-session.sh", ":p")) | buffer ~/dotfiles/SCRIPTS/tmux-new-session.sh | else | edit ~/dotfiles/SCRIPTS/tmux-new-session.sh | endif
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -1898,12 +1612,12 @@ endif
 setlocal fillchars=
 setlocal fixendofline
 setlocal foldcolumn=0
-setlocal nofoldenable
+setlocal foldenable
 setlocal foldexpr=0
 setlocal foldignore=#
 setlocal foldlevel=0
 setlocal foldmarker={{{,}}}
-setlocal foldmethod=indent
+setlocal foldmethod=manual
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
@@ -1986,12 +1700,15 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 4 - ((0 * winheight(0) + 16) / 33)
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 4 - ((3 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 4
 normal! 0
+lcd ~/dotfiles
 wincmd w
 exe 'vert 1resize ' . ((&columns * 47 + 71) / 142)
 exe 'vert 2resize ' . ((&columns * 47 + 71) / 142)
