@@ -465,6 +465,7 @@ call plug#begin('~/.config/nvim/plugged')
     "Plug 'ctrlpvim/ctrlp.vim' " using fzf instead now
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    " // enables :Files
     Plug 'jparise/vim-graphql' " graphQL syntax highlighting
     Plug 'StanAngeloff/php.vim' " php syntax highlighting // archived DEC 2020
     Plug 'adoy/vim-php-refactoring-toolbox'
