@@ -267,6 +267,7 @@ set nofoldenable "defaults no folding on first open
 " f.ct( // COMBO: on character . change everything until (
 
 "" UPPERCASE & lowercase
+"" uppsercase & lowercase
 " visual mode select characters
 " U for UPPERCASE
 " u for lowercase
