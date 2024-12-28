@@ -35,7 +35,8 @@ badd +1 os-MAC/apps-02-config.sh
 badd +1 os-MAC/apps-01-install.sh
 badd +1 os-ANDROID/apps-01-install.sh
 badd +1 os-LINUX-remote/apps-01-install.sh
-badd +0 TOOLS/ghostty.md
+badd +17 TOOLS/ghostty.md
+badd +0 TOOLS/ghostty/README.md
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -519,7 +520,7 @@ exe 'vert 1resize ' . ((&columns * 55 + 83) / 167)
 exe 'vert 2resize ' . ((&columns * 55 + 83) / 167)
 exe 'vert 3resize ' . ((&columns * 55 + 83) / 167)
 tabnext
-edit TOOLS/ghostty.md
+edit TOOLS/ghostty/README.md
 argglobal
 balt init.vim
 setlocal fdm=indent
@@ -530,12 +531,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 5 - ((4 * winheight(0) + 21) / 43)
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 5
-normal! 019|
+keepjumps 1
+normal! 0
 tabnext 7
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
