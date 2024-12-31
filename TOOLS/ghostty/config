@@ -9,3 +9,6 @@ background-opacity = 0.95
 # font-size = 18
 # // didn't work; cmd +/- instead
 
+
+clipboard-read = allow
+clipboard-write = allow
