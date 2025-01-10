@@ -1,6 +1,8 @@
 # SHELL SETUP
 
 alias ssha='eval $(ssh-agent); ssh-add'
+# // add specific key
+# ssh-add path/to/private_key
 
 # // to see OS from command line
 # $ uname
