@@ -23,3 +23,5 @@ How to output to the console
 IO.inspect(variable_name)
 IO.puts(some_string_or_primitive)
 ```
+
+length(list) # get the length of an array
