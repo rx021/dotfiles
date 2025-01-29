@@ -157,6 +157,9 @@ alias gdc='echo "// git diff --cached"; git diff --cached' #// to see staged (ad
 
 #// when only changing the FILENAME casing in git
 #git mv <filename>
+#NOTE: windows & mac OS are case-insensitive
+#linux is case-sensitive
+#git will also have trouble with this if the OS does
 
 alias ga='echo "// git add <files>"; git add ' 
 alias gaa='echo "// git add . (ALL)"; git add .;' 
