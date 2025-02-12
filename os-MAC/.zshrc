@@ -610,7 +610,7 @@ alias sail='echo "// trying sail command else use vendor"; [ -f sail ] && sh sai
 # PHP 
 
 # COMPOSER
-alias crt='crt echo "// composer run test-filter "; composer run test-filter '
+alias crt='echo "// composer run test-filter "; composer run test-filter '
 
 # LARAVEL
 # laravel VAPOR alias
