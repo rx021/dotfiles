@@ -607,8 +607,15 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 alias sail='echo "// trying sail command else use vendor"; [ -f sail ] && sh sail || sh vendor/bin/sail'
 
-#// laravel vapor alias
+# PHP 
+
+# COMPOSER
+alias crt='crt echo "// composer run test-filter "; composer run test-filter '
+
+# LARAVEL
+# laravel VAPOR alias
 alias vapor='echo "// php vendor/bin/vapor"; php vendor/bin/vapor'
+
 
 #/opt/homebrew/Caskroom/zulu8/8.0.382,8.72.0.17-ca
 #/opt/homebrew/Caskroom/zulu11/11.0.20.1,11.66.19-ca
