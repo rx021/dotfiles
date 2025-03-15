@@ -608,6 +608,12 @@ export PATH="$PATH:$HOME/.rvm/bin"
 alias sail='echo "// trying sail command else use vendor"; [ -f sail ] && sh sail || sh vendor/bin/sail'
 
 # PHP 
+alias crt='echo "// composer run test-filter "; composer run test-filter '
+
+alias_message='echo "// composer run tests-parallel-filter";'
+alias_command='composer run tests-parallel-filter'
+alias ltpf="$alias_message $alias_command"
+
 
 # COMPOSER
 alias crt='echo "// composer run test-filter "; composer run test-filter '
