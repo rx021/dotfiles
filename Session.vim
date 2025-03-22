@@ -37,7 +37,7 @@ badd +1 os-ANDROID/apps-01-install.sh
 badd +1 os-LINUX-remote/apps-01-install.sh
 badd +17 TOOLS/ghostty.md
 badd +5 TOOLS/ghostty/README.md
-badd +0 TOOLS/ghostty/config
+badd +1 TOOLS/ghostty/config
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -58,7 +58,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 21) / 43)
+let s:l = 1 - ((0 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -88,10 +88,14 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 46 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 45 + 83) / 167)
-exe 'vert 3resize ' . ((&columns * 47 + 83) / 167)
-exe 'vert 4resize ' . ((&columns * 26 + 83) / 167)
+exe '1resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 1resize ' . ((&columns * 46 + 83) / 166)
+exe '2resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 2resize ' . ((&columns * 45 + 83) / 166)
+exe '3resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 3resize ' . ((&columns * 46 + 83) / 166)
+exe '4resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 4resize ' . ((&columns * 26 + 83) / 166)
 argglobal
 balt LIBRARIES/stripe.md
 setlocal fdm=indent
@@ -102,7 +106,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 6 - ((5 * winheight(0) + 21) / 43)
+let s:l = 6 - ((1 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -123,7 +127,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 21) / 43)
+let s:l = 1 - ((0 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -144,7 +148,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 21) / 43)
+let s:l = 1 - ((0 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -165,17 +169,21 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 2 - ((1 * winheight(0) + 21) / 43)
+let s:l = 2 - ((0 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 2
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 46 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 45 + 83) / 167)
-exe 'vert 3resize ' . ((&columns * 47 + 83) / 167)
-exe 'vert 4resize ' . ((&columns * 26 + 83) / 167)
+exe '1resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 1resize ' . ((&columns * 46 + 83) / 166)
+exe '2resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 2resize ' . ((&columns * 45 + 83) / 166)
+exe '3resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 3resize ' . ((&columns * 46 + 83) / 166)
+exe '4resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 4resize ' . ((&columns * 26 + 83) / 166)
 tabnext
 edit os-MAC/apps-01-install.sh
 let s:save_splitbelow = &splitbelow
@@ -197,9 +205,12 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 62 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 62 + 83) / 167)
-exe 'vert 3resize ' . ((&columns * 41 + 83) / 167)
+exe '1resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 1resize ' . ((&columns * 62 + 83) / 166)
+exe '2resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 2resize ' . ((&columns * 61 + 83) / 166)
+exe '3resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 3resize ' . ((&columns * 41 + 83) / 166)
 argglobal
 balt os-MAC/apps-02-config.sh
 setlocal fdm=indent
@@ -210,7 +221,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 222 - ((13 * winheight(0) + 21) / 43)
+let s:l = 222 - ((2 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -231,7 +242,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 21) / 43)
+let s:l = 1 - ((0 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -252,16 +263,19 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 13 - ((2 * winheight(0) + 21) / 43)
+let s:l = 13 - ((0 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 13
 normal! 021|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 62 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 62 + 83) / 167)
-exe 'vert 3resize ' . ((&columns * 41 + 83) / 167)
+exe '1resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 1resize ' . ((&columns * 62 + 83) / 166)
+exe '2resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 2resize ' . ((&columns * 61 + 83) / 166)
+exe '3resize ' . ((&lines * 7 + 21) / 43)
+exe 'vert 3resize ' . ((&columns * 41 + 83) / 166)
 tabnext
 edit os-MAC/.zshrc
 let s:save_splitbelow = &splitbelow
@@ -283,9 +297,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 62 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 62 + 83) / 167)
-exe 'vert 3resize ' . ((&columns * 41 + 83) / 167)
+exe 'vert 1resize ' . ((&columns * 62 + 83) / 166)
+exe 'vert 2resize ' . ((&columns * 61 + 83) / 166)
+exe 'vert 3resize ' . ((&columns * 41 + 83) / 166)
 argglobal
 balt README.md
 setlocal fdm=indent
@@ -296,7 +310,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 162 - ((18 * winheight(0) + 21) / 43)
+let s:l = 162 - ((17 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -317,7 +331,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 50 - ((1 * winheight(0) + 21) / 43)
+let s:l = 50 - ((1 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -338,16 +352,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 76 - ((1 * winheight(0) + 21) / 43)
+let s:l = 76 - ((1 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 76
 normal! 08|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 62 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 62 + 83) / 167)
-exe 'vert 3resize ' . ((&columns * 41 + 83) / 167)
+exe 'vert 1resize ' . ((&columns * 62 + 83) / 166)
+exe 'vert 2resize ' . ((&columns * 61 + 83) / 166)
+exe 'vert 3resize ' . ((&columns * 41 + 83) / 166)
 tabnext
 edit OS/config-vim.sh
 let s:save_splitbelow = &splitbelow
@@ -369,9 +383,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 62 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 62 + 83) / 167)
-exe 'vert 3resize ' . ((&columns * 41 + 83) / 167)
+exe 'vert 1resize ' . ((&columns * 62 + 83) / 166)
+exe 'vert 2resize ' . ((&columns * 61 + 83) / 166)
+exe 'vert 3resize ' . ((&columns * 41 + 83) / 166)
 argglobal
 balt SCRIPTS/.sync.sh
 setlocal fdm=indent
@@ -382,11 +396,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 21) / 43)
+let s:l = 2 - ((1 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 2
 normal! 0
 wincmd w
 argglobal
@@ -403,7 +417,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 21) / 43)
+let s:l = 1 - ((0 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -424,16 +438,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 21) / 43)
+let s:l = 1 - ((0 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 62 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 62 + 83) / 167)
-exe 'vert 3resize ' . ((&columns * 41 + 83) / 167)
+exe 'vert 1resize ' . ((&columns * 62 + 83) / 166)
+exe 'vert 2resize ' . ((&columns * 61 + 83) / 166)
+exe 'vert 3resize ' . ((&columns * 41 + 83) / 166)
 tabnext
 edit SCRIPTS/tmux-new-session.sh
 let s:save_splitbelow = &splitbelow
@@ -455,9 +469,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 55 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 55 + 83) / 167)
-exe 'vert 3resize ' . ((&columns * 55 + 83) / 167)
+exe 'vert 1resize ' . ((&columns * 55 + 83) / 166)
+exe 'vert 2resize ' . ((&columns * 54 + 83) / 166)
+exe 'vert 3resize ' . ((&columns * 55 + 83) / 166)
 argglobal
 balt .tmux.conf
 setlocal fdm=indent
@@ -468,7 +482,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 2 - ((1 * winheight(0) + 21) / 43)
+let s:l = 2 - ((1 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -489,12 +503,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 57 - ((0 * winheight(0) + 21) / 43)
+let s:l = 93 - ((20 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 57
-normal! 058|
+keepjumps 93
+normal! 012|
 wincmd w
 argglobal
 if bufexists(fnamemodify("init.vim", ":p")) | buffer init.vim | else | edit init.vim | endif
@@ -510,16 +524,17 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 186 - ((0 * winheight(0) + 21) / 43)
+let s:l = 191 - ((7 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 186
+keepjumps 191
 normal! 03|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 55 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 55 + 83) / 167)
-exe 'vert 3resize ' . ((&columns * 55 + 83) / 167)
+3wincmd w
+exe 'vert 1resize ' . ((&columns * 55 + 83) / 166)
+exe 'vert 2resize ' . ((&columns * 54 + 83) / 166)
+exe 'vert 3resize ' . ((&columns * 55 + 83) / 166)
 tabnext
 edit TOOLS/ghostty/config
 let s:save_splitbelow = &splitbelow
@@ -538,8 +553,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 83 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 83 + 83) / 167)
+exe 'vert 1resize ' . ((&columns * 82 + 83) / 166)
+exe 'vert 2resize ' . ((&columns * 83 + 83) / 166)
 argglobal
 balt TOOLS/ghostty/README.md
 setlocal fdm=indent
@@ -550,7 +565,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 21) / 43)
+let s:l = 1 - ((0 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -571,17 +586,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 5 - ((4 * winheight(0) + 21) / 43)
+let s:l = 5 - ((4 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 5
 normal! 019|
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 83 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 83 + 83) / 167)
-tabnext 7
+exe 'vert 1resize ' . ((&columns * 82 + 83) / 166)
+exe 'vert 2resize ' . ((&columns * 83 + 83) / 166)
+tabnext 6
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
