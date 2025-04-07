@@ -610,10 +610,13 @@ alias sail='echo "// trying sail command else use vendor"; [ -f sail ] && sh sai
 # PHP 
 alias crt='echo "// composer run test-filter "; composer run test-filter '
 
-alias_message='echo "// composer run tests-parallel-filter";'
-alias_command='composer run tests-parallel-filter'
-alias ltpf="$alias_message $alias_command"
+ltpf_command='composer run tests-parallel-filter'
+ltpf_message="echo '// $ltpf_command';"
+alias ltpf="$ltpf_message $ltpf_command"
 
+pa_command="php artisan"
+pa_message="echo '// $pa_command';"
+alias pa="$pa_message $pa_command"
 
 # COMPOSER
 alias crt='echo "// composer run test-filter "; composer run test-filter '
