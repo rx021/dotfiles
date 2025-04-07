@@ -58,7 +58,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 3) / 7)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -93,7 +93,7 @@ exe 'vert 1resize ' . ((&columns * 44 + 75) / 150)
 exe '2resize ' . ((&lines * 2 + 20) / 41)
 exe 'vert 2resize ' . ((&columns * 43 + 75) / 150)
 exe '3resize ' . ((&lines * 2 + 20) / 41)
-exe 'vert 3resize ' . ((&columns * 44 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 35 + 75) / 150)
 exe '4resize ' . ((&lines * 2 + 20) / 41)
 exe 'vert 4resize ' . ((&columns * 25 + 75) / 150)
 argglobal
@@ -181,7 +181,7 @@ exe 'vert 1resize ' . ((&columns * 44 + 75) / 150)
 exe '2resize ' . ((&lines * 2 + 20) / 41)
 exe 'vert 2resize ' . ((&columns * 43 + 75) / 150)
 exe '3resize ' . ((&lines * 2 + 20) / 41)
-exe 'vert 3resize ' . ((&columns * 44 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 35 + 75) / 150)
 exe '4resize ' . ((&lines * 2 + 20) / 41)
 exe 'vert 4resize ' . ((&columns * 25 + 75) / 150)
 tabnext
@@ -208,7 +208,7 @@ set winwidth=1
 exe '1resize ' . ((&lines * 2 + 20) / 41)
 exe 'vert 1resize ' . ((&columns * 59 + 75) / 150)
 exe '2resize ' . ((&lines * 2 + 20) / 41)
-exe 'vert 2resize ' . ((&columns * 59 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
 exe '3resize ' . ((&lines * 2 + 20) / 41)
 exe 'vert 3resize ' . ((&columns * 39 + 75) / 150)
 argglobal
@@ -273,7 +273,7 @@ wincmd w
 exe '1resize ' . ((&lines * 2 + 20) / 41)
 exe 'vert 1resize ' . ((&columns * 59 + 75) / 150)
 exe '2resize ' . ((&lines * 2 + 20) / 41)
-exe 'vert 2resize ' . ((&columns * 59 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
 exe '3resize ' . ((&lines * 2 + 20) / 41)
 exe 'vert 3resize ' . ((&columns * 39 + 75) / 150)
 tabnext
@@ -310,12 +310,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 612 - ((8 * winheight(0) + 19) / 38)
+let s:l = 613 - ((9 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 612
-normal! 0
+keepjumps 613
+normal! 039|
 wincmd w
 argglobal
 if bufexists(fnamemodify("os-ANDROID/.bash_profile", ":p")) | buffer os-ANDROID/.bash_profile | else | edit os-ANDROID/.bash_profile | endif
@@ -331,7 +331,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 50 - ((1 * winheight(0) + 19) / 38)
+let s:l = 50 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -352,7 +352,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 76 - ((2 * winheight(0) + 19) / 38)
+let s:l = 76 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -553,7 +553,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe '1resize ' . ((&lines * 7 + 20) / 41)
-exe 'vert 1resize ' . ((&columns * 78 + 75) / 150)
+exe 'vert 1resize ' . ((&columns * 69 + 75) / 150)
 exe '2resize ' . ((&lines * 7 + 20) / 41)
 exe 'vert 2resize ' . ((&columns * 80 + 75) / 150)
 argglobal
@@ -595,7 +595,7 @@ keepjumps 5
 normal! 019|
 wincmd w
 exe '1resize ' . ((&lines * 7 + 20) / 41)
-exe 'vert 1resize ' . ((&columns * 78 + 75) / 150)
+exe 'vert 1resize ' . ((&columns * 69 + 75) / 150)
 exe '2resize ' . ((&lines * 7 + 20) / 41)
 exe 'vert 2resize ' . ((&columns * 80 + 75) / 150)
 tabnext 4
