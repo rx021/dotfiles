@@ -195,3 +195,5 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --heading'
 
 # END OF FILE
 
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
