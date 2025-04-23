@@ -91,18 +91,7 @@ alias mv='mv -iv '
 
 alias cdd='echo "// cd ~/dotfiles"; cd ~/dotfiles'
 alias cdD='echo "// cd ~/Downloads"; cd ~/Downloads'
-alias cdH='echo "// cd ~/HigherMe"; cd ~/HigherMe'
 alias cdO='echo "// cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/OBSIDIAN"; cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/OBSIDIAN'
-# just making it easier to 
-# go between docker setup & monorepo setup 
-alias cdk='echo "// cd ~/HigherMe/higherme-docker"; cd ~/HigherMe/higherme-docker'
-alias cdj='cd ~/HigherMe/higherme-docker/sites/higherme/higherme-laravel-5/resources/assets/js
-'
-#alias cdh='cd ~/HigherMe/higherme'
-# // no longer have these directories after laptop reset
-#alias cdh='cd ~/HigherMe/higherme-docker/sites/higherme'
-#alias cdl='cd ~/HigherMe/higherme-docker/sites/highermeapi'
-#alias cdm='echo "// cd ~/HigherMe/monorepo"; cd ~/HigherMe/monorepo'
 
 #alias cdr='cd /Users/reinhardtc/Downloads/0-cloud/0-learn-software/reinhardtcgr.github.io'
 #alias cdz='cd /Users/reinhardtc/Downloads/0-cloud/0-learn-software/zero-one'
@@ -490,11 +479,6 @@ alias dp='echo "// docker ps";docker ps'
 alias ds='echo "// docker stop <container>"; docker stop '
 
 
-#alias dsn='docker stop higherme-node'
-# alias hm='/Users/reinhardtc/HigherMe/monorepo/develop/assistant/hmcli'
-alias hm='/Users/reinhardtc/HigherMe/assistant-cli/cli/hmcli'
-alias hmcli='/Users/reinhardtc/HigherMe/assistant-cli/cli/hmcli'
-
 # MONOREPO kubernetes setup
 # spinning it up
 # `k3d start cluster`
@@ -515,9 +499,6 @@ alias kssh='echo "// kubectl exec --stdin --tty <podname> -- <shell command>"; k
 alias kc='echo "// kubectl config <command>"; kubectl config '
 alias kcuc='echo "// kubectl config use-context <context>"; kubectl config use-context '
 alias kcucdefault='echo "// kubectl config use-context k3s-default"; kubectl config use-context k3s-default'
-
-# HigherMe Monorepo Path
-MONOREPO_PATH='/Users/reinhardtc/HigherMe/monorepo'
 
 # // this is for homebrew gcc >> don't need anymore should use Xcode CLT
 #PATH="/usr/local/Cellar/gcc/11.2.0/bin:${PATH}"
