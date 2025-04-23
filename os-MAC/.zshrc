@@ -170,7 +170,10 @@ alias grs='echo "// git restore --staged <files> to UNSTAGE"; git restore --stag
 alias gcm='echo "// trying commit script"; [ -f ~/dotfiles/SCRIPTS/.gitcommit.sh ] && sh ~/dotfiles/SCRIPTS/.gitcommit.sh || echo "> no ~/dotfiles/SCRIPTS/.gitcommit.sh file"'
 
 #// to push changes into the stash
-alias gspush='echo "// git stash push"; git stash push'
+#alias gspush='echo "// git stash push"; git stash push'
+gspush_command='git stash push'
+gspush_message="echo '// $gspush_command';"
+alias gspush="$gspush_message $gspush_command"
 #// to push even untracked changes
 # git stash push --include-untracked <file>
 
