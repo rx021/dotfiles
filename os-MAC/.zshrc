@@ -1,5 +1,12 @@
 # SHELL SETUP
 
+create_alias()
+{
+  alias_command=$1
+  alias_message="echo '// $alias_command';"
+  echo "$alias_message $alias_command"
+}
+
 alias ssha='eval $(ssh-agent); ssh-add'
 
 # // how to check the shell you are using
@@ -103,7 +110,7 @@ alias otrash='open ~/.Trash/'
 # cmd + shift + del
 
 # get working directory
-alias gwd='echo "// pwd |pbcopy"; pwd |pbcopy'
+alias gwd="$(create_alias 'pwd |pbcopy')"
 
 # TODO: END CHECK IF ON MAC OS
 
@@ -140,9 +147,10 @@ alias gpull='echo "// git pull <branch>"; git pull'
 alias gpush='echo "// git push <branch>"; git push'
 alias gpom='echo "// git push origin main"; git push origin main'
 
-alias gs='echo "// git status"; git status'
-alias gd='echo "// git diff";git diff'
-alias gdc='echo "// git diff --cached"; git diff --cached' #// to see staged (added) changes (hunk)
+alias gs="$(create_alias 'git status')"
+alias gd="$(create_alias 'git diff')"
+#// to see staged (added) changes (hunk)
+alias gdc="$(create_alias 'git diff --cached')"
 
 #// when only changing the FILENAME casing in git
 #git mv <filename>
@@ -167,7 +175,8 @@ alias gspush="$gspush_message $gspush_command"
 # git stash push --include-untracked <file>
 
 #// to see a list of stashed patches
-alias gslist='echo "// git stash list"; git stash list'
+
+alias gslist="$(create_alias 'git stash list')"
 alias gsshow='echo "// git stash show -p"; git stash show -p'
 # git stash show -p 3 // to see the #4 stashed patch/changes
 
@@ -241,7 +250,8 @@ alias gl1='echo "// git log --graph --oneline"; git log --graph --oneline'
 # $ glg -n <number of commits>
 
 # // git log FILES to see which files were updated
-alias glf='echo "// git log --graph --oneline --name-status"; git log --graph --oneline --name-status'
+
+alias glf="$(create_alias 'git log --graph --oneline --name-status')"
 
 # // git log PATCHES to see the diffs in each
 alias glp='echo "// git log -p"; git log -p'
