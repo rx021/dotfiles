@@ -6,7 +6,7 @@
 # // if so then add to the end of the files
 # // if no then do the straight forward symlink
 
-ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/os-LINUX-remote/.tmux.conf ~/.tmux.conf
 # // can then run the shell script for tmux setup for a new project
 # // run `:source ~/.tmux.conf` if already in tmux
 
