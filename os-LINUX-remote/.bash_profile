@@ -68,8 +68,16 @@ alias ga='echo "// git add <files>"; git add '
 alias gaa='echo "// git add . (ALL)"; git add .;' 
 alias grs='echo "// git restore --staged <files> to UNSTAGE"; git restore --staged ' 
 
+
+create_alias()
+{
+  alias_command=$1
+  alias_message="echo '// $alias_command';"
+  echo "$alias_message $alias_command"
+}
+
 # // git log FILES to see which files were updated
-alias glf='echo "// git log --name-only --oneline"; git log --name-only --oneline'
+alias glf="$(create_alias 'git log --graph --oneline --name-status')"
 
 # // git log PATCHES to see the diffs in each
 alias glp='echo "// git log -p"; git log -p'
@@ -155,8 +163,6 @@ alias glgr='echo "// git log --graph --pretty=reference --relative-date"; git lo
 alias gl1='echo "// git log --graph --oneline"; git log --graph --oneline'
 
 
-# // git log FILES to see which files were updated
-alias glf='echo "// git log --name-only --oneline"; git log --name-only --oneline'
 
 # // git log patches to see the diffs in each
 alias glp='echo "// git log -p"; git log -p'
