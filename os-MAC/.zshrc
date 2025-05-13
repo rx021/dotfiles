@@ -278,8 +278,11 @@ alias glshow='echo "// git log -p"; git log -p'
 # // note: must use full hash that you can get from git log 
 # git revert <commit-hash || HEAD>
 
-#// to cherry pick a commit from another branch
+#-- to cherry pick a commit from another branch
 # git cherry-pick <commmit-hash>
+
+#-- to cherry pick a range of commits inclusive of the first commit
+# git cherry-pick <commmit-id-1>~..<commmit-id-n>
 
 # GIT CHANGE REMOTE 
 # git remote set-url <remote-name> <ssh-remote-url>
