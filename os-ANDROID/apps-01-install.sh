@@ -23,3 +23,6 @@ pkg install ruby;
 
 # to see files
 pkg install tree;
+
+#-- set the rebase code editor to vim
+# git config --global core.editor "vim"

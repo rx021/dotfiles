@@ -8,6 +8,9 @@ sudo apt-get install tmux #// only Ubuntu & Debian
 # INSTALL NEOVIM [2]
 sudo apt install neovim #// only Ubuntu
 
+#-- set the rebase code editor to vim
+# git config --global core.editor "vim"
+
 # INSTALL RIPGREP [2a] for navigating code
 sudo apt update
 #sudo apt-get ripgrep
