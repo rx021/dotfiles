@@ -8,7 +8,7 @@ read message
 separator=":"
 last_commit=$(git log -1 --pretty=%B)
 
-if [ "$last_commit" == *_${separator}_* ]; then
+if echo "$last_commit" | grep -q "$separator"; then
   first_word=$(echo $last_commit | cut -d "$seperator" -f1)
   #IFS="$separator" read -r first_word _ <<< "$last_commit" 
 fi
