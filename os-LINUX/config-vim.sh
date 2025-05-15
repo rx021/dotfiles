@@ -10,5 +10,5 @@ mkdir -p ~/.config/nvim;
 # // if so then add to the end of the files
 # // if no then do the straight forward symlink
 # // TODO: install VIM plugins - might also auto install when first run
-ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim;
+ln -s ~/dotfiles/os-LINUX/init.vim ~/.config/nvim/init.vim;
 
