@@ -9,7 +9,10 @@ separator=":"
 last_commit=$(git log -1 --pretty=%B)
 
 if echo "$last_commit" | grep -q "$separator"; then
-  first_word=$(echo $last_commit | cut -d "$seperator" -f1)
+  first_word=$(echo "$last_commit" | sed "s/$seperator.*//")
+  #first_word=$(echo "$last_commit" | awk -F "$seperator" '{print $1}')
+  #first_word=$(echo "$last_commit" | awk -F "$seperator" "{print $1}")
+  #first_word=$(echo "$last_commit" | cut -d "$seperator" -f1)
   #IFS="$separator" read -r first_word _ <<< "$last_commit" 
 fi
 
