@@ -7,7 +7,7 @@ read message
 
 separator=":"
 last_commit=$(git log -1 --pretty=%B)
-if [[ "$last_commit" == *"$separator"* ]]; then
+if [ "$last_commit" == *"$separator"* ]; then
   first_word=$(echo $last_commit | cut -d "$seperator" -f1)
   #IFS="$separator" read -r first_word _ <<< "$last_commit" 
 fi
@@ -16,7 +16,7 @@ fi
 prefix_prompt="___ADD A PREFIX?___"
 echo "$prefix_prompt"
 
-if [[ -z "$first_word" ]]; then
+if [ -z "$first_word" ]; then
   read prefix
 else
   echo "$first_word ? [Y=enter]"
