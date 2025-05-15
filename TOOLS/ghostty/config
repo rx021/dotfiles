@@ -1,3 +1,10 @@
+#_ GHOSTTY TERMINAL CONFIG
+
+##_ RELOADING CONFIG
+# ctrl+shift+,
+
+##_ OFFLINE DOCS
+# $ ghostty +show-config --default --docs
 
 theme = xcodedarkhc
 
@@ -12,11 +19,12 @@ background-opacity = 0.95
 
 cursor-style = block
 
-# HOTKEYS
+##_ HOTKEYS
 keybind = ctrl+c=copy_to_clipboard
 keybind = ctrl+v=paste_from_clipboard
 
-# CLIPBOARD
-copy-on-select = clipboard
+##_ CLIPBOARD
+copy-on-select = false
+# = clipboard / true / false
 clipboard-read = allow
 clipboard-write = allow
