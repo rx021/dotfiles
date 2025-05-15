@@ -6,7 +6,11 @@
 - [x] symlink the file here to the app
 
 ```bash
+# os-MAC:
 ln -s ~/dotfiles/TOOLS/ghostty/config ~/Library/Application\ Support/com.mitchellh.ghostty/config;
+
+# os-LINUX:
+ln -s ~/dotfiles/TOOLS/ghostty/config ~/.config/ghostty/config
 
 ```
 
