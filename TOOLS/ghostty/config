@@ -1,13 +1,16 @@
+
 theme = xcodedarkhc
 
 background-opacity = 0.95
-# // opacity doesnt do much in full screen
+#-- opacity doesnt do much in full screen
 
 # window-padding-y = 8
-# // doesn't really do much
+#-- doesn't really do much
 
 # font-size = 18
-# // didn't work; cmd +/- instead
+#-- didn't work; cmd/ctrl +/- instead
+
+cursor-style = block
 
 # HOTKEYS
 keybind = ctrl+c=copy_to_clipboard
