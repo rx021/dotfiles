@@ -8,8 +8,10 @@ read message
 separator=":"
 last_commit=$(git log -1 --pretty=%B)
 if [[ "$last_commit" == *"$separator"* ]]; then
-  IFS="$separator" read -r first_word _ <<< "$last_commit" 
+  first_word=$(echo $last_commit | cut -d "$seperator" -f1)
+  #IFS="$separator" read -r first_word _ <<< "$last_commit" 
 fi
+
 
 prefix_prompt="___ADD A PREFIX?___"
 echo "$prefix_prompt"
