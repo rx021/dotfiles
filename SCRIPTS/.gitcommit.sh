@@ -13,7 +13,6 @@ if echo "$last_commit" | grep -q "$separator"; then
   #IFS="$separator" read -r first_word _ <<< "$last_commit" 
 fi
 
-
 prefix_prompt="___ADD A PREFIX?___"
 echo "$prefix_prompt"
 
