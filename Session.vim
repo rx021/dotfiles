@@ -18,7 +18,7 @@ badd +5 FRAMEWORKS/next-react.md
 badd +2 LIBRARIES/stripe.md
 badd +1 LANGUAGES/javascript.md
 badd +93 .tmux.conf
-badd +60 init.vim
+badd +1 init.vim
 badd +1 OS/config-vim.sh
 badd +1 OS/config-tmux.sh
 badd +1 SCRIPTS/.gitcommit.sh
@@ -29,7 +29,7 @@ badd +6 os-LINUX-remote/config-bash.sh
 badd +1 README.md
 badd +1 os-MAC/.zshrc
 badd +1 os-ANDROID/.bash_profile
-badd +1 os-LINUX-remote/.bash_profile
+badd +76 os-LINUX-remote/.bash_profile
 badd +17 SCRIPTS/.sync.sh
 badd +1 os-MAC/apps-02-config.sh
 badd +1 os-MAC/apps-01-install.sh
@@ -40,6 +40,10 @@ badd +5 TOOLS/ghostty/README.md
 badd +1 TOOLS/ghostty/config
 badd +1 os-MAC/.tmux.conf
 badd +7 os-MAC/config-tmux.sh
+badd +0 os-LINUX/config-tmux.sh
+badd +0 os-LINUX/config-vim.sh
+badd +0 os-LINUX/.bash_profile
+badd +0 os-LINUX/init.vim
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -60,7 +64,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 16) / 33)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -96,12 +100,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 17 - ((13 * winheight(0) + 18) / 36)
+let s:l = 16 - ((12 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 17
-normal! 013|
+keepjumps 16
+normal! 0
 wincmd w
 argglobal
 if bufexists(fnamemodify("TOOLS/ghostty/README.md", ":p")) | buffer TOOLS/ghostty/README.md | else | edit TOOLS/ghostty/README.md | endif
@@ -160,11 +164,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 250 - ((6 * winheight(0) + 18) / 36)
+let s:l = 249 - ((5 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 250
+keepjumps 249
 normal! 0
 wincmd w
 argglobal
@@ -189,11 +193,11 @@ keepjumps 55
 normal! 045|
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-LINUX-remote/.bash_profile", ":p")) | buffer os-LINUX-remote/.bash_profile | else | edit os-LINUX-remote/.bash_profile | endif
+if bufexists(fnamemodify("os-LINUX/.bash_profile", ":p")) | buffer os-LINUX/.bash_profile | else | edit os-LINUX/.bash_profile | endif
 if &buftype ==# 'terminal'
-  silent file os-LINUX-remote/.bash_profile
+  silent file os-LINUX/.bash_profile
 endif
-balt README.md
+balt os-LINUX-remote/.bash_profile
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -202,12 +206,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 76 - ((0 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 76
-normal! 08|
+keepjumps 1
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 47 + 71) / 143)
 exe 'vert 2resize ' . ((&columns * 47 + 71) / 143)
@@ -246,11 +250,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 2 - ((1 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 2
 normal! 0
 wincmd w
 argglobal
@@ -275,11 +279,11 @@ keepjumps 1
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("init.vim", ":p")) | buffer init.vim | else | edit init.vim | endif
+if bufexists(fnamemodify("os-LINUX/init.vim", ":p")) | buffer os-LINUX/init.vim | else | edit os-LINUX/init.vim | endif
 if &buftype ==# 'terminal'
-  silent file init.vim
+  silent file os-LINUX/init.vim
 endif
-balt .tmux.conf
+balt init.vim
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -288,18 +292,18 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 431 - ((12 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 431
+keepjumps 1
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 48 + 71) / 143)
 exe 'vert 2resize ' . ((&columns * 46 + 71) / 143)
 exe 'vert 3resize ' . ((&columns * 47 + 71) / 143)
 tabnext
-edit OS/config-vim.sh
+edit os-LINUX/config-vim.sh
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -323,7 +327,7 @@ exe 'vert 1resize ' . ((&columns * 47 + 71) / 143)
 exe 'vert 2resize ' . ((&columns * 47 + 71) / 143)
 exe 'vert 3resize ' . ((&columns * 47 + 71) / 143)
 argglobal
-balt SCRIPTS/.sync.sh
+balt OS/config-vim.sh
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -332,19 +336,19 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 2 - ((1 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
+keepjumps 1
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("OS/config-tmux.sh", ":p")) | buffer OS/config-tmux.sh | else | edit OS/config-tmux.sh | endif
+if bufexists(fnamemodify("os-LINUX/config-tmux.sh", ":p")) | buffer os-LINUX/config-tmux.sh | else | edit os-LINUX/config-tmux.sh | endif
 if &buftype ==# 'terminal'
-  silent file OS/config-tmux.sh
+  silent file os-LINUX/config-tmux.sh
 endif
-balt OS/config-vim.sh
+balt OS/config-tmux.sh
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -381,7 +385,6 @@ normal! zt
 keepjumps 3
 normal! 0
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 47 + 71) / 143)
 exe 'vert 2resize ' . ((&columns * 47 + 71) / 143)
 exe 'vert 3resize ' . ((&columns * 47 + 71) / 143)
@@ -578,7 +581,7 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 13
-normal! 021|
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 47 + 71) / 143)
 exe 'vert 2resize ' . ((&columns * 47 + 71) / 143)
