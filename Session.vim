@@ -103,11 +103,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 16 - ((13 * winheight(0) + 19) / 38)
+let s:l = 15 - ((12 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 16
+keepjumps 15
 normal! 0
 wincmd w
 argglobal
@@ -154,8 +154,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
-exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 1resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
 exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 argglobal
 balt SCRIPTS/tmux-new-session.sh
@@ -216,8 +216,8 @@ normal! zt
 keepjumps 1
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
-exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 1resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
 exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 tabnext
 edit SCRIPTS/tmux-new-session.sh
@@ -326,8 +326,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
-exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 1resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
 exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 argglobal
 setlocal fdm=manual
@@ -340,11 +340,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 11 - ((10 * winheight(0) + 19) / 38)
+let s:l = 9 - ((8 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 11
+keepjumps 9
 normal! 0
 lcd ~/dotfiles
 wincmd w
@@ -390,8 +390,8 @@ normal! zt
 keepjumps 3
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
-exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 1resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
 exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 tabnext
 edit ~/dotfiles/LANGUAGES/javascript.md
@@ -419,8 +419,8 @@ set winminwidth=0
 set winwidth=1
 exe 'vert 1resize ' . ((&columns * 37 + 75) / 150)
 exe 'vert 2resize ' . ((&columns * 37 + 75) / 150)
-exe 'vert 3resize ' . ((&columns * 36 + 75) / 150)
-exe 'vert 4resize ' . ((&columns * 37 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 37 + 75) / 150)
+exe 'vert 4resize ' . ((&columns * 36 + 75) / 150)
 argglobal
 balt ~/dotfiles/LIBRARIES/stripe.md
 setlocal fdm=indent
@@ -431,11 +431,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 6 - ((0 * winheight(0) + 19) / 38)
+let s:l = 3 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 6
+keepjumps 3
 normal! 06|
 wincmd w
 argglobal
@@ -503,8 +503,8 @@ normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 37 + 75) / 150)
 exe 'vert 2resize ' . ((&columns * 37 + 75) / 150)
-exe 'vert 3resize ' . ((&columns * 36 + 75) / 150)
-exe 'vert 4resize ' . ((&columns * 37 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 37 + 75) / 150)
+exe 'vert 4resize ' . ((&columns * 36 + 75) / 150)
 tabnext
 edit ~/dotfiles/os-MAC/apps-01-install.sh
 let s:save_splitbelow = &splitbelow
@@ -526,8 +526,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
-exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 1resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
 exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 argglobal
 balt ~/dotfiles/os-MAC/apps-02-config.sh
@@ -588,8 +588,8 @@ normal! zt
 keepjumps 13
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
-exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 1resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
 exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 tabnext 6
 set stal=1
