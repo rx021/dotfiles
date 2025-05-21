@@ -40,12 +40,15 @@ badd +5 TOOLS/ghostty/README.md
 badd +1 TOOLS/ghostty/config
 badd +1 os-MAC/.tmux.conf
 badd +7 os-MAC/config-tmux.sh
-badd +0 os-LINUX/config-tmux.sh
-badd +0 os-LINUX/config-vim.sh
-badd +0 os-LINUX/.bash_profile
-badd +0 os-LINUX/init.vim
+badd +1 os-LINUX/config-tmux.sh
+badd +7 os-LINUX/config-vim.sh
+badd +1 os-LINUX/.bash_profile
+badd +1 os-LINUX/init.vim
+badd +1 os-MAC/config-vim.sh
+badd +0 os-MAC/init.vim
 argglobal
 %argdel
+set stal=2
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
@@ -64,7 +67,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -88,8 +91,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 71 + 71) / 143)
-exe 'vert 2resize ' . ((&columns * 71 + 71) / 143)
+exe 'vert 1resize ' . ((&columns * 75 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 74 + 75) / 150)
 argglobal
 balt TOOLS/ghostty/README.md
 setlocal fdm=indent
@@ -100,7 +103,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 16 - ((12 * winheight(0) + 18) / 36)
+let s:l = 16 - ((13 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -121,15 +124,15 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 5 - ((4 * winheight(0) + 18) / 36)
+let s:l = 5 - ((4 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 5
 normal! 019|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 71 + 71) / 143)
-exe 'vert 2resize ' . ((&columns * 71 + 71) / 143)
+exe 'vert 1resize ' . ((&columns * 75 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 74 + 75) / 150)
 tabnext
 edit os-MAC/.zshrc
 let s:save_splitbelow = &splitbelow
@@ -151,9 +154,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 47 + 71) / 143)
-exe 'vert 2resize ' . ((&columns * 47 + 71) / 143)
-exe 'vert 3resize ' . ((&columns * 47 + 71) / 143)
+exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 argglobal
 balt SCRIPTS/tmux-new-session.sh
 setlocal fdm=indent
@@ -164,11 +167,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 249 - ((5 * winheight(0) + 18) / 36)
+let s:l = 247 - ((3 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 249
+keepjumps 247
 normal! 0
 wincmd w
 argglobal
@@ -185,7 +188,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 55 - ((0 * winheight(0) + 18) / 36)
+let s:l = 55 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -206,16 +209,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 47 + 71) / 143)
-exe 'vert 2resize ' . ((&columns * 47 + 71) / 143)
-exe 'vert 3resize ' . ((&columns * 47 + 71) / 143)
+exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 tabnext
 edit SCRIPTS/tmux-new-session.sh
 let s:save_splitbelow = &splitbelow
@@ -237,9 +240,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 48 + 71) / 143)
-exe 'vert 2resize ' . ((&columns * 46 + 71) / 143)
-exe 'vert 3resize ' . ((&columns * 47 + 71) / 143)
+exe 'vert 1resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 argglobal
 balt .tmux.conf
 setlocal fdm=indent
@@ -250,11 +253,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 2 - ((1 * winheight(0) + 18) / 36)
+let s:l = 3 - ((2 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
+keepjumps 3
 normal! 0
 wincmd w
 argglobal
@@ -271,7 +274,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -279,11 +282,11 @@ keepjumps 1
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-LINUX/init.vim", ":p")) | buffer os-LINUX/init.vim | else | edit os-LINUX/init.vim | endif
+if bufexists(fnamemodify("os-MAC/init.vim", ":p")) | buffer os-MAC/init.vim | else | edit os-MAC/init.vim | endif
 if &buftype ==# 'terminal'
-  silent file os-LINUX/init.vim
+  silent file os-MAC/init.vim
 endif
-balt init.vim
+balt os-LINUX/init.vim
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -292,18 +295,18 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 48 + 71) / 143)
-exe 'vert 2resize ' . ((&columns * 46 + 71) / 143)
-exe 'vert 3resize ' . ((&columns * 47 + 71) / 143)
+exe 'vert 1resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 tabnext
-edit os-LINUX/config-vim.sh
+edit os-MAC/config-vim.sh
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -323,32 +326,34 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 47 + 71) / 143)
-exe 'vert 2resize ' . ((&columns * 47 + 71) / 143)
-exe 'vert 3resize ' . ((&columns * 47 + 71) / 143)
+exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 argglobal
-balt OS/config-vim.sh
-setlocal fdm=indent
+setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 11 - ((10 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 11
 normal! 0
+lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-LINUX/config-tmux.sh", ":p")) | buffer os-LINUX/config-tmux.sh | else | edit os-LINUX/config-tmux.sh | endif
+if bufexists(fnamemodify("~/dotfiles/os-MAC/config-tmux.sh", ":p")) | buffer ~/dotfiles/os-MAC/config-tmux.sh | else | edit ~/dotfiles/os-MAC/config-tmux.sh | endif
 if &buftype ==# 'terminal'
-  silent file os-LINUX/config-tmux.sh
+  silent file ~/dotfiles/os-MAC/config-tmux.sh
 endif
-balt OS/config-tmux.sh
+balt ~/dotfiles/os-LINUX/config-tmux.sh
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -357,19 +362,19 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 8 - ((7 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 8
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("SCRIPTS/.gitcommit.sh", ":p")) | buffer SCRIPTS/.gitcommit.sh | else | edit SCRIPTS/.gitcommit.sh | endif
+if bufexists(fnamemodify("~/dotfiles/SCRIPTS/.gitcommit.sh", ":p")) | buffer ~/dotfiles/SCRIPTS/.gitcommit.sh | else | edit ~/dotfiles/SCRIPTS/.gitcommit.sh | endif
 if &buftype ==# 'terminal'
-  silent file SCRIPTS/.gitcommit.sh
+  silent file ~/dotfiles/SCRIPTS/.gitcommit.sh
 endif
-balt SCRIPTS/.sync.sh
+balt ~/dotfiles/SCRIPTS/.sync.sh
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -378,18 +383,18 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 3 - ((2 * winheight(0) + 18) / 36)
+let s:l = 3 - ((2 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 3
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 47 + 71) / 143)
-exe 'vert 2resize ' . ((&columns * 47 + 71) / 143)
-exe 'vert 3resize ' . ((&columns * 47 + 71) / 143)
+exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 tabnext
-edit LANGUAGES/javascript.md
+edit ~/dotfiles/LANGUAGES/javascript.md
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -412,12 +417,12 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 35 + 71) / 143)
-exe 'vert 2resize ' . ((&columns * 35 + 71) / 143)
-exe 'vert 3resize ' . ((&columns * 35 + 71) / 143)
-exe 'vert 4resize ' . ((&columns * 35 + 71) / 143)
+exe 'vert 1resize ' . ((&columns * 37 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 37 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 36 + 75) / 150)
+exe 'vert 4resize ' . ((&columns * 37 + 75) / 150)
 argglobal
-balt LIBRARIES/stripe.md
+balt ~/dotfiles/LIBRARIES/stripe.md
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -426,7 +431,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 6 - ((0 * winheight(0) + 18) / 36)
+let s:l = 6 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -434,11 +439,11 @@ keepjumps 6
 normal! 06|
 wincmd w
 argglobal
-if bufexists(fnamemodify("LIBRARIES/stripe.md", ":p")) | buffer LIBRARIES/stripe.md | else | edit LIBRARIES/stripe.md | endif
+if bufexists(fnamemodify("~/dotfiles/LIBRARIES/stripe.md", ":p")) | buffer ~/dotfiles/LIBRARIES/stripe.md | else | edit ~/dotfiles/LIBRARIES/stripe.md | endif
 if &buftype ==# 'terminal'
-  silent file LIBRARIES/stripe.md
+  silent file ~/dotfiles/LIBRARIES/stripe.md
 endif
-balt LANGUAGES/javascript.md
+balt ~/dotfiles/LANGUAGES/javascript.md
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -447,7 +452,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -455,11 +460,11 @@ keepjumps 1
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("FRAMEWORKS/next-react.md", ":p")) | buffer FRAMEWORKS/next-react.md | else | edit FRAMEWORKS/next-react.md | endif
+if bufexists(fnamemodify("~/dotfiles/FRAMEWORKS/next-react.md", ":p")) | buffer ~/dotfiles/FRAMEWORKS/next-react.md | else | edit ~/dotfiles/FRAMEWORKS/next-react.md | endif
 if &buftype ==# 'terminal'
-  silent file FRAMEWORKS/next-react.md
+  silent file ~/dotfiles/FRAMEWORKS/next-react.md
 endif
-balt TOOLS/laravel-vapor.md
+balt ~/dotfiles/TOOLS/laravel-vapor.md
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -468,7 +473,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -476,11 +481,11 @@ keepjumps 1
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("TOOLS/laravel-vapor.md", ":p")) | buffer TOOLS/laravel-vapor.md | else | edit TOOLS/laravel-vapor.md | endif
+if bufexists(fnamemodify("~/dotfiles/TOOLS/laravel-vapor.md", ":p")) | buffer ~/dotfiles/TOOLS/laravel-vapor.md | else | edit ~/dotfiles/TOOLS/laravel-vapor.md | endif
 if &buftype ==# 'terminal'
-  silent file TOOLS/laravel-vapor.md
+  silent file ~/dotfiles/TOOLS/laravel-vapor.md
 endif
-balt FRAMEWORKS/next-react.md
+balt ~/dotfiles/FRAMEWORKS/next-react.md
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -489,19 +494,19 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 2 - ((0 * winheight(0) + 18) / 36)
+let s:l = 2 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 2
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 35 + 71) / 143)
-exe 'vert 2resize ' . ((&columns * 35 + 71) / 143)
-exe 'vert 3resize ' . ((&columns * 35 + 71) / 143)
-exe 'vert 4resize ' . ((&columns * 35 + 71) / 143)
+exe 'vert 1resize ' . ((&columns * 37 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 37 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 36 + 75) / 150)
+exe 'vert 4resize ' . ((&columns * 37 + 75) / 150)
 tabnext
-edit os-MAC/apps-01-install.sh
+edit ~/dotfiles/os-MAC/apps-01-install.sh
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -521,11 +526,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 47 + 71) / 143)
-exe 'vert 2resize ' . ((&columns * 47 + 71) / 143)
-exe 'vert 3resize ' . ((&columns * 47 + 71) / 143)
+exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 argglobal
-balt os-MAC/apps-02-config.sh
+balt ~/dotfiles/os-MAC/apps-02-config.sh
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -534,7 +539,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 262 - ((9 * winheight(0) + 18) / 36)
+let s:l = 262 - ((10 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -542,11 +547,11 @@ keepjumps 262
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-ANDROID/apps-01-install.sh", ":p")) | buffer os-ANDROID/apps-01-install.sh | else | edit os-ANDROID/apps-01-install.sh | endif
+if bufexists(fnamemodify("~/dotfiles/os-ANDROID/apps-01-install.sh", ":p")) | buffer ~/dotfiles/os-ANDROID/apps-01-install.sh | else | edit ~/dotfiles/os-ANDROID/apps-01-install.sh | endif
 if &buftype ==# 'terminal'
-  silent file os-ANDROID/apps-01-install.sh
+  silent file ~/dotfiles/os-ANDROID/apps-01-install.sh
 endif
-balt os-ANDROID/config-bash.sh
+balt ~/dotfiles/os-ANDROID/config-bash.sh
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -555,7 +560,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -563,11 +568,11 @@ keepjumps 1
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-LINUX-remote/apps-01-install.sh", ":p")) | buffer os-LINUX-remote/apps-01-install.sh | else | edit os-LINUX-remote/apps-01-install.sh | endif
+if bufexists(fnamemodify("~/dotfiles/os-LINUX-remote/apps-01-install.sh", ":p")) | buffer ~/dotfiles/os-LINUX-remote/apps-01-install.sh | else | edit ~/dotfiles/os-LINUX-remote/apps-01-install.sh | endif
 if &buftype ==# 'terminal'
-  silent file os-LINUX-remote/apps-01-install.sh
+  silent file ~/dotfiles/os-LINUX-remote/apps-01-install.sh
 endif
-balt os-LINUX-remote/config-bash.sh
+balt ~/dotfiles/os-LINUX-remote/config-bash.sh
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -576,17 +581,18 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 13 - ((1 * winheight(0) + 18) / 36)
+let s:l = 13 - ((1 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 13
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 47 + 71) / 143)
-exe 'vert 2resize ' . ((&columns * 47 + 71) / 143)
-exe 'vert 3resize ' . ((&columns * 47 + 71) / 143)
-tabnext 5
+exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
+tabnext 6
+set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
