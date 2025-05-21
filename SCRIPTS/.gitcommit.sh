@@ -14,7 +14,7 @@ if echo "$last_commit" | grep -q "$separator"; then
   #first_word=$(echo "$last_commit" | awk -F "$separator" '{print $1}')
   #first_word=$(echo "$last_commit" | awk -F "$separator" "{print $1}")
   #first_word=$(echo "$last_commit" | cut -d "$separator" -f1)
-  #IFS="$separator" read -r first_word _ <<< "$last_commit" 
+  #IFS="$separator" read -r first_word _ <<< "$last_commit" #-- no good for LINUX
 fi
 
 prefix_prompt="___ADD A PREFIX?___"
