@@ -306,7 +306,7 @@ exe 'vert 1resize ' . ((&columns * 50 + 75) / 150)
 exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
 exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 tabnext
-edit os-MAC/config-vim.sh
+edit os-MAC/config-tmux.sh
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -326,10 +326,31 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
 exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
-exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 50 + 75) / 150)
 argglobal
+balt os-LINUX/config-tmux.sh
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+let s:l = 7 - ((6 * winheight(0) + 19) / 38)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 7
+normal! 0
+wincmd w
+argglobal
+if bufexists(fnamemodify("os-MAC/config-vim.sh", ":p")) | buffer os-MAC/config-vim.sh | else | edit os-MAC/config-vim.sh | endif
+if &buftype ==# 'terminal'
+  silent file os-MAC/config-vim.sh
+endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -349,27 +370,6 @@ normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-MAC/config-tmux.sh", ":p")) | buffer ~/dotfiles/os-MAC/config-tmux.sh | else | edit ~/dotfiles/os-MAC/config-tmux.sh | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-MAC/config-tmux.sh
-endif
-balt ~/dotfiles/os-LINUX/config-tmux.sh
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 8 - ((7 * winheight(0) + 19) / 38)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 8
-normal! 0
-wincmd w
-argglobal
 if bufexists(fnamemodify("~/dotfiles/SCRIPTS/.gitcommit.sh", ":p")) | buffer ~/dotfiles/SCRIPTS/.gitcommit.sh | else | edit ~/dotfiles/SCRIPTS/.gitcommit.sh | endif
 if &buftype ==# 'terminal'
   silent file ~/dotfiles/SCRIPTS/.gitcommit.sh
@@ -383,16 +383,17 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 3 - ((2 * winheight(0) + 19) / 38)
+let s:l = 16 - ((15 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 3
-normal! 0
+keepjumps 16
+normal! 062|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 50 + 75) / 150)
+3wincmd w
+exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
 exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
-exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 50 + 75) / 150)
 tabnext
 edit ~/dotfiles/LANGUAGES/javascript.md
 let s:save_splitbelow = &splitbelow
@@ -431,12 +432,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 3 - ((0 * winheight(0) + 19) / 38)
+let s:l = 2 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 3
-normal! 06|
+keepjumps 2
+normal! 0
 wincmd w
 argglobal
 if bufexists(fnamemodify("~/dotfiles/LIBRARIES/stripe.md", ":p")) | buffer ~/dotfiles/LIBRARIES/stripe.md | else | edit ~/dotfiles/LIBRARIES/stripe.md | endif
@@ -591,7 +592,7 @@ wincmd w
 exe 'vert 1resize ' . ((&columns * 50 + 75) / 150)
 exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
 exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
-tabnext 6
+tabnext 5
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
