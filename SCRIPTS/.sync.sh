@@ -11,10 +11,24 @@ echo "_______________"
 echo "// git status"
 git status
 
+separator=":"
+last_commit=$(git log -1 --pretty=%B)
+
+if echo "$last_commit" | grep -q "$separator"; then
+  first_word=$(echo "$last_commit" | sed "s/$separator.*//")
+fi
+
+message="${folder} sync"
+
+if [ "$first_word" != "" ]
+then
+  message="${first_word}${separator} ${message}"
+fi
+
 #TODO: get the message of what was worked on 
 echo "_______________"
-echo "// git commit -m '${folder} sync'"
-git commit -m "${folder} sync"
+echo "// git commit -m '${message}'"
+git commit -m "${message}"
 
 
 echo "_______________"
