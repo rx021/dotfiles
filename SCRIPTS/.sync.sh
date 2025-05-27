@@ -13,23 +13,44 @@ git status
 
 #-- logic to blacklist directories to sync
 echo "_______________"
-echo "CHECKING BLACKLIST:"
-declare -a blacklist=(
-  #"OBSIDIAN"
-  #"dotfiles"
-  "rentatee"
-  "OSS"
+echo "CHECKING WHITELIST:"
+declare -a whitelist=(
+  "OBSIDIAN"
+  "dotfiles"
+  #"rentatee"
+  #"OSS"
 )
-
-for curr_dir in "${blacklist[@]}"
+can_continue=false
+for curr_dir in "${whitelist[@]}"
 do
   echo "$curr_dir/"
   if echo "$PWD" | grep -q "$curr_dir";
   then
-    echo "> on blacklist"
-    exit 1
+    echo "> on whitelist"
+    can_continue=true
   fi
 done
+if [ "$can_continue" = false ]
+then
+  exit 1
+fi
+
+#echo "CHECKING BLACKLIST:"
+#declare -a blacklist=(
+  #"OBSIDIAN"
+  #"dotfiles"
+  #"rentatee"
+  #"OSS"
+#)
+#for curr_dir in "${blacklist[@]}"
+#do
+  #echo "$curr_dir/"
+  #if echo "$PWD" | grep -q "$curr_dir";
+  #then
+    #echo "> on blacklist"
+    #exit 1
+  #fi
+#done
 
 #-- logic to sync
 
