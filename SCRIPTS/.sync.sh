@@ -20,7 +20,7 @@ declare -a blacklist=(
 
 for curr_dir in "${blacklist[@]}"
 do
-  echo "$curr_dir"
+  echo "\n$curr_dir"
 done
 
 #-- logic to sync
