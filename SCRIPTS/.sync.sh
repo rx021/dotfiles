@@ -12,7 +12,7 @@ echo "// git status"
 git status
 
 #-- logic to blacklist directories to sync
-echo "\n CHECKING BLACKLIST:"
+echo "\nCHECKING BLACKLIST:"
 declare -a blacklist=(
   #"OBSIDIAN"
   #"dotfiles"
@@ -22,7 +22,7 @@ declare -a blacklist=(
 
 for curr_dir in "${blacklist[@]}"
 do
-  echo "$curr_dir"
+  echo "$curr_dir\/"
   if echo "$PWD" | grep -q "$curr_dir";
   then
     echo "> on blacklist"
