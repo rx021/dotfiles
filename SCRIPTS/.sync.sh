@@ -12,7 +12,8 @@ echo "// git status"
 git status
 
 #-- logic to blacklist directories to sync
-echo "\nCHECKING BLACKLIST:"
+echo "_______________"
+echo "CHECKING BLACKLIST:"
 declare -a blacklist=(
   #"OBSIDIAN"
   #"dotfiles"
