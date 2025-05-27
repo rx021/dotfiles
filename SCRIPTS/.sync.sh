@@ -20,6 +20,7 @@ do
 done
 if [ "$can_continue" = false ]
 then
+  echo "> NOT on whitelist"
   exit 1
 fi
 
