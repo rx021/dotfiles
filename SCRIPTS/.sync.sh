@@ -15,7 +15,7 @@ git status
 echo "\n CHECKING BLACKLIST:"
 declare -a blacklist=(
   "OBSIDIAN"
-  "dotfiles"
+  #"dotfiles"
   "rentatee"
   "OSS"
 )
@@ -26,6 +26,7 @@ do
   if echo "$PWD" | grep -q "$curr_dir";
   then
     echo "> on blacklist"
+    exit 1
   fi
 done
 
