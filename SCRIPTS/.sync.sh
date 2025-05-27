@@ -1,17 +1,5 @@
-folder=${PWD##*/}
-#echo ${folder} 
-#echo "test"
-echo "_______________"
-echo "// git status"
-git status
-echo "_______________"
-echo "// git add ."
-git add .
-echo "_______________"
-echo "// git status"
-git status
+#-- LOGIC TO BLACKLIST DIRECTORIES TO SYNC
 
-#-- logic to blacklist directories to sync
 echo "_______________"
 echo "CHECKING WHITELIST:"
 declare -a whitelist=(
@@ -35,6 +23,8 @@ then
   exit 1
 fi
 
+#-- LOGIC TO BLACKLIST DIRECTORIES TO SYNC
+
 #echo "CHECKING BLACKLIST:"
 #declare -a blacklist=(
   #"OBSIDIAN"
@@ -52,7 +42,21 @@ fi
   #fi
 #done
 
-#-- logic to sync
+#-- LOGIC TO SYNC
+
+folder=${PWD##*/}
+#echo ${folder} 
+#echo "test"
+echo "_______________"
+echo "// git status"
+git status
+echo "_______________"
+echo "// git add ."
+git add .
+echo "_______________"
+echo "// git status"
+git status
+
 
 separator=":"
 last_commit=$(git log -1 --pretty=%B)
