@@ -11,6 +11,20 @@ echo "_______________"
 echo "// git status"
 git status
 
+#-- logic to blacklist directories to sync
+declare -a blacklist=(
+  "OBSIDIAN"
+  "rentatee"
+  "OSS"
+)
+
+for curr_dir in "${blacklist[@]}"
+do
+  echo "$curr_dir"
+done
+
+#-- logic to sync
+
 separator=":"
 last_commit=$(git log -1 --pretty=%B)
 
