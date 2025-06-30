@@ -17,7 +17,8 @@ git clone git@github.com:reinhardtcgr/dotfiles.git
 #- can install from download for OS
 
 # INSTALL TMUX [3]
-sudo apt-get install tmux #// only Ubuntu & Debian
+#sudo apt-get install tmux #// only Ubuntu & Debian
+sudo dnf install tmux #// only for Fedora
 
 #-- set the rebase code editor to vim
 # git config --global core.editor "vim"
