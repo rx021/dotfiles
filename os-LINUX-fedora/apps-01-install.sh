@@ -16,6 +16,12 @@ git clone git@github.com:reinhardtcgr/dotfiles.git
 #https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-download
 #- can install from download for OS
 
+# SET GIT EDITOR [2b]
+# git config --global core.editor "nvim"
+# SET GIT USER [2c]
+# git config --global user.name "reinhardt"
+# git config --global user.email "reinhardt.cgr@proton.me"
+
 # INSTALL TMUX [3]
 #sudo apt-get install tmux #// only Ubuntu & Debian
 sudo dnf install tmux #// only for Fedora
