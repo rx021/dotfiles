@@ -486,6 +486,12 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     " // enables :Files
+
+    Plug 'nvim-lua/plenary.vim'
+    "-- issues install this
+    "-- even did
+    "git config --global url.ssh://git@github.com/.insteadOf https://github.com/
+
     Plug 'jparise/vim-graphql' " graphQL syntax highlighting
     Plug 'StanAngeloff/php.vim' " php syntax highlighting // archived DEC 2020
     Plug 'adoy/vim-php-refactoring-toolbox'
@@ -631,7 +637,12 @@ function! s:tweak_darcula_colors()
   " adds Truecolor to the terminal if supported
   set termguicolors
   let g:lightline = { 'colorscheme': 'darculaOriginal' }
+
+  "-- fix attempt for Goyo restting bad
+  "hi LineNr ...
+  "hi FoldColumn ...
 endfunction
+
 autocmd! ColorScheme darcula call s:tweak_darcula_colors()
 " prefered syntax color scheme
 " TODO CHECK IF PLUGIN INSTALLED
