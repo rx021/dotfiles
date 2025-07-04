@@ -470,7 +470,10 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
     Plug 'doums/darcula' " my prefered syntax color scheme 
-    Plug 'preservim/nerdtree' " to see filetree
+
+    "Plug 'preservim/nerdtree' " to see filetree
+    "-- turning off to better understand netrw
+
     Plug 'airblade/vim-gitgutter' " to see git if line changed
 
     Plug 'preservim/nerdcommenter' " allows commenting out 
