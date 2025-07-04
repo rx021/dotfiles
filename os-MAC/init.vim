@@ -41,7 +41,7 @@
 " :echo expand('%:p') // for absolute path
 " :let @" = expand("%:p") // copy current file path / filename
 
-"" SETTINGS
+"-- SETTINGS
 "
 "colorcolumn=80,120 "//doesn't work
 "cursorline "//doesn't work
@@ -313,6 +313,7 @@ set nofoldenable "defaults no folding on first open
 
 """"""""""""""" 
 " STATUS LINE
+" per file
 """"""""""""""" 
 
 function! GitGetCurrentBranch()
@@ -470,6 +471,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
     Plug 'doums/darcula' " my prefered syntax color scheme 
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
     "Plug 'preservim/nerdtree' " to see filetree
     "-- turning off to better understand netrw
@@ -634,6 +636,19 @@ autocmd! ColorScheme darcula call s:tweak_darcula_colors()
 " prefered syntax color scheme
 " TODO CHECK IF PLUGIN INSTALLED
 colorscheme darcula
+
+"-- the following is for init.vim
+"lua << EOF
+  "require("catppuccin").setup({
+    "flavour = "mocha",
+  "})
+"EOF
+"colorscheme catppuccin
+"-- the following is for init.lua
+"require("catppuccin").setup({
+  "flavour = "mocha",
+"})
+"vim.cmd.colorscheme "catppuccin"
 
 
 """"""""""""""" 
