@@ -27,7 +27,7 @@ badd +6 os-MAC/config-sh.sh
 badd +3 os-ANDROID/config-bash.sh
 badd +6 os-LINUX-remote/config-bash.sh
 badd +1 README.md
-badd +3 os-MAC/.zshrc
+badd +1 os-MAC/.zshrc
 badd +1 os-ANDROID/.bash_profile
 badd +76 os-LINUX-remote/.bash_profile
 badd +1 SCRIPTS/.sync.sh
@@ -61,10 +61,13 @@ badd +1 os-SHARED/.utils.bash
 badd +5 os-SHARED/.alias_git.bash
 badd +5 os-SHARED/alias_tmux.bash
 badd +4 os-SHARED/.alias_tmux.bash
-badd +0 os-SHARED/.alias_filesystem.sh
-badd +1 os-SHARED/.cli.sh
-badd +0 os-SHARED/.alias_git.sh
+badd +1 os-SHARED/.alias_filesystem.sh
+badd +17 os-SHARED/.cli.sh
+badd +1 os-SHARED/.alias_git.sh
 badd +11 os-LINUX-fedora/config-bash.sh
+badd +1 os-SHARED/.alias_tmux.sh
+badd +1 os-SHARED/.utils.sh
+badd +1 os-SHARED/.x.sh
 argglobal
 %argdel
 set stal=2
@@ -165,6 +168,10 @@ vsplit
 2wincmd h
 wincmd w
 wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
 wincmd t
@@ -176,7 +183,10 @@ set winminwidth=0
 set winwidth=1
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
+exe '3resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
+exe '4resize ' . ((&lines * 19 + 21) / 42)
+exe 'vert 4resize ' . ((&columns * 51 + 79) / 158)
 argglobal
 balt SCRIPTS/tmux-new-session.sh
 setlocal foldmethod=indent
@@ -187,12 +197,12 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 7 - ((6 * winheight(0) + 19) / 39)
+let s:l = 252 - ((11 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 7
-normal! 014|
+keepjumps 252
+normal! 07|
 wincmd w
 argglobal
 if bufexists(fnamemodify("os-ANDROID/.bash_profile", ":p")) | buffer os-ANDROID/.bash_profile | else | edit os-ANDROID/.bash_profile | endif
@@ -229,7 +239,7 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 2 - ((1 * winheight(0) + 19) / 39)
+let s:l = 2 - ((1 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -237,10 +247,33 @@ keepjumps 2
 normal! 0
 lcd ~/dotfiles
 wincmd w
-3wincmd w
+argglobal
+if bufexists(fnamemodify("~/dotfiles/os-SHARED/.alias_git.sh", ":p")) | buffer ~/dotfiles/os-SHARED/.alias_git.sh | else | edit ~/dotfiles/os-SHARED/.alias_git.sh | endif
+if &buftype ==# 'terminal'
+  silent file ~/dotfiles/os-SHARED/.alias_git.sh
+endif
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 7 - ((6 * winheight(0) + 9) / 19)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 7
+normal! 028|
+lcd ~/dotfiles
+wincmd w
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
+exe '3resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
+exe '4resize ' . ((&lines * 19 + 21) / 42)
+exe 'vert 4resize ' . ((&columns * 51 + 79) / 158)
 tabnext
 edit ~/dotfiles/SCRIPTS/tmux-new-session.sh
 let s:save_splitbelow = &splitbelow
@@ -275,12 +308,12 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 38 - ((10 * winheight(0) + 19) / 39)
+let s:l = 75 - ((3 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 38
-normal! 07|
+keepjumps 75
+normal! 042|
 wincmd w
 argglobal
 if bufexists(fnamemodify("~/dotfiles/os-ANDROID/.tmux.conf", ":p")) | buffer ~/dotfiles/os-ANDROID/.tmux.conf | else | edit ~/dotfiles/os-ANDROID/.tmux.conf | endif
@@ -361,11 +394,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 4 - ((2 * winheight(0) + 19) / 39)
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 4
+keepjumps 1
 normal! 0
 wincmd w
 argglobal
@@ -675,6 +708,7 @@ if bufexists(fnamemodify("~/dotfiles/os-SHARED/.alias_git.sh", ":p")) | buffer ~
 if &buftype ==# 'terminal'
   silent file ~/dotfiles/os-SHARED/.alias_git.sh
 endif
+balt ~/dotfiles/os-SHARED/.cli.sh
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -696,6 +730,7 @@ if bufexists(fnamemodify("~/dotfiles/os-SHARED/.alias_filesystem.sh", ":p")) | b
 if &buftype ==# 'terminal'
   silent file ~/dotfiles/os-SHARED/.alias_filesystem.sh
 endif
+balt ~/dotfiles/os-SHARED/.cli.sh
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -764,7 +799,7 @@ exe '4resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 4resize ' . ((&columns * 78 + 79) / 158)
 exe '5resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 5resize ' . ((&columns * 78 + 79) / 158)
-tabnext 3
+tabnext 4
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
