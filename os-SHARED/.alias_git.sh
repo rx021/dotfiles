@@ -29,8 +29,8 @@ alias glshow="$(create_alias 'git log -p ')"
 alias gspush="$(create_alias 'git stash push ')"
 
 #-- to see a list of stashed patches
-alias gslist='echo "// git stash list"; git stash list'
-alias gsshow='echo "// git stash show -p"; git stash show -p'
+alias gslist="$(create_alias 'git stash list ')"
+alias gsshow="$(create_alias 'git stash show -p ')"
 # git stash show -p 3 // to see the #4 stashed patch/changes
 
 # git show stash@{0} // to show tracked files stashed in index 0
@@ -40,9 +40,10 @@ alias gsshow='echo "// git stash show -p"; git stash show -p'
 # git stash apply <stash-index>
 
 # git stash push -m "message" <path>
-alias gsdrop='echo "// git stash drop <number>"; git stash drop '
+# git stash drop <number>
+alias gsdrop="$(create_alias 'git stash drop ')"
 
-alias gf='echo "// git fetch"; git fetch'
+alias gf="$(create_alias 'git fetch ')"
 #alias gp='git pull'
 
 ## GIT MERGE
