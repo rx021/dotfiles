@@ -6,3 +6,8 @@ create_alias()
   echo "$alias_message; $alias_command"
 }
 
+#-- CLI PREFIX DEFAULT
+#cli_prefix="💧 "
+#cli_prefix="💻 "
+cli_prefix="@"
+

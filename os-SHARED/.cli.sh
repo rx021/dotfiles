@@ -6,9 +6,7 @@
 #color_prompt=no
 color_prompt=yes
 
-#cli_prefix="@"
-#cli_prefix="💧 "
-cli_prefix="💻 "
+#cli_prefix="@" #-- see .utils.sh
 
 user_name="\u"
 host_name="\h"
