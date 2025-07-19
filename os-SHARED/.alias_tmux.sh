@@ -10,14 +10,17 @@ alias trs='echo "// tmux rename-session -t <old-name> <new-name>"; tmux rename-s
 
 ## SCRIPTS
 tns_script="~/dotfiles/SCRIPTS/tmux-new-session.sh"
-tns_msg="echo '// TRYING SCRIPT: $tns_script"
+tns_msg="echo '// TRYING SCRIPT: ${tns_script}'"
 run_tns()
 {
   echo "run_tns --"
   session_name=$1
-  sh "$tns_script" "$session_name"
+  #echo
+  #sh "$tns_script" "$session_name"
 }
-alias tns="$tns_msg; run_tns "
+#alias tns="$tns_msg"
+#alias tns="$tns_msg; run_tns "
+alias tns="$tns_msg; sh $tns_script "
 
 #-- original
 #alias tns='echo "// sh ${tns_script}"; function foo(){ sh ~/dotfiles/SCRIPTS/tmux-new-session.sh $1; unset -f foo; }; foo'
