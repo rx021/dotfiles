@@ -1,14 +1,14 @@
 # SHARED SHELL - CLI
 
 alias ssha='eval $(ssh-agent); ssh-add'
-# // add specific key
+#-- add specific key
 # ssh-add path/to/private_key
 
-# // to see OS from command line
+#-- to see OS from command line
 # $ uname
 # $ echo $OSTYPE
 
-# // to see OS version from linux
+#-- to see OS version from linux
 # $ lsb_release -a
 
 # modifying the bash prompt to something simpler

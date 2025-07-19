@@ -47,7 +47,7 @@ alias gf='echo "// git fetch"; git fetch'
 
 ## GIT MERGE
 
-# // to merge another branch into your current branch
+#-- to merge another branch into your current branch
 # git merge incomingBranch
 
 ## GIT REBASE
@@ -63,10 +63,10 @@ alias gf='echo "// git fetch"; git fetch'
 
 #-- to find the number of commits to squash
 # git log
-# // to open interactive to squash commits and give a better commit message
+#-- to open interactive to squash commits and give a better commit message
 # git rebase -i HEAD~<number-of-commits>
 # git rebase -i HEAD~9
-# // To push up the changes
+#-- To push up the changes
 # git push --force origin feature/COR-7412-edocs-re-write-create-feature-switch
 
 ### Rebase your branch to resolve merge conflicts 
@@ -79,17 +79,17 @@ alias gf='echo "// git fetch"; git fetch'
 
 
 alias gl='echo "// git log"; git log'
-# git log // to see if your current changes match the remote
+# git log - to see if your current changes match the remote
 
-# // to see which commits are on your master which you haven't yet pushed
+#-- to see which commits are on your master which you haven't yet pushed
 # git log origin/master..master
 alias gld='echo "// git log diff b/w remote"; git log origin/master..master'
 
-# // to see which commits are on origin/master but not yet on master
+#-- to see which commits are on origin/master but not yet on master
 
 # git log master..origin/master
 
-# // git log graph
+#-- git log graph
 alias glg='echo "// git log --graph --pretty=format:.."; git log --pretty=format:"%C(dim white)%d%C(reset) %s %C(dim white)[%h %ae %cr]%C(reset)" --graph'
 
 alias glgraph='echo "// git log --graph"; git log --graph'

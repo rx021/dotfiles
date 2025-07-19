@@ -3,7 +3,6 @@
 test_message="TEST TMUX aliases"
 alias alias_tmux="echo '$test_message'"
 
-# TMUX
 alias t='echo "// tmux <command>"; tmux '
 alias tls='echo "// tmux ls"; tmux ls'
 alias tns='echo "// sh ~/dotfiles/SCRIPTS/tmux-new-session.sh"; function foo(){ sh ~/dotfiles/SCRIPTS/tmux-new-session.sh $1; unset -f foo; }; foo'

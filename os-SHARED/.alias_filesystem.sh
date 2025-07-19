@@ -7,7 +7,7 @@ alias l='ls'
 # -F for files vs directories
 # -G for colors
 
-#// alias to always prompt before overwriting and to be verbose"
+#-- alias to always prompt before overwriting and to be verbose"
 alias mv='mv -iv '
 
 #-- Go directly to the Dotfiles folder
