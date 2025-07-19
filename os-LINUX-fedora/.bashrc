@@ -57,6 +57,7 @@ alias nv='echo "// nvim <command>"; nvim'
 
 source ~/dotfiles/os-SHARED/.utils.bash
 source ~/dotfiles/os-SHARED/.alias_git.bash
+source ~/dotfiles/os-SHARED/.alias_tmux.bash
 source ~/dotfiles/os-SHARED/.x.bash
 
 # GIT
@@ -67,22 +68,9 @@ source ~/dotfiles/os-SHARED/.x.bash
 alias sy='echo "// trying sync script"; [ -f ~/dotfiles/SCRIPTS/.sync.sh ] && sh ~/dotfiles/SCRIPTS/.sync.sh || echo "> no ~/dotfiles/SCRIPTS/.sync.sh file"'
 
 
-
-# TMUX
-alias t='echo "// tmux <command>"; tmux '
-alias tls='echo "// tmux ls"; tmux ls'
-alias tns='echo "// sh ~/dotfiles/SCRIPTS/tmux-new-session.sh"; function foo(){ sh ~/dotfiles/SCRIPTS/tmux-new-session.sh $1; unset -f foo; }; foo'
-alias tas='echo "// tmux attach-session -t <name>"; tmux attach-session -t '
-alias trs='echo "// tmux rename-session -t <old-name> <new-name>"; tmux rename-session -t '
-alias tkill='echo "// tmux kill-session -t <name>"; tmux kill-session -t '
-
-
 export FZF_DEFAULT_COMMAND='rg --files --hidden --heading'
-
-
-
-# END OF FILE
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# END OF FILE
