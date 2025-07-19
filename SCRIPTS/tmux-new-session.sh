@@ -17,62 +17,61 @@ fi
 
 if ! tmux has-session -t $SESSION_ID; then
 echo "No worries if we can't find your session. Lets create a new session.\n"
-#// create new tmux session for the project
-#// called '$SESSION_ID' (project session)
-#// with first window called CMD (aka command center)
+#-- create new tmux session for the project
+#-- called '$SESSION_ID' (project session)
+#-- with first window called CMD (aka command center)
 tmux new -s $SESSION_ID -n CMD -d;
-    #// WINDOW: CMD
+    #-- WINDOW: CMD
     # |__1__|
     # |_2|_3|
     # |__4__|
-    #// split the 'command' window
-    #// into a top & bottom pane (vertical split) 
+    #-- split the 'command' window
+    #-- into a top & bottom pane (vertical split) 
     tmux split-window -v -t $SESSION_ID:1;
-    #// split the 'command' window's top pane
+    #-- split the 'command' window's top pane
     tmux split-window -v -t $SESSION_ID:1.1;
-    #// split the 'command' window's 2nd pane
-    #// into a left & right pane (horizontal split)
+    #-- split the 'command' window's 2nd pane
+    #-- into a left & right pane (horizontal split)
     tmux split-window -h -t $SESSION_ID:1.2;
-    #// split the 'command' window's top pane
-    #// into a left & right pane (horizontal split)
-    #// at 40/60 ratio
+    #-- split the 'command' window's top pane
+    #-- into a left & right pane (horizontal split)
+    #-- at 40/60 ratio
     #tmux split-window -h -l 60% -t $SESSION_ID:1.1;
     #tmux send-keys -t $SESSION_ID:1.2 "watch -n 10 kubectl config get-contexts" Enter;
-    #// TODO: figure out why the resize is not working for the panes
+    #-- TODO: figure out why the resize is not working for the panes
 
-    #// WINDOW: DB 
+    #-- WINDOW: DB 
     # |__1__|
     # |__2__|
     # |__3__|
     tmux new-window -t $SESSION_ID:2 -n DB;
-    #// split the 'database' window
-    #// into a top & bottom pane (vertical split) 
+    #-- split the 'database' window
+    #-- into a top & bottom pane (vertical split) 
     tmux split-window -v -t $SESSION_ID:2;
-    #// split the top 'database' window
-    #// again (vertical split) 
+    #-- split the top 'database' window
+    #-- again (vertical split) 
     tmux split-window -v -t $SESSION_ID:2.1;
     
-    #// WINDOW: GIT
+    #-- WINDOW: GIT
     # |_1_|2|
     # |___|3|
     # |__4__|
-    #// create a new window
-    #// for source control called 'GIT'
-    #// (at window index 2 on session 'ps')
+    #-- create a new window
+    #-- for source control called 'GIT'
+    #-- (at window index 2 on session 'ps')
     tmux new-window -t $SESSION_ID:3 -n GIT;
-    #// split the window
-    #// into large top & small bottom
+    #-- split the window
+    #-- into large top & small bottom
     tmux split-window -v -l 20% -t $SESSION_ID:3; 
-    #// split the top window
-    #// into a left & right pane
-    #// at 27/73 ratio
+    #-- split the top window
+    #-- into a left & right pane
+    #-- at 27/73 ratio
     tmux split-window -h -l 27% -t $SESSION_ID:3.1;
     #tmux split-window -h -l 73% -t $SESSION_ID:3;
-    #// split the left pane
-    #// into a top & bottom pane
-    #// at 30/70 ratio
+    #-- split the left pane
+    #-- into a top & bottom pane
+    #-- at 30/70 ratio
     tmux split-window -v -l 70% -t $SESSION_ID:3.2;
-    #tmux send-keys -t $SESSION_ID:3.1 "watch -n 5 'git log --format=\"%C(dim white)%d%C(reset) %s %C(dim white)[%ae %h %cr]%C(reset)\" --graph'" Enter;
     tmux send-keys -t $SESSION_ID:3.1 "glf" Enter;
     tmux send-keys -t $SESSION_ID:3.1 "q" Enter;
     tmux send-keys -t $SESSION_ID:3.2 "watch -n 10 git branch" Enter;
@@ -81,27 +80,27 @@ tmux new -s $SESSION_ID -n CMD -d;
     #tmux send-keys -t $SESSION_ID:3.4 "gs" Enter;
     tmux send-keys -t $SESSION_ID:3.4 "watch -n 10 git status" Enter;
     
-    #// WINDOW: CODE
+    #-- WINDOW: CODE
     # |_____|
     # |__1__|
     # |_____|
-    #// create a new window
-    #// for coding called 'CODE'
-    #// (at window index 1 on session 'ps')
+    #-- create a new window
+    #-- for coding called 'CODE'
+    #-- (at window index 1 on session 'ps')
     tmux new-window -t $SESSION_ID:4 -n CDE;
     tmux send-keys -t $SESSION_ID:4.1 "nv" Enter;
-    #tmux send-keys -t $SESSION_ID:4.1 "C-o"; # // can't seem to send this second command right away
+    #tmux send-keys -t $SESSION_ID:4.1 "C-o"; # -- can't seem to send this second command right away
 
-    #// WINDOW: MISC
+    #-- WINDOW: MISC
     # |__|__|
     # |_1|_2|
     # |__|__|
-    #// create a new window
-    #// as a sandbax / tinkering / misc
+    #-- create a new window
+    #-- as a sandbax / tinkering / misc
     tmux new-window -t $SESSION_ID:5 -n X; 
-    #// split the top window
-    #// into a left & right pane
-    #// at 27/73 ratio
+    #-- split the top window
+    #-- into a left & right pane
+    #-- at 27/73 ratio
     tmux split-window -h -t $SESSION_ID:5;
 fi
 echo "The new TMUX session ($SESSION_ID) is ready to ATTACH to now:"
