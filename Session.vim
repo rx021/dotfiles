@@ -30,7 +30,7 @@ badd +1 README.md
 badd +1 os-MAC/.zshrc
 badd +1 os-ANDROID/.bash_profile
 badd +76 os-LINUX-remote/.bash_profile
-badd +17 SCRIPTS/.sync.sh
+badd +1 SCRIPTS/.sync.sh
 badd +1 os-MAC/apps-02-config.sh
 badd +1 os-MAC/apps-01-install.sh
 badd +1 os-ANDROID/apps-01-install.sh
@@ -48,6 +48,7 @@ badd +1 os-MAC/config-vim.sh
 badd +1 os-MAC/init.vim
 badd +1 os-ANDROID/.tmux.conf
 badd +4 .tmux.conf.x-leader
+badd +0 os-LINUX-fedora/init.vim
 argglobal
 %argdel
 set stal=2
@@ -61,15 +62,15 @@ tabrewind
 edit README.md
 argglobal
 balt LANGUAGES/javascript.md
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -93,19 +94,19 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 65 + 65) / 130)
-exe 'vert 2resize ' . ((&columns * 64 + 65) / 130)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 78 + 79) / 158)
 argglobal
 balt TOOLS/ghostty/README.md
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 15 - ((8 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 15 - ((13 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -118,23 +119,23 @@ if &buftype ==# 'terminal'
   silent file TOOLS/ghostty/README.md
 endif
 balt init.vim
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 5 - ((3 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 5 - ((4 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 5
 normal! 019|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 65 + 65) / 130)
-exe 'vert 2resize ' . ((&columns * 64 + 65) / 130)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 78 + 79) / 158)
 tabnext
 edit os-MAC/.zshrc
 let s:save_splitbelow = &splitbelow
@@ -156,20 +157,20 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 2resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 3resize ' . ((&columns * 42 + 65) / 130)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
 argglobal
 balt SCRIPTS/tmux-new-session.sh
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 246 - ((1 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 246 - ((2 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -182,15 +183,15 @@ if &buftype ==# 'terminal'
   silent file os-ANDROID/.bash_profile
 endif
 balt README.md
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 60 - ((4 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 60 - ((6 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -203,24 +204,24 @@ if &buftype ==# 'terminal'
   silent file os-LINUX/.bash_profile
 endif
 balt os-LINUX-remote/.bash_profile
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 2resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 3resize ' . ((&columns * 42 + 65) / 130)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
 tabnext
 edit SCRIPTS/tmux-new-session.sh
 let s:save_splitbelow = &splitbelow
@@ -242,20 +243,20 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 2resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 3resize ' . ((&columns * 42 + 65) / 130)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
 argglobal
 balt .tmux.conf
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 3 - ((1 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 3 - ((2 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -268,15 +269,15 @@ if &buftype ==# 'terminal'
   silent file os-ANDROID/.tmux.conf
 endif
 balt .tmux.conf.x-leader
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 18 - ((11 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 18 - ((17 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -289,24 +290,24 @@ if &buftype ==# 'terminal'
   silent file os-MAC/init.vim
 endif
 balt os-LINUX/init.vim
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 2resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 3resize ' . ((&columns * 42 + 65) / 130)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
 tabnext
 edit os-MAC/config-tmux.sh
 let s:save_splitbelow = &splitbelow
@@ -328,20 +329,20 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 42 + 65) / 130)
-exe 'vert 2resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 3resize ' . ((&columns * 43 + 65) / 130)
+exe 'vert 1resize ' . ((&columns * 51 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
 argglobal
 balt os-LINUX/config-tmux.sh
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 5 - ((2 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 5 - ((3 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -354,17 +355,17 @@ if &buftype ==# 'terminal'
   silent file os-MAC/config-vim.sh
 endif
 balt os-MAC/config-tmux.sh
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
+setlocal foldmethod=manual
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 7 - ((3 * winheight(0) + 13) / 27)
+let s:l = 7 - ((5 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -373,30 +374,30 @@ normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/SCRIPTS/.sync.sh", ":p")) | buffer ~/dotfiles/SCRIPTS/.sync.sh | else | edit ~/dotfiles/SCRIPTS/.sync.sh | endif
+if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/init.vim", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/init.vim | else | edit ~/dotfiles/os-LINUX-fedora/init.vim | endif
 if &buftype ==# 'terminal'
-  silent file ~/dotfiles/SCRIPTS/.sync.sh
+  silent file ~/dotfiles/os-LINUX-fedora/init.vim
 endif
-balt ~/dotfiles/SCRIPTS/.gitcommit.sh
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+balt ~/dotfiles/SCRIPTS/.sync.sh
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 640 - ((17 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 640
+normal! 026|
 wincmd w
 3wincmd w
-exe 'vert 1resize ' . ((&columns * 42 + 65) / 130)
-exe 'vert 2resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 3resize ' . ((&columns * 43 + 65) / 130)
+exe 'vert 1resize ' . ((&columns * 51 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
 tabnext
 edit ~/dotfiles/LANGUAGES/javascript.md
 let s:save_splitbelow = &splitbelow
@@ -421,21 +422,21 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 32 + 65) / 130)
-exe 'vert 2resize ' . ((&columns * 32 + 65) / 130)
-exe 'vert 3resize ' . ((&columns * 32 + 65) / 130)
-exe 'vert 4resize ' . ((&columns * 31 + 65) / 130)
+exe 'vert 1resize ' . ((&columns * 39 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 39 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 39 + 79) / 158)
+exe 'vert 4resize ' . ((&columns * 38 + 79) / 158)
 argglobal
 balt ~/dotfiles/LIBRARIES/stripe.md
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 2 - ((0 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 2 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -448,15 +449,15 @@ if &buftype ==# 'terminal'
   silent file ~/dotfiles/LIBRARIES/stripe.md
 endif
 balt ~/dotfiles/LANGUAGES/javascript.md
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -469,15 +470,15 @@ if &buftype ==# 'terminal'
   silent file ~/dotfiles/FRAMEWORKS/next-react.md
 endif
 balt ~/dotfiles/TOOLS/laravel-vapor.md
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -490,25 +491,25 @@ if &buftype ==# 'terminal'
   silent file ~/dotfiles/TOOLS/laravel-vapor.md
 endif
 balt ~/dotfiles/FRAMEWORKS/next-react.md
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 2 - ((0 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 2 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 2
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 32 + 65) / 130)
-exe 'vert 2resize ' . ((&columns * 32 + 65) / 130)
-exe 'vert 3resize ' . ((&columns * 32 + 65) / 130)
-exe 'vert 4resize ' . ((&columns * 31 + 65) / 130)
+exe 'vert 1resize ' . ((&columns * 39 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 39 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 39 + 79) / 158)
+exe 'vert 4resize ' . ((&columns * 38 + 79) / 158)
 tabnext
 edit ~/dotfiles/os-MAC/apps-01-install.sh
 let s:save_splitbelow = &splitbelow
@@ -530,20 +531,20 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 2resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 3resize ' . ((&columns * 42 + 65) / 130)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
 argglobal
 balt ~/dotfiles/os-MAC/apps-02-config.sh
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 260 - ((4 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 260 - ((6 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -556,15 +557,15 @@ if &buftype ==# 'terminal'
   silent file ~/dotfiles/os-ANDROID/apps-01-install.sh
 endif
 balt ~/dotfiles/os-ANDROID/config-bash.sh
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -577,24 +578,24 @@ if &buftype ==# 'terminal'
   silent file ~/dotfiles/os-LINUX-remote/apps-01-install.sh
 endif
 balt ~/dotfiles/os-LINUX-remote/config-bash.sh
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 13 - ((1 * winheight(0) + 13) / 27)
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 13 - ((2 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 13
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 2resize ' . ((&columns * 43 + 65) / 130)
-exe 'vert 3resize ' . ((&columns * 42 + 65) / 130)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
 tabnext 5
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
