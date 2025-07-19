@@ -1,3 +1,4 @@
+# SHARED SHELL - UTILS
 create_alias()
 {
   alias_command=$1
