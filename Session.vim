@@ -36,8 +36,8 @@ badd +1 os-MAC/apps-01-install.sh
 badd +1 os-ANDROID/apps-01-install.sh
 badd +1 os-LINUX-remote/apps-01-install.sh
 badd +17 TOOLS/ghostty.md
-badd +5 TOOLS/ghostty/README.md
-badd +1 TOOLS/ghostty/config
+badd +4 TOOLS/ghostty/README.md
+badd +12 TOOLS/ghostty/config
 badd +13 os-MAC/.tmux.conf
 badd +1 os-MAC/config-tmux.sh
 badd +1 os-LINUX/config-tmux.sh
@@ -71,6 +71,7 @@ badd +1 os-SHARED/.x.sh
 badd +141 os-LINUX-fedora/.tmux.conf
 badd +1 os-LINUX-fedora/config-tmux.sh
 badd +0 os-LINUX-fedora/config-vim.sh
+badd +1 thelp
 argglobal
 %argdel
 set stal=2
@@ -79,33 +80,18 @@ tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
-tabnew +setlocal\ bufhidden=wipe
 tabrewind
 edit README.md
-argglobal
-balt LANGUAGES/javascript.md
-setlocal foldmethod=indent
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-tabnext
-edit TOOLS/ghostty/config
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
@@ -116,10 +102,13 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+exe '1resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 78 + 79) / 158)
+exe '2resize ' . ((&lines * 19 + 21) / 42)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
 argglobal
-balt TOOLS/ghostty/README.md
+balt LANGUAGES/javascript.md
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -128,11 +117,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 13 - ((10 * winheight(0) + 19) / 39)
+let s:l = 1 - ((0 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 13
+keepjumps 1
 normal! 0
 wincmd w
 argglobal
@@ -140,7 +129,7 @@ if bufexists(fnamemodify("TOOLS/ghostty/README.md", ":p")) | buffer TOOLS/ghostt
 if &buftype ==# 'terminal'
   silent file TOOLS/ghostty/README.md
 endif
-balt init.vim
+balt README.md
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -149,15 +138,39 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 5 - ((4 * winheight(0) + 19) / 39)
+let s:l = 4 - ((3 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 5
-normal! 019|
+keepjumps 4
+normal! 0
 wincmd w
+argglobal
+if bufexists(fnamemodify("TOOLS/ghostty/config", ":p")) | buffer TOOLS/ghostty/config | else | edit TOOLS/ghostty/config | endif
+if &buftype ==# 'terminal'
+  silent file TOOLS/ghostty/config
+endif
+balt README.md
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 12 - ((11 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 12
+normal! 0
+wincmd w
+exe '1resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 78 + 79) / 158)
+exe '2resize ' . ((&lines * 19 + 21) / 42)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
 tabnext
 edit os-MAC/.zshrc
 let s:save_splitbelow = &splitbelow
@@ -263,11 +276,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 22 - ((7 * winheight(0) + 9) / 19)
+let s:l = 17 - ((2 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 22
+keepjumps 17
 normal! 0
 lcd ~/dotfiles
 wincmd w
@@ -311,11 +324,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 16 - ((15 * winheight(0) + 19) / 39)
+let s:l = 15 - ((14 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 16
+keepjumps 15
 normal! 0
 wincmd w
 argglobal
@@ -332,11 +345,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 13 - ((12 * winheight(0) + 19) / 39)
+let s:l = 12 - ((11 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 13
+keepjumps 12
 normal! 023|
 wincmd w
 argglobal
@@ -360,6 +373,7 @@ normal! zt
 keepjumps 140
 normal! 07|
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
@@ -443,11 +457,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 2 - ((1 * winheight(0) + 19) / 39)
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
+keepjumps 1
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
@@ -641,17 +655,17 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+let s:l = 2 - ((1 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 2
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
-tabnext 6
+tabnext 3
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
