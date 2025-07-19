@@ -79,30 +79,32 @@ alias gf="$(create_alias 'git fetch ')"
 #Then change back to your branch to rebase
 
 
-alias gl='echo "// git log"; git log'
+alias gl="$(create_alias 'git log ')"
 # git log - to see if your current changes match the remote
 
 #-- to see which commits are on your master which you haven't yet pushed
 # git log origin/master..master
-alias gld='echo "// git log diff b/w remote"; git log origin/master..master'
+#alias gld='echo "// git log diff b/w remote"; git log origin/master..master'
 
 #-- to see which commits are on origin/master but not yet on master
 
 # git log master..origin/master
 
 #-- git log graph
-alias glg='echo "// git log --graph --pretty=format:.."; git log --pretty=format:"%C(dim white)%d%C(reset) %s %C(dim white)[%h %ae %cr]%C(reset)" --graph'
+log_format="%C(dim white)%d%C(reset) %s %C(dim white)[%h %ae %cr]%C(reset)"
+glg_command="git log --graph --pretty=format:\"${log_format}\""
+alias glg="$(create_alias "${glg_command}")"
 
-alias glgraph='echo "// git log --graph"; git log --graph'
+alias glgraph="$(create_alias "git log --graph")"
 
-alias glgr='echo "// git log --graph --pretty=reference --relative-date"; git log --graph --pretty=reference --relative-date'
-alias gl1='echo "// git log --graph --oneline"; git log --graph --oneline'
+alias glgr="$(create_alias "git log --graph --pretty=reference --relative-date")"
+alias gl1="$(create_alias "git log --graph --oneline")"
 
 #-- git log patches to see the diffs in each
-alias glp='echo "// git log -p"; git log -p'
+alias glp="$(create_alias "git log -p")"
 #-- can add --author='Reinhardt' to see changes  by specific people
 #-- just another alias to make t easier to view changes
-alias glshow='echo "// git log -p"; git log -p'
+alias glshow="$(create_alias "git log -p")"
 
 #-- to reset to a previous commit but careful as you lose everything 
 # git reset --hard <commit-ID || HEAD>
