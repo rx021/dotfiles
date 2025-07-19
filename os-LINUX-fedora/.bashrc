@@ -55,6 +55,7 @@ alias n='echo "// nvim <command>"; nvim'
 alias nv='echo "// nvim <command>"; nvim'
 
 
+source ~/dotfiles/os-SHARED/.basha
 source ~/dotfiles/os-SHARED/.bashx
 
 # GIT

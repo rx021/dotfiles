@@ -1,28 +1,4 @@
 # SHARED BASH SETUP
 
-alias bashx="echo 'bashx TEST'"
+alias bashx="echo 'TEST bashx'"
 
-create_alias()
-{
-  alias_command=$1
-  alias_message="echo '// $alias_command'"
-  echo "$alias_message; $alias_command"
-}
-
-#-- git log FILES to see which files were updated
-alias glf="$(create_alias 'git log --graph --oneline --name-status')"
-
-## GIT
-#alias gc='echo "// git checkout <branch>"; git checkout'
-alias gc="$(create_alias 'git checkout')"
-alias gb="$(create_alias 'git branch')"
-
-alias gs="$(create_alias 'git status')"
-alias gd="$(create_alias 'git diff')"
-
-#-- to see staged (added) changes (hunk)
-alias gdc="$(create_alias 'git diff --cached')"
-
-alias ga="$(create_alias 'git add ')"
-alias gaa="$(create_alias 'git add . ;')"
-alias grs="$(create_alias 'git restore --staged ')"
