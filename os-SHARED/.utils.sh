@@ -14,10 +14,10 @@ create_script_alias()
   script_path=$1
   alias_msg="echo '// TRYING SCRIPT: ${script_path}'"
   fallback_msg="echo '> no ${script_path} file'"
-  script_attempt="[ -f $script_path] && sh $script_path || $fallback_msg"
+  script_attempt="[ -f $script_path ] && sh $script_path || $fallback_msg"
   
   #-- returns the echo & command to run in CLI
-  echo "$alias_message; $script_attempt"
+  echo "$alias_msg; $script_attempt"
 }
 
 ## SHELL PROMPT SETTINGS - DEFAULT
