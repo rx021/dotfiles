@@ -25,7 +25,7 @@ cli_prompt="$ "
 
 cli_body="${cli_prefix}${cli_dir}"
 
-#-- default values
+#-- DEFAULT VALUES
 cli_start="${cli_body}"
 cli_end="${cli_prompt}"
 
@@ -39,6 +39,7 @@ if [ "$color_prompt" = yes ]; then
   cli_color="\[${a_esc_char}[${prompt_color}\]"
   color_reset="\[${a_esc_char}[${a_white}\]"
 
+  #-- COLOR VALUES
   cli_start="${cli_color}${cli_body}"
   cli_end="${color_reset}${cli_prompt}"
 fi
