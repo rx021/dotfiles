@@ -60,13 +60,6 @@ source ~/dotfiles/os-SHARED/.alias_git.bash
 source ~/dotfiles/os-SHARED/.alias_tmux.bash
 source ~/dotfiles/os-SHARED/.x.bash
 
-# GIT
-
-
-
-# SYNC IF SYNC FILE EXISTS
-alias sy='echo "// trying sync script"; [ -f ~/dotfiles/SCRIPTS/.sync.sh ] && sh ~/dotfiles/SCRIPTS/.sync.sh || echo "> no ~/dotfiles/SCRIPTS/.sync.sh file"'
-
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --heading'
 
