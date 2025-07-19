@@ -125,6 +125,5 @@ alias glshow="$(create_alias "git log -p")"
 alias gcm='echo "// trying COMMIT script"; [ -f ~/dotfiles/SCRIPTS/.gitcommit.sh ] && sh ~/dotfiles/SCRIPTS/.gitcommit.sh || echo "> no ~/dotfiles/SCRIPTS/.gitcommit.sh file"'
 
 # SYNC IF SYNC FILE EXISTS
-alias sy='echo "// trying SYNC script"; [ -f ~/dotfiles/SCRIPTS/.sync.sh ] && sh ~/dotfiles/SCRIPTS/.sync.sh || echo "> no ~/dotfiles/SCRIPTS/.sync.sh file"'
-#alias sy='sh ~/dotfiles/SCRIPTS/.sync.sh || echo "> no ~/dotfiles/SCRIPTS/.sync.sh file"'
+alias sy="$(create_script_alias "~/dotfiles/SCRIPTS/.sync.sh")"
 alias sync="$(create_script_alias "~/dotfiles/SCRIPTS/.sync.sh")"
