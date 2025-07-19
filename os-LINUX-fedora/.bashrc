@@ -16,6 +16,8 @@ alias ssha='eval $(ssh-agent); ssh-add'
 color_prompt=yes
 #color_prompt=no
 emoji="💻"
+PS1="\[\033[34m\]@${emoji}\W\[\033[37m\]\$ "
+
 if [ "$color_prompt" = yes ]; then
   #PS1="\[\033[35m\]@\W\[\033[37m\]\$ "
   #PS1 = ${debian_chroot:+($debian_chroot)}\u@\h:\w\$
@@ -24,10 +26,9 @@ if [ "$color_prompt" = yes ]; then
   #PS1="${debian_chroot:+($debian_chroot)}\[\033[34m\]\u💧\w\[\033[37m\]\$ "
   #PS1="${debian_chroot:+($debian_chroot)}\[\033[34m\]\u💧\W\[\033[37m\]\$ "
   PS1="${debian_chroot:+($debian_chroot)}\[\033[34m\]${emoji}\W\[\033[37m\]\$ "
-else
+#else
   #PS1="@\W\$ "
   #I want to keep colors but simplify the prompt
-  PS1="\[\033[34m\]@\W\[\033[37m\]\$ "
 fi
 
 
