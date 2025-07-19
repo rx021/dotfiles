@@ -55,15 +55,10 @@ alias n='echo "// nvim <command>"; nvim'
 alias nv='echo "// nvim <command>"; nvim'
 
 
+source ~/dotfiles/os-SHARED/.bashx
 
 # GIT
 
-
-alias ga='echo "// git add <files>"; git add ' 
-alias gaa='echo "// git add . (ALL)"; git add .;' 
-alias grs='echo "// git restore --staged <files> to UNSTAGE"; git restore --staged ' 
-
-source ~/dotfiles/os-SHARED/.bashx
 
 # // git log PATCHES to see the diffs in each
 alias glp='echo "// git log -p"; git log -p'
