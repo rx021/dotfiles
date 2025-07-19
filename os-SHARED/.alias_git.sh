@@ -122,7 +122,7 @@ alias glshow="$(create_alias "git log -p")"
 ## SCRIPTS
 
 # GIT COMMIT IF GIT COMMIT SCRIPT FILE EXISTS
-alias gcm='echo "// trying COMMIT script"; [ -f ~/dotfiles/SCRIPTS/.gitcommit.sh ] && sh ~/dotfiles/SCRIPTS/.gitcommit.sh || echo "> no ~/dotfiles/SCRIPTS/.gitcommit.sh file"'
+alias gcm="$(create_script_alias "~/dotfiles/SCRIPTS/.gitcommit.sh")"
 
 # SYNC IF SYNC FILE EXISTS
 alias sy="$(create_script_alias "~/dotfiles/SCRIPTS/.sync.sh")"
