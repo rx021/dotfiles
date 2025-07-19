@@ -14,8 +14,10 @@ user_name="\u"
 host_name="\h"
 server_data="${debian_chroot:+($debian_chroot)}"
 
-#PS1 = ${debian_chroot:+($debian_chroot)}${user_name}${cli_prefix}${host_name}:${present_working_dir}${cli_prompt}
-#ex: = root@ubuntu-s-1vcpu-1gb-sfo3-01:~#
+# EXAMPLE:
+# root@ubuntu-s-1vcpu-1gb-sfo3-01:~#
+# ==
+# ${debian_chroot:+($debian_chroot)}${user_name}${cli_prefix}${host_name}:${present_working_dir}${cli_prompt}
 
 present_working_dir="\w" #-- dir path
 curr_dir="\W" #-- curr dir only
