@@ -1,4 +1,5 @@
 # SHARED BASH EXPERIMENTS
 
-alias bash_x="echo 'TEST bashx'"
+test_message="TEST X"
+alias x_bash="echo '$test_message'"
 
