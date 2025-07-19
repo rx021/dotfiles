@@ -1,11 +1,10 @@
-# SHARED BASH GIT ALIASES
+# SHARED BASH - GIT ALIASES
 
-alias alias_git="echo 'TEST git aliases'"
+test_message="TEST GIT aliases"
+alias alias_git="echo '$test_message'"
 
 #-- git log FILES to see which files were updated
 alias glf="$(create_alias 'git log --graph --oneline --name-status')"
-
-## GIT
 
 alias gc="$(create_alias 'git checkout')"
 alias gb="$(create_alias 'git branch')"
@@ -20,21 +19,16 @@ alias ga="$(create_alias 'git add ')"
 alias gaa="$(create_alias 'git add . ;')"
 alias grs="$(create_alias 'git restore --staged ')"
 
-# // git log PATCHES to see the diffs in each
-alias glp='echo "// git log -p"; git log -p'
-# // can add --author='Reinhardt' to see changes  by specific people
-# // just another alias to make t easier to view changes
-alias glshow='echo "// git log -p"; git log -p'
+#-- git log PATCHES to see the diffs in each
+alias glp="$(create_alias 'git log -p ')"
+#-- can add --author='Reinhardt' to see changes  by specific people
+#-- just another alias to make it easier to view changes
+alias glshow="$(create_alias 'git log -p ')"
 
-#alias gcm='echo "// git commit -m <text>"; git commit -m ' 
-# GIT COMMIT IF GIT COMMIT SCRIPT FILE EXISTS
-alias gcm='echo "// trying commit script"; [ -f ~/dotfiles/SCRIPTS/.gitcommit.sh ] && sh ~/dotfiles/SCRIPTS/.gitcommit.sh || echo "> no ~/dotfiles/SCRIPTS/.gitcommit.sh file"'
+#-- to push changes into the stash
+alias gspush="$(create_alias 'git stash push ')"
 
-
-#// to push changes into the stash
-alias gspush='echo "// git stash push"; git stash push'
-
-#// to see a list of stashed patches
+#-- to see a list of stashed patches
 alias gslist='echo "// git stash list"; git stash list'
 alias gsshow='echo "// git stash show -p"; git stash show -p'
 # git stash show -p 3 // to see the #4 stashed patch/changes
@@ -42,7 +36,7 @@ alias gsshow='echo "// git stash show -p"; git stash show -p'
 # git show stash@{0} // to show tracked files stashed in index 0
 # git show stash@{0}^3 // to show untracked files stashed in index 0
 
-#// to apply changes from a certain stash index (0 being at the top)
+#-- to apply changes from a certain stash index (0 being at the top)
 # git stash apply <stash-index>
 
 # git stash push -m "message" <path>
@@ -58,16 +52,16 @@ alias gf='echo "// git fetch"; git fetch'
 
 ## GIT REBASE
 
-# // to rebase your current branch with another branch
+#-- to rebase your current branch with another branch
 # git rebase incomingBranch
 
-# // to rebase your current branch from the remote branch
+#-- to rebase your current branch from the remote branch
 # git fetch
 # git rebase origin/master
 
 ## Squash Commits on your branch
 
-# // to find the number of commits to squash
+#-- to find the number of commits to squash
 # git log
 # // to open interactive to squash commits and give a better commit message
 # git rebase -i HEAD~<number-of-commits>
@@ -103,21 +97,27 @@ alias glgraph='echo "// git log --graph"; git log --graph'
 alias glgr='echo "// git log --graph --pretty=reference --relative-date"; git log --graph --pretty=reference --relative-date'
 alias gl1='echo "// git log --graph --oneline"; git log --graph --oneline'
 
-
-
-# // git log patches to see the diffs in each
+#-- git log patches to see the diffs in each
 alias glp='echo "// git log -p"; git log -p'
-# // can add --author='Reinhardt' to see changes  by specific people
-# // just another alias to make t easier to view changes
+#-- can add --author='Reinhardt' to see changes  by specific people
+#-- just another alias to make t easier to view changes
 alias glshow='echo "// git log -p"; git log -p'
 
-# // to reset to a previous commit but careful as you lose everything 
+#-- to reset to a previous commit but careful as you lose everything 
 # git reset --hard <commit-ID || HEAD>
 
-# // to revert a certain commit or the last commit on HEAD
-# // the diff with reset is that this does the opposite of the given commit 
-# // note: must use full hash that you can get from git log 
+#-- to revert a certain commit or the last commit on HEAD
+#-- the diff with reset is that this does the opposite of the given commit 
+#-- note: must use full hash that you can get from git log 
 # git revert <commit-hash || HEAD>
 
-#// to cherry pick a commit from another branch
+#-- to cherry pick a commit from another branch
 # git cherry-pick <commmit-hash>
+
+
+
+## SCRIPTS
+
+# GIT COMMIT IF GIT COMMIT SCRIPT FILE EXISTS
+alias gcm='echo "// trying commit script"; [ -f ~/dotfiles/SCRIPTS/.gitcommit.sh ] && sh ~/dotfiles/SCRIPTS/.gitcommit.sh || echo "> no ~/dotfiles/SCRIPTS/.gitcommit.sh file"'
+
