@@ -1,0 +1,14 @@
+# SHARED BASH SETUP
+
+create_alias()
+{
+  alias_command=$1
+  alias_message="echo '// $alias_command';"
+  echo "$alias_message $alias_command"
+}
+
+# // git log FILES to see which files were updated
+alias glf="$(create_alias 'git log --graph --oneline --name-status')"
+
+
+alias aT="echo 'alias Test'"
