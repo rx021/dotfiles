@@ -15,14 +15,14 @@ alias ssha='eval $(ssh-agent); ssh-add'
 #color_prompt=yes
 color_prompt=no
 
-prompt_prefix="@"
-prompt_prefix="💻 "
+cli_prefix="@"
+cli_prefix="💻 "
 
 user_name="\u"
 working_dir="\W"
 cli_prompt="$"
 
-PS1="${prompt_prefix}${working_dir}${cli_prompt}"
+PS1="${cli_prefix}${working_dir}${cli_prompt}"
 
 a_esc_char="\033" #-- ascii esc char
 a_blue="34m" #-- ascii blue
@@ -32,10 +32,10 @@ prompt_color="${a_purple}"
 color_change="\[${a_esc_char}[${prompt_color}\]"
 color_reset="\[${a_esc_char}[${a_white}\]"
 
-PS1="${color_change}${prompt_prefix}${working_dir}${color_reset}${cli_prompt} "
-#PS1="\[\033[34m\]${prompt_prefix}\[\033[37m\]\$ "
+PS1="${color_change}${cli_prefix}${working_dir}${color_reset}${cli_prompt} "
+#PS1="\[\033[34m\]${cli_prefix}\[\033[37m\]\$ "
 
-#PS1="\[\033[35m\]{prompt_prefix} \W\[\033[37m\]\${cli_prompt} "
+#PS1="\[\033[35m\]{cli_prefix} \W\[\033[37m\]\${cli_prompt} "
 
 if [ "$color_prompt" = yes ]; then
   #PS1="\[\033[35m\]@\W\[\033[37m\]\$ "
@@ -44,7 +44,7 @@ if [ "$color_prompt" = yes ]; then
   #PS1="${debian_chroot:+($debian_chroot)}\[\033[34m\]\u@\h:\w\[\033[37m\]\$ "
   #PS1="${debian_chroot:+($debian_chroot)}\[\033[34m\]\u💧\w\[\033[37m\]\$ "
   #PS1="${debian_chroot:+($debian_chroot)}\[\033[34m\]\u💧\W\[\033[37m\]\$ "
-  PS1="${debian_chroot:+($debian_chroot)}\[\033[34m\]${prompt_prefix}\W\[\033[37m\]\$ "
+  PS1="${debian_chroot:+($debian_chroot)}\[\033[34m\]${cli_prefix}\W\[\033[37m\]\$ "
 fi
 
 #--  alias to open NEOVIM quickly
