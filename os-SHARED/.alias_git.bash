@@ -1,13 +1,6 @@
-# SHARED BASH SETUP
+# SHARED BASH GIT ALIASES
 
-alias basha="echo 'TEST basha'"
-
-create_alias()
-{
-  alias_command=$1
-  alias_message="echo '// $alias_command'"
-  echo "$alias_message; $alias_command"
-}
+alias alias_git="echo 'TEST git aliases'"
 
 #-- git log FILES to see which files were updated
 alias glf="$(create_alias 'git log --graph --oneline --name-status')"
