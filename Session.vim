@@ -62,7 +62,7 @@ badd +5 os-SHARED/.alias_git.bash
 badd +5 os-SHARED/alias_tmux.bash
 badd +4 os-SHARED/.alias_tmux.bash
 badd +1 os-SHARED/.alias_filesystem.sh
-badd +17 os-SHARED/.cli.sh
+badd +1 os-SHARED/.cli.sh
 badd +1 os-SHARED/.alias_git.sh
 badd +11 os-LINUX-fedora/config-bash.sh
 badd +1 os-SHARED/.alias_tmux.sh
@@ -252,6 +252,7 @@ if bufexists(fnamemodify("~/dotfiles/os-SHARED/.alias_git.sh", ":p")) | buffer ~
 if &buftype ==# 'terminal'
   silent file ~/dotfiles/os-SHARED/.alias_git.sh
 endif
+balt ~/dotfiles/os-MAC/.zshrc
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -308,12 +309,12 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 75 - ((3 * winheight(0) + 19) / 39)
+let s:l = 106 - ((11 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 75
-normal! 042|
+keepjumps 106
+normal! 07|
 wincmd w
 argglobal
 if bufexists(fnamemodify("~/dotfiles/os-ANDROID/.tmux.conf", ":p")) | buffer ~/dotfiles/os-ANDROID/.tmux.conf | else | edit ~/dotfiles/os-ANDROID/.tmux.conf | endif
