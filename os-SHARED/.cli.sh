@@ -48,8 +48,7 @@ PS1="${cli_start}${cli_end}"
 ## ALIASES:
 
 #-- alias to open NEOVIM quickly
-alias n='echo "// nvim <command>"; nvim'
-alias nv='echo "// nvim <command>"; nvim'
+alias nv="$(create_alias "nvim ")"
 
 alias ssha='eval $(ssh-agent); ssh-add'
 #-- add specific key
