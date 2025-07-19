@@ -638,7 +638,7 @@ colorscheme darcula
 """"""""""""""" 
 
 " ctrl+o // to open nerd tree 
-"map <C-o> :NERDTreeToggle<CR>
+map <C-o> :NERDTreeToggle<CR>
 "let NERDTreeShowHidden=1
 " `r` is used to reload the directory to have the new file show
 
