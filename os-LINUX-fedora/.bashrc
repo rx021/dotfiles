@@ -1,6 +1,7 @@
 # BASHRC SETUP
 
 source ~/dotfiles/os-SHARED/.utils.sh
+color_prompt=yes
 cli_prefix="💻 "
 source ~/dotfiles/os-SHARED/.cli.sh
 

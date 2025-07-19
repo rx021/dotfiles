@@ -2,10 +2,7 @@
 
 ## SHELL PROMPT SETTINGS:
 
-#-- modifying the bash prompt to something simpler
-#color_prompt=no
-color_prompt=yes
-
+#color_prompt=yes #-- see .utils.sh
 #cli_prefix="@" #-- see .utils.sh
 
 user_name="\u"

@@ -6,7 +6,13 @@ create_alias()
   echo "$alias_message; $alias_command"
 }
 
-#-- CLI PREFIX DEFAULT
+## SHELL PROMPT SETTINGS - DEFAULT
+
+#-- modifying the bash prompt to something simpler
+color_prompt=no
+#color_prompt=yes
+
+#-- CLI PREFIX - DEFAULT:
 #cli_prefix="💧 "
 #cli_prefix="💻 "
 cli_prefix="@"
