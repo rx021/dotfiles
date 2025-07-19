@@ -9,7 +9,7 @@
 ln -s ~/dotfiles/os-LINUX-fedora/.bashrc ~/.bashrc
 
 #-- need this for linux terminal - tmux
-ln -s ~/dotfiles/os-LINUX/.bash_profile ~/.bash_profile
+ln -s ~/dotfiles/os-LINUX-fedora/.bash_profile ~/.bash_profile
 
 #-- note: use path relative to home (~/.../file) 
 #-- not relative to pwd (./file) 
