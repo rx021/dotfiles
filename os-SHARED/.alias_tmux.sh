@@ -1,4 +1,4 @@
-# SHARED BASH - TMUX ALIASES
+# SHARED - TMUX ALIASES
 
 test_message="TEST TMUX aliases"
 alias alias_tmux="echo '$test_message'"

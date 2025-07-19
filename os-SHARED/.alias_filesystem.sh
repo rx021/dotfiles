@@ -1,4 +1,4 @@
-# SHARED BASH - FILESYSTEM ALIASES
+# SHARED - FILESYSTEM ALIASES
 
 # modifying 'ls' command to default display all directory info
 alias ls='ls -aFG'

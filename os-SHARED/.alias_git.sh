@@ -1,4 +1,4 @@
-# SHARED BASH - GIT ALIASES
+# SHARED - GIT ALIASES
 
 test_message="TEST GIT aliases"
 alias alias_git="echo '$test_message'"
