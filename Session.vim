@@ -17,12 +17,12 @@ badd +1 TOOLS/laravel-vapor.md
 badd +5 FRAMEWORKS/next-react.md
 badd +2 LIBRARIES/stripe.md
 badd +1 LANGUAGES/javascript.md
-badd +93 .tmux.conf
+badd +1 .tmux.conf
 badd +1 init.vim
 badd +1 OS/config-vim.sh
 badd +1 OS/config-tmux.sh
 badd +7 SCRIPTS/.gitcommit.sh
-badd +1 SCRIPTS/tmux-new-session.sh
+badd +16 SCRIPTS/tmux-new-session.sh
 badd +12 os-MAC/config-sh.sh
 badd +3 os-ANDROID/config-bash.sh
 badd +6 os-LINUX-remote/config-bash.sh
@@ -38,17 +38,17 @@ badd +1 os-LINUX-remote/apps-01-install.sh
 badd +17 TOOLS/ghostty.md
 badd +5 TOOLS/ghostty/README.md
 badd +1 TOOLS/ghostty/config
-badd +8 os-MAC/.tmux.conf
+badd +13 os-MAC/.tmux.conf
 badd +1 os-MAC/config-tmux.sh
 badd +1 os-LINUX/config-tmux.sh
 badd +7 os-LINUX/config-vim.sh
 badd +1 os-LINUX/.bash_profile
 badd +1 os-LINUX/init.vim
-badd +1 os-MAC/config-vim.sh
+badd +6 os-MAC/config-vim.sh
 badd +1 os-MAC/init.vim
 badd +3 os-ANDROID/.tmux.conf
-badd +4 .tmux.conf.x-leader
-badd +1 os-LINUX-fedora/init.vim
+badd +1 .tmux.conf.x-leader
+badd +3 os-LINUX-fedora/init.vim
 badd +2 os-LINUX-fedora/.bashrc
 badd +1 os-SHARED/config-hooks.sh
 badd +13 os-SHARED/.bash-shared
@@ -68,6 +68,9 @@ badd +12 os-LINUX-fedora/config-bash.sh
 badd +1 os-SHARED/.alias_tmux.sh
 badd +19 os-SHARED/.utils.sh
 badd +1 os-SHARED/.x.sh
+badd +141 os-LINUX-fedora/.tmux.conf
+badd +1 os-LINUX-fedora/config-tmux.sh
+badd +0 os-LINUX-fedora/config-vim.sh
 argglobal
 %argdel
 set stal=2
@@ -299,7 +302,7 @@ exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
 argglobal
-balt ~/dotfiles/.tmux.conf
+balt ~/dotfiles/os-LINUX-fedora/config-tmux.sh
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -308,7 +311,7 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 16 - ((8 * winheight(0) + 19) / 39)
+let s:l = 16 - ((15 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -329,19 +332,19 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 16 - ((15 * winheight(0) + 19) / 39)
+let s:l = 13 - ((12 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 16
-normal! 037|
+keepjumps 13
+normal! 023|
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/init.vim", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/init.vim | else | edit ~/dotfiles/os-LINUX-fedora/init.vim | endif
+if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/.tmux.conf", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/.tmux.conf | else | edit ~/dotfiles/os-LINUX-fedora/.tmux.conf | endif
 if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-LINUX-fedora/init.vim
+  silent file ~/dotfiles/os-LINUX-fedora/.tmux.conf
 endif
-balt ~/dotfiles/os-MAC/init.vim
+balt ~/dotfiles/.tmux.conf.x-leader
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -350,19 +353,18 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+let s:l = 140 - ((15 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 04|
+keepjumps 140
+normal! 07|
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
 tabnext
-edit ~/dotfiles/os-MAC/config-tmux.sh
+edit ~/dotfiles/os-MAC/config-vim.sh
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -382,31 +384,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 51 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
 argglobal
-balt ~/dotfiles/os-LINUX/config-tmux.sh
-setlocal foldmethod=indent
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-wincmd w
-argglobal
-if bufexists(fnamemodify("~/dotfiles/os-MAC/config-vim.sh", ":p")) | buffer ~/dotfiles/os-MAC/config-vim.sh | else | edit ~/dotfiles/os-MAC/config-vim.sh | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-MAC/config-vim.sh
-endif
 balt ~/dotfiles/os-MAC/config-tmux.sh
 setlocal foldmethod=manual
 setlocal foldexpr=0
@@ -418,20 +399,20 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 7 - ((5 * winheight(0) + 19) / 39)
+let s:l = 4 - ((3 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 7
+keepjumps 4
 normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/init.vim", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/init.vim | else | edit ~/dotfiles/os-LINUX-fedora/init.vim | endif
+if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/config-vim.sh", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/config-vim.sh | else | edit ~/dotfiles/os-LINUX-fedora/config-vim.sh | endif
 if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-LINUX-fedora/init.vim
+  silent file ~/dotfiles/os-LINUX-fedora/config-vim.sh
 endif
-balt ~/dotfiles/SCRIPTS/.sync.sh
+balt ~/dotfiles/os-MAC/config-vim.sh
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -440,15 +421,37 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+let s:l = 4 - ((3 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 4
+normal! 0
+lcd ~/dotfiles
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/init.vim", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/init.vim | else | edit ~/dotfiles/os-LINUX-fedora/init.vim | endif
+if &buftype ==# 'terminal'
+  silent file ~/dotfiles/os-LINUX-fedora/init.vim
+endif
+balt ~/dotfiles/os-MAC/init.vim
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 2 - ((1 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 2
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 51 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
 tabnext
 edit ~/dotfiles/LANGUAGES/javascript.md
@@ -488,11 +491,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 8 - ((7 * winheight(0) + 19) / 39)
+let s:l = 7 - ((6 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
+keepjumps 7
 normal! 0
 wincmd w
 argglobal
@@ -648,7 +651,7 @@ wincmd w
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
-tabnext 4
+tabnext 6
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
