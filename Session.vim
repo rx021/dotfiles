@@ -23,12 +23,12 @@ badd +1 OS/config-vim.sh
 badd +1 OS/config-tmux.sh
 badd +7 SCRIPTS/.gitcommit.sh
 badd +1 SCRIPTS/tmux-new-session.sh
-badd +6 os-MAC/config-sh.sh
+badd +12 os-MAC/config-sh.sh
 badd +3 os-ANDROID/config-bash.sh
 badd +6 os-LINUX-remote/config-bash.sh
 badd +1 README.md
 badd +1 os-MAC/.zshrc
-badd +1 os-ANDROID/.bash_profile
+badd +101 os-ANDROID/.bash_profile
 badd +76 os-LINUX-remote/.bash_profile
 badd +1 SCRIPTS/.sync.sh
 badd +1 os-MAC/apps-02-config.sh
@@ -46,14 +46,14 @@ badd +1 os-LINUX/.bash_profile
 badd +1 os-LINUX/init.vim
 badd +1 os-MAC/config-vim.sh
 badd +1 os-MAC/init.vim
-badd +1 os-ANDROID/.tmux.conf
+badd +17 os-ANDROID/.tmux.conf
 badd +4 .tmux.conf.x-leader
 badd +1 os-LINUX-fedora/init.vim
-badd +2 os-LINUX-fedora/.bashrc
+badd +4 os-LINUX-fedora/.bashrc
 badd +1 os-SHARED/config-hooks.sh
 badd +13 os-SHARED/.bash-shared
 badd +3 os-SHARED/.bashx
-badd +14 os-LINUX-fedora/.bash_profile
+badd +3 os-LINUX-fedora/.bash_profile
 badd +3 os-SHARED/.basha
 badd +4 os-SHARED/.x.bash
 badd +3 os-SHARED/.alias-git.bash
@@ -62,11 +62,11 @@ badd +5 os-SHARED/.alias_git.bash
 badd +5 os-SHARED/alias_tmux.bash
 badd +4 os-SHARED/.alias_tmux.bash
 badd +1 os-SHARED/.alias_filesystem.sh
-badd +1 os-SHARED/.cli.sh
-badd +1 os-SHARED/.alias_git.sh
+badd +9 os-SHARED/.cli.sh
+badd +23 os-SHARED/.alias_git.sh
 badd +11 os-LINUX-fedora/config-bash.sh
 badd +1 os-SHARED/.alias_tmux.sh
-badd +1 os-SHARED/.utils.sh
+badd +11 os-SHARED/.utils.sh
 badd +1 os-SHARED/.x.sh
 argglobal
 %argdel
@@ -197,19 +197,19 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 252 - ((11 * winheight(0) + 19) / 39)
+let s:l = 66 - ((18 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 252
-normal! 07|
+keepjumps 66
+normal! 029|
 wincmd w
 argglobal
 if bufexists(fnamemodify("os-ANDROID/.bash_profile", ":p")) | buffer os-ANDROID/.bash_profile | else | edit os-ANDROID/.bash_profile | endif
 if &buftype ==# 'terminal'
   silent file os-ANDROID/.bash_profile
 endif
-balt README.md
+balt os-MAC/config-sh.sh
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -218,19 +218,19 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 60 - ((5 * winheight(0) + 19) / 39)
+let s:l = 103 - ((16 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 60
-normal! 045|
+keepjumps 103
+normal! 016|
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-LINUX-fedora/.bashrc", ":p")) | buffer os-LINUX-fedora/.bashrc | else | edit os-LINUX-fedora/.bashrc | endif
+if bufexists(fnamemodify("os-LINUX-fedora/.bash_profile", ":p")) | buffer os-LINUX-fedora/.bash_profile | else | edit os-LINUX-fedora/.bash_profile | endif
 if &buftype ==# 'terminal'
-  silent file os-LINUX-fedora/.bashrc
+  silent file os-LINUX-fedora/.bash_profile
 endif
-balt os-MAC/.zshrc
+balt os-LINUX-fedora/.bashrc
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -239,36 +239,37 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 2 - ((1 * winheight(0) + 9) / 19)
+let s:l = 1 - ((0 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
+keepjumps 1
+normal! 016|
+lcd ~/dotfiles
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/dotfiles/os-SHARED/.utils.sh", ":p")) | buffer ~/dotfiles/os-SHARED/.utils.sh | else | edit ~/dotfiles/os-SHARED/.utils.sh | endif
+if &buftype ==# 'terminal'
+  silent file ~/dotfiles/os-SHARED/.utils.sh
+endif
+balt ~/dotfiles/os-SHARED/.cli.sh
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 9 - ((8 * winheight(0) + 9) / 19)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 9
 normal! 0
 lcd ~/dotfiles
 wincmd w
-argglobal
-if bufexists(fnamemodify("~/dotfiles/os-SHARED/.alias_git.sh", ":p")) | buffer ~/dotfiles/os-SHARED/.alias_git.sh | else | edit ~/dotfiles/os-SHARED/.alias_git.sh | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-SHARED/.alias_git.sh
-endif
-balt ~/dotfiles/os-MAC/.zshrc
-setlocal foldmethod=indent
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal nofoldenable
-let s:l = 7 - ((6 * winheight(0) + 9) / 19)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 7
-normal! 028|
-lcd ~/dotfiles
-wincmd w
+4wincmd w
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 2resize ' . ((&columns * 53 + 79) / 158)
 exe '3resize ' . ((&lines * 19 + 21) / 42)
@@ -309,11 +310,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 106 - ((11 * winheight(0) + 19) / 39)
+let s:l = 29 - ((0 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 106
+keepjumps 29
 normal! 07|
 wincmd w
 argglobal
@@ -330,11 +331,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 18 - ((15 * winheight(0) + 19) / 39)
+let s:l = 17 - ((16 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 18
+keepjumps 17
 normal! 02|
 wincmd w
 argglobal
@@ -762,11 +763,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 3 - ((2 * winheight(0) + 9) / 19)
+let s:l = 2 - ((1 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 3
+keepjumps 2
 normal! 0
 wincmd w
 argglobal
@@ -800,7 +801,7 @@ exe '4resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 4resize ' . ((&columns * 78 + 79) / 158)
 exe '5resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 5resize ' . ((&columns * 78 + 79) / 158)
-tabnext 4
+tabnext 3
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
