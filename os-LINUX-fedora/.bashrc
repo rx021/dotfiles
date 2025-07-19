@@ -1,5 +1,6 @@
 # BASHRC SETUP
 
+emoji="💻"
 source ~/dotfiles/os-SHARED/.cli.sh
 source ~/dotfiles/os-SHARED/.utils.sh
 source ~/dotfiles/os-SHARED/.alias_filesystem.sh

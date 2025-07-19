@@ -65,7 +65,7 @@ if [ "$color_prompt" = yes ]; then
   #m is used to set the sequence
   #\] is to end a sequence of non-printing characters
   #\W is the basename of the current working directory
-  PS1="%F{5}@%. %f%F{15}$ " # // zsh
+  PS1="%F{5}@%. %f%F{15}$ " #-- zsh
   # %F is foreground color start
   # %f is foreground color end
   # 5 is purple
