@@ -15,6 +15,7 @@ alias ssha='eval $(ssh-agent); ssh-add'
 # PS1="\u@\W\$"
 color_prompt=yes
 #color_prompt=no
+emoji="💻"
 if [ "$color_prompt" = yes ]; then
   #PS1="\[\033[35m\]@\W\[\033[37m\]\$ "
   #PS1 = ${debian_chroot:+($debian_chroot)}\u@\h:\w\$
@@ -22,13 +23,13 @@ if [ "$color_prompt" = yes ]; then
   #PS1="${debian_chroot:+($debian_chroot)}\[\033[34m\]\u@\h:\w\[\033[37m\]\$ "
   #PS1="${debian_chroot:+($debian_chroot)}\[\033[34m\]\u💧\w\[\033[37m\]\$ "
   #PS1="${debian_chroot:+($debian_chroot)}\[\033[34m\]\u💧\W\[\033[37m\]\$ "
-  PS1="${debian_chroot:+($debian_chroot)}\[\033[34m\]💧\W\[\033[37m\]\$ "
+  PS1="${debian_chroot:+($debian_chroot)}\[\033[34m\]${emoji}\W\[\033[37m\]\$ "
 else
-  PS1="@\W\$ "
+  #PS1="@\W\$ "
+  #I want to keep colors but simplify the prompt
+  PS1="\[\033[34m\]@\W\[\033[37m\]\$ "
 fi
 
-#I want to keep colors but simplify the prompt
-PS1="\[\033[34m\]@\W\[\033[37m\]\$ "
 
 # modifying 'ls' command to default display all directory info
 alias ls='ls -aFG'
