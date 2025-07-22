@@ -8,6 +8,7 @@ color_prompt=yes
 source ~/dotfiles/os-SHARED/.cli.sh
 source ~/dotfiles/os-SHARED/.alias_filesystem.sh
 source ~/dotfiles/os-SHARED/.alias_git.sh
+source ~/dotfiles/os-SHARED/.alias_tmux.sh
 
 # // how to check the shell you are using
 # $ echo $SHELL
@@ -201,15 +202,6 @@ alias glr='echo "// git log diff on remote not local"; git log main..origin/main
 # GIT CHANGE REMOTE 
 # git remote set-url <remote-name> <ssh-remote-url>
 # git remote set-url origin git@github.com:reinhardt021/x-spotify.git
-
-
-# TMUX
-alias t='echo "// tmux <command>"; tmux '
-alias tls='echo "// tmux ls"; tmux ls'
-alias tns='echo "// sh ~/dotfiles/SCRIPTS/tmux-new-session.sh"; function foo(){ sh ~/dotfiles/SCRIPTS/tmux-new-session.sh $1; unset -f foo; }; foo'
-alias tas='echo "// tmux attach-session -t <name>"; tmux attach-session -t '
-alias trs='echo "// tmux rename-session -t <old-name> <new-name>"; tmux rename-session -t '
-alias tkill='echo "// tmux kill-session -t <name>"; tmux kill-session -t '
 
 
 # WATCH
