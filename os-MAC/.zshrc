@@ -1,13 +1,13 @@
 # SHELL SETUP
 
-create_alias()
-{
-  alias_command=$1
-  alias_message="echo '// $alias_command';"
-  echo "$alias_message $alias_command"
-}
+source ~/dotfiles/os-SHARED/.utils.sh
 
-alias ssha='eval $(ssh-agent); ssh-add'
+#-- overwrite defaults in .utils.sh
+color_prompt=yes
+
+source ~/dotfiles/os-SHARED/.cli.sh
+source ~/dotfiles/os-SHARED/.alias_filesystem.sh
+source ~/dotfiles/os-SHARED/.alias_git.sh
 
 # // how to check the shell you are using
 # $ echo $SHELL
@@ -55,7 +55,7 @@ alias sy='echo "// trying sync script"; [ -f ~/dotfiles/SCRIPTS/.sync.sh ] && sh
 
 # modifying the bash prompt to something simpler
 # PS1="\u@\W\$"
-color_prompt=yes
+
 if [ "$color_prompt" = yes ]; then
   #PS1="\[\033[35m\]@\W\[\033[37m\]\$ " # // for bash
   #\[ is to begin a sequence of non-printing characters
@@ -76,17 +76,9 @@ else
   PS1="@%. $ " # // zsh
 fi
 
-# modifying 'ls' command to default display all directory info
-alias ls='ls -aFG'
-alias l='ls'
-# -a for showing hidden files
-# -F for files vs directories
-# -G for colors
 #export LSCOLORS=exfxcxdxbxegedabagacad # default ls colors
 export LSCOLORS=Hxfxcxdxbxegedabagacad # default ls colors to have directories as bold light grey
 
-#// alias to always prompt before overwriting and to be verbose"
-alias mv='mv -iv '
 
 # open -a /Applications/VLC.app ./movie.mkv
 # to open the file with a certain application
@@ -96,13 +88,6 @@ alias mv='mv -iv '
 # to umount a volume that is partitioned
 # diskutil unmountDrive /dev/disk2
 
-alias cdd='echo "// cd ~/dotfiles"; cd ~/dotfiles'
-alias cdD='echo "// cd ~/Downloads"; cd ~/Downloads'
-alias cdO='echo "// cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/OBSIDIAN"; cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/OBSIDIAN'
-
-#alias cdr='cd /Users/reinhardtc/Downloads/0-cloud/0-learn-software/reinhardtcgr.github.io'
-#alias cdz='cd /Users/reinhardtc/Downloads/0-cloud/0-learn-software/zero-one'
-
 # // open trash bin 
 # $ open ~/.Trash/
 alias otrash='open ~/.Trash/'
@@ -110,23 +95,15 @@ alias otrash='open ~/.Trash/'
 # cmd + shift + del
 
 # get working directory
-alias gwd="$(create_alias 'pwd |pbcopy')"
+#-- no such thing as pbcopy in linux
+alias gwd="$(create_alias 'pwd | pbcopy')"
 
 # TODO: END CHECK IF ON MAC OS
 
-# alias to open neovim quickly
-alias n='echo "// nvim <command>"; nvim'
-alias nv='echo "// nvim <command>"; nvim'
 
 # GIT VERSION CONTROL
-#alias shs='. ./.sync' #//doesn't quite work - might be because of relative path?
-# TODO: CHECK IF FILE EXISTS BEFORE RUNNING
 
-alias g='echo "// git <command>"; git'
-alias gb='echo "// git branch"; git branch'
-# TODO: CHECK IF MAC OS
 alias gbc='echo "// git branch --show-current | pbcopy"; git branch --show-current | pbcopy'
-# TODO END CHECK
 
 # git branch -d <branch-name> // to delete local branch
 # git branch -D <branch-name> // to force delete local branch
@@ -136,21 +113,6 @@ alias gbc='echo "// git branch --show-current | pbcopy"; git branch --show-curre
 # example:
 # git push origin --delete <branch-name>
 
-alias gc='echo "// git checkout <branch>"; git checkout'
-
-alias gf='echo "// git fetch"; git fetch'
-# // to rebase from the remote branch
-# git fetch
-# git rebase origin/master
-
-alias gpull='echo "// git pull <branch>"; git pull'
-alias gpush='echo "// git push <branch>"; git push'
-alias gpom='echo "// git push origin main"; git push origin main'
-
-alias gs="$(create_alias 'git status')"
-alias gd="$(create_alias 'git diff')"
-#// to see staged (added) changes (hunk)
-alias gdc="$(create_alias 'git diff --cached')"
 
 #// when only changing the FILENAME casing in git
 #git mv <filename>
@@ -158,36 +120,7 @@ alias gdc="$(create_alias 'git diff --cached')"
 #linux is case-sensitive
 #git will also have trouble with this if the OS does
 
-alias ga='echo "// git add <files>"; git add ' 
-alias gaa='echo "// git add . (ALL)"; git add .;' 
-alias grs='echo "// git restore --staged <files> to UNSTAGE"; git restore --staged ' 
 
-#alias gcm='echo "// git commit -m <text>"; git commit -m ' 
-# GIT COMMIT IF GIT COMMIT SCRIPT FILE EXISTS
-alias gcm='echo "// trying commit script"; [ -f ~/dotfiles/SCRIPTS/.gitcommit.sh ] && sh ~/dotfiles/SCRIPTS/.gitcommit.sh || echo "> no ~/dotfiles/SCRIPTS/.gitcommit.sh file"'
-
-#// to push changes into the stash
-#alias gspush='echo "// git stash push"; git stash push'
-gspush_command='git stash push'
-gspush_message="echo '// $gspush_command';"
-alias gspush="$gspush_message $gspush_command"
-#// to push even untracked changes
-# git stash push --include-untracked <file>
-
-#// to see a list of stashed patches
-
-alias gslist="$(create_alias 'git stash list')"
-alias gsshow='echo "// git stash show -p"; git stash show -p'
-# git stash show -p 3 // to see the #4 stashed patch/changes
-
-# git show stash@{0} // to show tracked files stashed in index 0
-# git show stash@{0}^3 // to show untracked files stashed in index 0
-
-#// to apply changes from a certain stash index (0 being at the top)
-# git stash apply <stash-index>
-
-# git stash push -m "message" <path>
-alias gsdrop='echo "// git stash drop <number>"; git stash drop '
 
 ## GIT MERGE
 
@@ -225,23 +158,13 @@ alias gsdrop='echo "// git stash drop <number>"; git stash drop '
 #Then change back to your branch to rebase
 
 # git log // to see if your current changes match the remote
-alias gl='echo "// git log"; git log'
 alias glog='echo "// git log"; git log'
 
-# // to see which commits are on your master which you haven't yet pushed
-# git log origin/master..master
-alias gld='echo "// git log diff on local not remote"; git log origin/main..main'
 
 # // to see which commits are on origin/master (remote) but not yet on master (local)
 # git log master..origin/master
 alias glr='echo "// git log diff on remote not local"; git log main..origin/main'
 
-# // git log GRAPH
-alias glg='echo "// git log --graph --format=.."; git log --format="%C(white)%d%C(reset) %s %C(white)[%ae %h %cr]%C(reset)" --graph'
-alias glgraph='echo "// git log --graph"; git log --graph'
-
-alias glgr='echo "// git log --graph --pretty=reference --relative-date"; git log --graph --pretty=reference --relative-date'
-alias gl1='echo "// git log --graph --oneline"; git log --graph --oneline'
 
 #@monorepo$ watch -n 5 'git log --format="%C(dim white)%d%C(reset) %s %C(dim white)[%ae %h %cr]%C(reset)" --graph'
 # // to limit the amount of commits shown use the following:
@@ -249,15 +172,6 @@ alias gl1='echo "// git log --graph --oneline"; git log --graph --oneline'
 # OR
 # $ glg -n <number of commits>
 
-# // git log FILES to see which files were updated
-
-alias glf="$(create_alias 'git log --graph --oneline --name-status')"
-
-# // git log PATCHES to see the diffs in each
-alias glp='echo "// git log -p"; git log -p'
-# // can add --author='Reinhardt' to see changes  by specific people
-# // just another alias to make t easier to view changes
-alias glshow='echo "// git log -p"; git log -p'
 
 # to RESET a SINGLE FILE in a PR
 # git reset <commit-ID>

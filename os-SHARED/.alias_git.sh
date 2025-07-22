@@ -27,6 +27,8 @@ alias glshow="$(create_alias 'git log -p ')"
 
 #-- to push changes into the stash
 alias gspush="$(create_alias 'git stash push ')"
+#-- to push even untracked changes
+# git stash push --include-untracked <file>
 
 #-- to see a list of stashed patches
 alias gslist="$(create_alias 'git stash list ')"
@@ -44,7 +46,10 @@ alias gsshow="$(create_alias 'git stash show -p ')"
 alias gsdrop="$(create_alias 'git stash drop ')"
 
 alias gf="$(create_alias 'git fetch ')"
-#alias gp='git pull'
+#-- to rebase from the remote branch
+# git fetch
+# git rebase origin/master
+
 
 ## GIT MERGE
 

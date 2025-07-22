@@ -13,9 +13,11 @@ alias mv='mv -iv '
 #-- Go directly to the Dotfiles folder
 alias cdd="$(create_alias 'cd ~/dotfiles')"
 
+#-- Go directly to the Downloads folder
+alias cdD="$(create_alias 'cd ~/Downloads')"
 
-# get working directory
-#-- no such thing as pbcopy in linux
-alias gwd="$(create_alias 'pwd | pbcopy')"
+#-- Go directly to the OBSIDIAN folder
+alias cdO="$(create_alias 'cd ~/Downloads/OBSIDIAN')"
+
 
 
