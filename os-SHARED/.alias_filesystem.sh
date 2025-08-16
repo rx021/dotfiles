@@ -1,8 +1,5 @@
 # SHARED - FILESYSTEM ALIASES
 
-# get working directory
-alias gwd="$(create_alias 'pwd | wl-copy')"
-
 # modifying 'ls' command to default display all directory info
 alias ls='ls -aFG'
 alias l='ls'

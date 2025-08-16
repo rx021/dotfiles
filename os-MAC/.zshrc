@@ -10,6 +10,10 @@ source ~/dotfiles/os-SHARED/.alias_filesystem.sh
 source ~/dotfiles/os-SHARED/.alias_git.sh
 source ~/dotfiles/os-SHARED/.alias_tmux.sh
 
+#-- OS SPECIFIC
+source ~/dotfiles/os-SHARED/.alias_filesystem_mac.sh
+source ~/dotfiles/os-SHARED/.alias_git_mac.sh
+
 # // how to check the shell you are using
 # $ echo $SHELL
 
@@ -95,16 +99,11 @@ alias otrash='open ~/.Trash/'
 # // empty trash bin
 # cmd + shift + del
 
-# get working directory
-#-- no such thing as pbcopy in linux
-alias gwd="$(create_alias 'pwd | pbcopy')"
 
 # TODO: END CHECK IF ON MAC OS
 
 
 # GIT VERSION CONTROL
-
-alias gbc='echo "// git branch --show-current | pbcopy"; git branch --show-current | pbcopy'
 
 # git branch -d <branch-name> // to delete local branch
 # git branch -D <branch-name> // to force delete local branch
