@@ -7,7 +7,8 @@ cli_prefix="💧 "
 
 source ~/dotfiles/os-SHARED/.cli.sh
 
-alias ssha='eval $(ssh-agent); ssh-add'
+#alias ssha='eval $(ssh-agent); ssh-add'
+alias ssha='eval $(ssh-agent); ssh-add ~/.ssh/id_ed25519_drop_gh'
 # // add specific key
 # ssh-add path/to/private_key
 
