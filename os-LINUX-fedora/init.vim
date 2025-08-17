@@ -424,16 +424,16 @@ set tabline=%!MyTabLine() "// filenames get too big
 " (IN SYSTEM CLIPBOARD)
 "-- os-MAC:
 " `"+y` // copy to system clipboard
-"vnoremap <C-y> "+y
+vnoremap <C-y> "+y
 " `"+x` // cut to system clipboard
-"vnoremap <C-x> "+x
+vnoremap <C-x> "+x
 " cmd+v // Insert Mode paste clipboard 
 
 "-- os-LINUX:
 " - how to yank vim to OS clipboard?
 " - how to paste into vim from OS clipboard
-vnoremap <C-y> "*yy
-vnoremap <C-x> "*x
+"vnoremap <C-y> "*yy
+"vnoremap <C-x> "*x
 " ctrl+shift+v // Insert Mode paste clipboard
 
 
