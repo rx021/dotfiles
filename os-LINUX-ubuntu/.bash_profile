@@ -26,4 +26,5 @@ source ~/dotfiles/os-SHARED/.alias_filesystem.sh
 alias gwd='echo "// pwd |pbcopy"; pwd |pbcopy'
 
 source ~/dotfiles/os-SHARED/.alias_git.sh
+source ~/dotfiles/os-SHARED/.alias_tmux.sh
 
