@@ -21,10 +21,11 @@ alias ssha='eval $(ssh-agent); ssh-add ~/.ssh/id_ed25519_drop_gh'
 
 source ~/dotfiles/os-SHARED/.alias_filesystem.sh
 
-# get working directory
-# // no such thing as pbcopy in linux
-alias gwd='echo "// pwd |pbcopy"; pwd |pbcopy'
-
 source ~/dotfiles/os-SHARED/.alias_git.sh
 source ~/dotfiles/os-SHARED/.alias_tmux.sh
+
+#-- OS SPECIFIC
+# get working directory
+# // no such thing as pbcopy in linux
+#alias gwd='echo "// pwd |pbcopy"; pwd |pbcopy'
 
