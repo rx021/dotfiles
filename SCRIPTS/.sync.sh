@@ -2,6 +2,7 @@
 
 echo "_______________"
 echo "CHECKING WHITELIST:"
+# TODO: doesn't work for UBUNTU
 declare -a whitelist=(
   "OBSIDIAN"
   "dotfiles"
