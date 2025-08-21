@@ -16,6 +16,7 @@ alias gd="$(create_alias 'git diff')"
 alias gdc="$(create_alias 'git diff --cached')"
 
 alias ga="$(create_alias 'git add ')"
+alias ga.="$(create_alias 'git add . ;')"
 alias gaa="$(create_alias 'git add . ;')"
 alias grs="$(create_alias 'git restore --staged ')"
 
