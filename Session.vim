@@ -22,7 +22,7 @@ badd +1 init.vim
 badd +1 OS/config-vim.sh
 badd +1 OS/config-tmux.sh
 badd +7 SCRIPTS/.gitcommit.sh
-badd +1 SCRIPTS/tmux-new-session.sh
+badd +5 SCRIPTS/tmux-new-session.sh
 badd +12 os-MAC/config-sh.sh
 badd +3 os-ANDROID/config-bash.sh
 badd +6 os-LINUX-remote/config-bash.sh
@@ -30,11 +30,11 @@ badd +1 README.md
 badd +1 os-MAC/.zshrc
 badd +97 os-ANDROID/.bash_profile
 badd +76 os-LINUX-remote/.bash_profile
-badd +1 SCRIPTS/.sync.sh
+badd +87 SCRIPTS/.sync.sh
 badd +1 os-MAC/apps-02-config.sh
 badd +1 os-MAC/apps-01-install.sh
 badd +1 os-ANDROID/apps-01-install.sh
-badd +1 os-LINUX-remote/apps-01-install.sh
+badd +2 os-LINUX-remote/apps-01-install.sh
 badd +17 TOOLS/ghostty.md
 badd +4 TOOLS/ghostty/README.md
 badd +12 TOOLS/ghostty/config
@@ -63,7 +63,7 @@ badd +5 os-SHARED/alias_tmux.bash
 badd +4 os-SHARED/.alias_tmux.bash
 badd +16 os-SHARED/.alias_filesystem.sh
 badd +71 os-SHARED/.cli.sh
-badd +40 os-SHARED/.alias_git.sh
+badd +123 os-SHARED/.alias_git.sh
 badd +12 os-LINUX-fedora/config-bash.sh
 badd +1 os-SHARED/.alias_tmux.sh
 badd +19 os-SHARED/.utils.sh
@@ -226,12 +226,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 513 - ((4 * winheight(0) + 9) / 18)
+let s:l = 32 - ((7 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 513
-normal! 06|
+keepjumps 32
+normal! 0
 wincmd w
 argglobal
 if bufexists(fnamemodify("os-MAC/config-sh.sh", ":p")) | buffer os-MAC/config-sh.sh | else | edit os-MAC/config-sh.sh | endif
@@ -268,12 +268,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 97 - ((0 * winheight(0) + 9) / 18)
+let s:l = 132 - ((6 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 97
-normal! 044|
+keepjumps 132
+normal! 0
 wincmd w
 argglobal
 if bufexists(fnamemodify("os-SHARED/.alias_git.sh", ":p")) | buffer os-SHARED/.alias_git.sh | else | edit os-SHARED/.alias_git.sh | endif
@@ -289,11 +289,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 17 - ((4 * winheight(0) + 8) / 17)
+let s:l = 133 - ((2 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 17
+keepjumps 133
 normal! 0
 wincmd w
 argglobal
@@ -310,11 +310,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 8 - ((7 * winheight(0) + 9) / 18)
+let s:l = 7 - ((6 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
+keepjumps 7
 normal! 0
 lcd ~/dotfiles
 wincmd w
@@ -332,15 +332,14 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 17 - ((0 * winheight(0) + 8) / 17)
+let s:l = 11 - ((1 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 17
+keepjumps 11
 normal! 0
 lcd ~/dotfiles
 wincmd w
-4wincmd w
 exe '1resize ' . ((&lines * 18 + 19) / 39)
 exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
 exe '2resize ' . ((&lines * 17 + 19) / 39)
@@ -675,11 +674,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 256 - ((1 * winheight(0) + 18) / 36)
+let s:l = 254 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 256
+keepjumps 254
 normal! 0
 wincmd w
 argglobal
@@ -704,11 +703,11 @@ keepjumps 1
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-LINUX-remote/apps-01-install.sh", ":p")) | buffer ~/dotfiles/os-LINUX-remote/apps-01-install.sh | else | edit ~/dotfiles/os-LINUX-remote/apps-01-install.sh | endif
+if bufexists(fnamemodify("~/dotfiles/SCRIPTS/.sync.sh", ":p")) | buffer ~/dotfiles/SCRIPTS/.sync.sh | else | edit ~/dotfiles/SCRIPTS/.sync.sh | endif
 if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-LINUX-remote/apps-01-install.sh
+  silent file ~/dotfiles/SCRIPTS/.sync.sh
 endif
-balt ~/dotfiles/os-LINUX-remote/config-bash.sh
+balt ~/dotfiles/SCRIPTS/tmux-new-session.sh
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -717,17 +716,18 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 2 - ((1 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
-normal! 0
+keepjumps 1
+normal! 030|
 wincmd w
+3wincmd w
 exe 'vert 1resize ' . ((&columns * 55 + 75) / 150)
 exe 'vert 2resize ' . ((&columns * 39 + 75) / 150)
 exe 'vert 3resize ' . ((&columns * 54 + 75) / 150)
-tabnext 2
+tabnext 6
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

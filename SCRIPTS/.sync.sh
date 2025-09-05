@@ -1,5 +1,8 @@
 #-- LOGIC TO BLACKLIST DIRECTORIES TO SYNC
 
+INPUT="$1"
+echo "//test inputs [$INPUT]"
+
 echo "_______________"
 echo "CHECKING WHITELIST:"
 # TODO: doesn't work for UBUNTU
