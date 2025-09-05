@@ -123,6 +123,9 @@ alias glshow="$(create_alias "git log -p")"
 #-- to cherry pick a commit from another branch
 # git cherry-pick <commmit-hash>
 
+#-- to cherry pick a range of commits inclusive of the first commit
+# git cherry-pick <commmit-id-1>~..<commmit-id-n>
+
 
 
 ## SCRIPTS

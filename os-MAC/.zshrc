@@ -192,9 +192,6 @@ alias glr='echo "// git log diff on remote not local"; git log main..origin/main
 # // note: must use full hash that you can get from git log 
 # git revert <commit-hash || HEAD>
 
-#-- to cherry pick a commit from another branch
-# git cherry-pick <commmit-hash>
-
 #-- to cherry pick a range of commits inclusive of the first commit
 # git cherry-pick <commmit-id-1>~..<commmit-id-n>
 
