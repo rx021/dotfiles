@@ -209,13 +209,13 @@ exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
 exe '2resize ' . ((&lines * 17 + 19) / 39)
 exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
 exe '3resize ' . ((&lines * 18 + 19) / 39)
-exe 'vert 3resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 exe '4resize ' . ((&lines * 17 + 19) / 39)
-exe 'vert 4resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 4resize ' . ((&columns * 49 + 75) / 150)
 exe '5resize ' . ((&lines * 18 + 19) / 39)
-exe 'vert 5resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 5resize ' . ((&columns * 50 + 75) / 150)
 exe '6resize ' . ((&lines * 17 + 19) / 39)
-exe 'vert 6resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 6resize ' . ((&columns * 50 + 75) / 150)
 argglobal
 balt SCRIPTS/tmux-new-session.sh
 setlocal fdm=indent
@@ -340,18 +340,19 @@ keepjumps 11
 normal! 0
 lcd ~/dotfiles
 wincmd w
+5wincmd w
 exe '1resize ' . ((&lines * 18 + 19) / 39)
 exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
 exe '2resize ' . ((&lines * 17 + 19) / 39)
 exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
 exe '3resize ' . ((&lines * 18 + 19) / 39)
-exe 'vert 3resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 49 + 75) / 150)
 exe '4resize ' . ((&lines * 17 + 19) / 39)
-exe 'vert 4resize ' . ((&columns * 50 + 75) / 150)
+exe 'vert 4resize ' . ((&columns * 49 + 75) / 150)
 exe '5resize ' . ((&lines * 18 + 19) / 39)
-exe 'vert 5resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 5resize ' . ((&columns * 50 + 75) / 150)
 exe '6resize ' . ((&lines * 17 + 19) / 39)
-exe 'vert 6resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 6resize ' . ((&columns * 50 + 75) / 150)
 tabnext
 edit ~/dotfiles/SCRIPTS/tmux-new-session.sh
 let s:save_splitbelow = &splitbelow
@@ -661,9 +662,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 55 + 75) / 150)
-exe 'vert 2resize ' . ((&columns * 39 + 75) / 150)
-exe 'vert 3resize ' . ((&columns * 54 + 75) / 150)
+exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 50 + 75) / 150)
 argglobal
 balt ~/dotfiles/os-MAC/apps-02-config.sh
 setlocal fdm=indent
@@ -723,11 +724,10 @@ normal! zt
 keepjumps 1
 normal! 030|
 wincmd w
-3wincmd w
-exe 'vert 1resize ' . ((&columns * 55 + 75) / 150)
-exe 'vert 2resize ' . ((&columns * 39 + 75) / 150)
-exe 'vert 3resize ' . ((&columns * 54 + 75) / 150)
-tabnext 6
+exe 'vert 1resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 2resize ' . ((&columns * 49 + 75) / 150)
+exe 'vert 3resize ' . ((&columns * 50 + 75) / 150)
+tabnext 2
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
