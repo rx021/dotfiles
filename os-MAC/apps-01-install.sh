@@ -5,6 +5,8 @@
 # []- Authorize Apple ID // iCloud sync and for access to TV / Notes / ...
 # []- turn ON FileVault // file encryption
 
+#-- set the rebase code editor to vim
+# git config --global core.editor "vim"
 
 # SYSTEM SETTINGS
 # []- change background (Desktop & ScreenSaver) to adaptive landscape // for light & dark modes) 

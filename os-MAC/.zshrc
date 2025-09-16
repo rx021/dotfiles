@@ -1,6 +1,18 @@
 # SHELL SETUP
 
-alias ssha='eval $(ssh-agent); ssh-add'
+source ~/dotfiles/os-SHARED/.utils.sh
+
+#-- overwrite defaults in .utils.sh
+color_prompt=yes
+
+source ~/dotfiles/os-SHARED/.cli.sh
+source ~/dotfiles/os-SHARED/.alias_filesystem.sh
+source ~/dotfiles/os-SHARED/.alias_git.sh
+source ~/dotfiles/os-SHARED/.alias_tmux.sh
+
+#-- OS SPECIFIC
+source ~/dotfiles/os-SHARED/.alias_filesystem_mac.sh
+source ~/dotfiles/os-SHARED/.alias_git_mac.sh
 
 # // how to check the shell you are using
 # $ echo $SHELL
@@ -48,7 +60,7 @@ alias sy='echo "// trying sync script"; [ -f ~/dotfiles/SCRIPTS/.sync.sh ] && sh
 
 # modifying the bash prompt to something simpler
 # PS1="\u@\W\$"
-color_prompt=yes
+
 if [ "$color_prompt" = yes ]; then
   #PS1="\[\033[35m\]@\W\[\033[37m\]\$ " # // for bash
   #\[ is to begin a sequence of non-printing characters
@@ -58,7 +70,7 @@ if [ "$color_prompt" = yes ]; then
   #m is used to set the sequence
   #\] is to end a sequence of non-printing characters
   #\W is the basename of the current working directory
-  PS1="%F{5}@%. %f%F{15}$ " # // zsh
+  PS1="%F{5}@%. %f%F{15}$ " #-- zsh
   # %F is foreground color start
   # %f is foreground color end
   # 5 is purple
@@ -69,17 +81,9 @@ else
   PS1="@%. $ " # // zsh
 fi
 
-# modifying 'ls' command to default display all directory info
-alias ls='ls -aFG'
-alias l='ls'
-# -a for showing hidden files
-# -F for files vs directories
-# -G for colors
 #export LSCOLORS=exfxcxdxbxegedabagacad # default ls colors
 export LSCOLORS=Hxfxcxdxbxegedabagacad # default ls colors to have directories as bold light grey
 
-#// alias to always prompt before overwriting and to be verbose"
-alias mv='mv -iv '
 
 # open -a /Applications/VLC.app ./movie.mkv
 # to open the file with a certain application
@@ -89,48 +93,17 @@ alias mv='mv -iv '
 # to umount a volume that is partitioned
 # diskutil unmountDrive /dev/disk2
 
-alias cdd='echo "// cd ~/dotfiles"; cd ~/dotfiles'
-alias cdD='echo "// cd ~/Downloads"; cd ~/Downloads'
-alias cdH='echo "// cd ~/HigherMe"; cd ~/HigherMe'
-alias cdO='echo "// cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/OBSIDIAN"; cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/OBSIDIAN'
-# just making it easier to 
-# go between docker setup & monorepo setup 
-alias cdk='echo "// cd ~/HigherMe/higherme-docker"; cd ~/HigherMe/higherme-docker'
-alias cdj='cd ~/HigherMe/higherme-docker/sites/higherme/higherme-laravel-5/resources/assets/js
-'
-#alias cdh='cd ~/HigherMe/higherme'
-# // no longer have these directories after laptop reset
-#alias cdh='cd ~/HigherMe/higherme-docker/sites/higherme'
-#alias cdl='cd ~/HigherMe/higherme-docker/sites/highermeapi'
-#alias cdm='echo "// cd ~/HigherMe/monorepo"; cd ~/HigherMe/monorepo'
-
-#alias cdr='cd /Users/reinhardtc/Downloads/0-cloud/0-learn-software/reinhardtcgr.github.io'
-#alias cdz='cd /Users/reinhardtc/Downloads/0-cloud/0-learn-software/zero-one'
-
 # // open trash bin 
 # $ open ~/.Trash/
 alias otrash='open ~/.Trash/'
 # // empty trash bin
 # cmd + shift + del
 
-# get working directory
-alias gwd='echo "// pwd |pbcopy"; pwd |pbcopy'
 
 # TODO: END CHECK IF ON MAC OS
 
-# alias to open neovim quickly
-alias n='echo "// nvim <command>"; nvim'
-alias nv='echo "// nvim <command>"; nvim'
 
 # GIT VERSION CONTROL
-#alias shs='. ./.sync' #//doesn't quite work - might be because of relative path?
-# TODO: CHECK IF FILE EXISTS BEFORE RUNNING
-
-alias g='echo "// git <command>"; git'
-alias gb='echo "// git branch"; git branch'
-# TODO: CHECK IF MAC OS
-alias gbc='echo "// git branch --show-current | pbcopy"; git branch --show-current | pbcopy'
-# TODO END CHECK
 
 # git branch -d <branch-name> // to delete local branch
 # git branch -D <branch-name> // to force delete local branch
@@ -140,47 +113,14 @@ alias gbc='echo "// git branch --show-current | pbcopy"; git branch --show-curre
 # example:
 # git push origin --delete <branch-name>
 
-alias gc='echo "// git checkout <branch>"; git checkout'
 
-alias gf='echo "// git fetch"; git fetch'
-# // to rebase from the remote branch
-# git fetch
-# git rebase origin/master
+#// when only changing the FILENAME casing in git
+#git mv <filename>
+#NOTE: windows & mac OS are case-insensitive
+#linux is case-sensitive
+#git will also have trouble with this if the OS does
 
-alias gpull='echo "// git pull <branch>"; git pull'
-alias gpush='echo "// git push <branch>"; git push'
-alias gpom='echo "// git push origin main"; git push origin main'
 
-alias gs='echo "// git status"; git status'
-alias gd='echo "// git diff";git diff'
-alias gdc='echo "// git diff --cached"; git diff --cached' #// to see staged (added) changes (hunk)
-
-alias ga='echo "// git add <files>"; git add ' 
-alias gaa='echo "// git add . (ALL)"; git add .;' 
-alias grs='echo "// git restore --staged <files> to UNSTAGE"; git restore --staged ' 
-
-#alias gcm='echo "// git commit -m <text>"; git commit -m ' 
-# GIT COMMIT IF GIT COMMIT SCRIPT FILE EXISTS
-alias gcm='echo "// trying commit script"; [ -f ~/dotfiles/SCRIPTS/.gitcommit.sh ] && sh ~/dotfiles/SCRIPTS/.gitcommit.sh || echo "> no ~/dotfiles/SCRIPTS/.gitcommit.sh file"'
-
-#// to push changes into the stash
-alias gspush='echo "// git stash push"; git stash push'
-#// to push even untracked changes
-# git stash push --include-untracked <file>
-
-#// to see a list of stashed patches
-alias gslist='echo "// git stash list"; git stash list'
-alias gsshow='echo "// git stash show -p"; git stash show -p'
-# git stash show -p 3 // to see the #4 stashed patch/changes
-
-# git show stash@{0} // to show tracked files stashed in index 0
-# git show stash@{0}^3 // to show untracked files stashed in index 0
-
-#// to apply changes from a certain stash index (0 being at the top)
-# git stash apply <stash-index>
-
-# git stash push -m "message" <path>
-alias gsdrop='echo "// git stash drop <number>"; git stash drop '
 
 ## GIT MERGE
 
@@ -218,23 +158,13 @@ alias gsdrop='echo "// git stash drop <number>"; git stash drop '
 #Then change back to your branch to rebase
 
 # git log // to see if your current changes match the remote
-alias gl='echo "// git log"; git log'
 alias glog='echo "// git log"; git log'
 
-# // to see which commits are on your master which you haven't yet pushed
-# git log origin/master..master
-alias gld='echo "// git log diff on local not remote"; git log origin/main..main'
 
 # // to see which commits are on origin/master (remote) but not yet on master (local)
 # git log master..origin/master
 alias glr='echo "// git log diff on remote not local"; git log main..origin/main'
 
-# // git log GRAPH
-alias glg='echo "// git log --graph --format=.."; git log --format="%C(white)%d%C(reset) %s %C(white)[%ae %h %cr]%C(reset)" --graph'
-alias glgraph='echo "// git log --graph"; git log --graph'
-
-alias glgr='echo "// git log --graph --pretty=reference --relative-date"; git log --graph --pretty=reference --relative-date'
-alias gl1='echo "// git log --graph --oneline"; git log --graph --oneline'
 
 #@monorepo$ watch -n 5 'git log --format="%C(dim white)%d%C(reset) %s %C(dim white)[%ae %h %cr]%C(reset)" --graph'
 # // to limit the amount of commits shown use the following:
@@ -242,14 +172,6 @@ alias gl1='echo "// git log --graph --oneline"; git log --graph --oneline'
 # OR
 # $ glg -n <number of commits>
 
-# // git log FILES to see which files were updated
-alias glf='echo "// git log --graph --oneline --name-status"; git log --graph --oneline --name-status'
-
-# // git log PATCHES to see the diffs in each
-alias glp='echo "// git log -p"; git log -p'
-# // can add --author='Reinhardt' to see changes  by specific people
-# // just another alias to make t easier to view changes
-alias glshow='echo "// git log -p"; git log -p'
 
 # to RESET a SINGLE FILE in a PR
 # git reset <commit-ID>
@@ -270,21 +192,12 @@ alias glshow='echo "// git log -p"; git log -p'
 # // note: must use full hash that you can get from git log 
 # git revert <commit-hash || HEAD>
 
-#// to cherry pick a commit from another branch
-# git cherry-pick <commmit-hash>
+#-- to cherry pick a range of commits inclusive of the first commit
+# git cherry-pick <commmit-id-1>~..<commmit-id-n>
 
 # GIT CHANGE REMOTE 
 # git remote set-url <remote-name> <ssh-remote-url>
 # git remote set-url origin git@github.com:reinhardt021/x-spotify.git
-
-
-# TMUX
-alias t='echo "// tmux <command>"; tmux '
-alias tls='echo "// tmux ls"; tmux ls'
-alias tns='echo "// sh ~/dotfiles/SCRIPTS/tmux-new-session.sh"; function foo(){ sh ~/dotfiles/SCRIPTS/tmux-new-session.sh $1; unset -f foo; }; foo'
-alias tas='echo "// tmux attach-session -t <name>"; tmux attach-session -t '
-alias trs='echo "// tmux rename-session -t <old-name> <new-name>"; tmux rename-session -t '
-alias tkill='echo "// tmux kill-session -t <name>"; tmux kill-session -t '
 
 
 # WATCH
@@ -481,11 +394,6 @@ alias dp='echo "// docker ps";docker ps'
 alias ds='echo "// docker stop <container>"; docker stop '
 
 
-#alias dsn='docker stop higherme-node'
-# alias hm='/Users/reinhardtc/HigherMe/monorepo/develop/assistant/hmcli'
-alias hm='/Users/reinhardtc/HigherMe/assistant-cli/cli/hmcli'
-alias hmcli='/Users/reinhardtc/HigherMe/assistant-cli/cli/hmcli'
-
 # MONOREPO kubernetes setup
 # spinning it up
 # `k3d start cluster`
@@ -506,9 +414,6 @@ alias kssh='echo "// kubectl exec --stdin --tty <podname> -- <shell command>"; k
 alias kc='echo "// kubectl config <command>"; kubectl config '
 alias kcuc='echo "// kubectl config use-context <context>"; kubectl config use-context '
 alias kcucdefault='echo "// kubectl config use-context k3s-default"; kubectl config use-context k3s-default'
-
-# HigherMe Monorepo Path
-MONOREPO_PATH='/Users/reinhardtc/HigherMe/monorepo'
 
 # // this is for homebrew gcc >> don't need anymore should use Xcode CLT
 #PATH="/usr/local/Cellar/gcc/11.2.0/bin:${PATH}"
@@ -601,8 +506,24 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 alias sail='echo "// trying sail command else use vendor"; [ -f sail ] && sh sail || sh vendor/bin/sail'
 
-#// laravel vapor alias
+# PHP 
+alias crt='echo "// composer run test-filter "; composer run test-filter '
+
+ltpf_command='composer run tests-parallel-filter'
+ltpf_message="echo '// $ltpf_command';"
+alias ltpf="$ltpf_message $ltpf_command"
+
+pa_command="php artisan"
+pa_message="echo '// $pa_command';"
+alias pa="$pa_message $pa_command"
+
+# COMPOSER
+alias crt='echo "// composer run test-filter "; composer run test-filter '
+
+# LARAVEL
+# laravel VAPOR alias
 alias vapor='echo "// php vendor/bin/vapor"; php vendor/bin/vapor'
+
 
 #/opt/homebrew/Caskroom/zulu8/8.0.382,8.72.0.17-ca
 #/opt/homebrew/Caskroom/zulu11/11.0.20.1,11.66.19-ca
@@ -628,9 +549,12 @@ export PATH=/Users/Shared/DBngin/mysql/8.0.33/bin:$PATH
 
 
 
+# HERD herd
 # Herd injected PHP 8.3 configuration.
 export HERD_PHP_83_INI_SCAN_DIR="/Users/reinhardt021/Library/Application Support/Herd/config/php/83/"
 
-
 # Herd injected PHP binary.
 export PATH="/Users/reinhardt021/Library/Application Support/Herd/bin/":$PATH
+
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/reinhardt021/Library/Application Support/Herd/config/php/82/"

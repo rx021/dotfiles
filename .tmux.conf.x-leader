@@ -1,0 +1,5 @@
+
+#enabling quick tmux binding for linux MBA
+unbind C-b;
+set-option -g prefix `;
+bind ` send-prefix

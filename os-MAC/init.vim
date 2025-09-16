@@ -2,8 +2,16 @@
 " VIM SETUP
 """"""""""""""" 
 " not that this is the file to setup nvim
-" .vimrc is for regular vim
+" ~/.config/nvim/init.vim
+" ~/.vimrc is for regular vim
 " - [ ] move this to a file and have it map to .vimrc as well an init.vim on machine when setup
+"
+"// mininmal ONE LINE SETUP for REMOTE LINUX
+"set number relativenumber autoindent expandtab tabstop=2 shiftwidth=2
+"
+"set number relativenumber
+"set autoindent expandtab
+"set tabstop=2 shiftwidth=2
 "
 " to format JSON in a .json file
 " :%!python -m json.tool
@@ -16,6 +24,11 @@
 " // to replay macro
 " @ <letter>
 
+" // to suspend vim 
+" C-z (ctrl-z)
+" // to re-active vim 
+" fg
+
 """"""""""""""" 
 " COMMAND MODE
 """"""""""""""" 
@@ -24,11 +37,12 @@
 " :q // to CLOSE a VIM window
 " :qa // to CLOSE ALL of VIM
 
-"" SETTINGS
-"
-" // ONE LINE SETUP for REMOTE LINUX
-"set number relativenumber expandtab tabstop=2 shiftwidth=2 autoindent
+" :echo expand('%') // for relative path
+" :echo expand('%:p') // for absolute path
+" :let @" = expand("%:p") // copy current file path / filename
 
+"-- SETTINGS
+"
 "colorcolumn=80,120 "//doesn't work
 "cursorline "//doesn't work
 "cursorcolumn "//doesn't work
@@ -258,6 +272,7 @@ set nofoldenable "defaults no folding on first open
 " f.ct( // COMBO: on character . change everything until (
 
 "" UPPERCASE & lowercase
+"" uppsercase & lowercase
 " visual mode select characters
 " U for UPPERCASE
 " u for lowercase
@@ -282,6 +297,10 @@ set nofoldenable "defaults no folding on first open
 """"""""""""""" 
 " // to jump to beginning or end of selection
 " o || O
+" // vertically select column of items
+" C-v (ctrl-v)
+" // then can go up or down with j/k
+" great for incrementing a list (ex: week dates)
 
 
 
@@ -294,6 +313,7 @@ set nofoldenable "defaults no folding on first open
 
 """"""""""""""" 
 " STATUS LINE
+" per file
 """"""""""""""" 
 
 function! GitGetCurrentBranch()
@@ -402,12 +422,21 @@ set tabline=%!MyTabLine() "// filenames get too big
 " MAPPINGS
 """"""""""""""" 
 
-" (in system clipboard)
-" `"+y` // to copy
-" `"+x` // to cut
-" cmd+v // to paste
+" (IN SYSTEM CLIPBOARD)
+"-- os-MAC:
+" `"+y` // copy to system clipboard
 vnoremap <C-y> "+y
+" `"+x` // cut to system clipboard
 vnoremap <C-x> "+x
+" cmd+v // Insert Mode paste clipboard 
+
+"-- os-LINUX:
+" - how to yank vim to OS clipboard?
+" - how to paste into vim from OS clipboard
+"vnoremap <C-y> "*yy
+"vnoremap <C-x> "*x
+" ctrl+shift+v // Insert Mode paste clipboard
+
 
 "" SELECT ALL
 " ggVG 
@@ -442,7 +471,11 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
     Plug 'doums/darcula' " my prefered syntax color scheme 
-    Plug 'preservim/nerdtree' " to see filetree
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
+    "Plug 'preservim/nerdtree' " to see filetree
+    "-- turning off to better understand netrw
+
     Plug 'airblade/vim-gitgutter' " to see git if line changed
 
     Plug 'preservim/nerdcommenter' " allows commenting out 
@@ -452,6 +485,13 @@ call plug#begin('~/.config/nvim/plugged')
     "Plug 'ctrlpvim/ctrlp.vim' " using fzf instead now
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    " // enables :Files
+
+    Plug 'nvim-lua/plenary.vim'
+    "-- issues install this
+    "-- even did
+    "git config --global url.ssh://git@github.com/.insteadOf https://github.com/
+
     Plug 'jparise/vim-graphql' " graphQL syntax highlighting
     Plug 'StanAngeloff/php.vim' " php syntax highlighting // archived DEC 2020
     Plug 'adoy/vim-php-refactoring-toolbox'
@@ -597,11 +637,29 @@ function! s:tweak_darcula_colors()
   " adds Truecolor to the terminal if supported
   set termguicolors
   let g:lightline = { 'colorscheme': 'darculaOriginal' }
+
+  "-- fix attempt for Goyo restting bad
+  "hi LineNr ...
+  "hi FoldColumn ...
 endfunction
+
 autocmd! ColorScheme darcula call s:tweak_darcula_colors()
 " prefered syntax color scheme
 " TODO CHECK IF PLUGIN INSTALLED
 colorscheme darcula
+
+"-- the following is for init.vim
+"lua << EOF
+  "require("catppuccin").setup({
+    "flavour = "mocha",
+  "})
+"EOF
+"colorscheme catppuccin
+"-- the following is for init.lua
+"require("catppuccin").setup({
+  "flavour = "mocha",
+"})
+"vim.cmd.colorscheme "catppuccin"
 
 
 """"""""""""""" 

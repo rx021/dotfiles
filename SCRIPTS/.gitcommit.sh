@@ -1,18 +1,26 @@
 # GIT COMMIT PROMPTS
-message_prompt="___WHY DID YOU MAKE CHANGES?___"
+message_prompt="___WHY did you make CHANGES?___"
 echo "$message_prompt"
+message_start="___I did these changes BECAUSE..."
+echo "$message_start"
 read message
 
 separator=":"
 last_commit=$(git log -1 --pretty=%B)
-if [[ "$last_commit" == *"$separator"* ]]; then
-  IFS="$separator" read -r first_word _ <<< "$last_commit" 
+
+if echo "$last_commit" | grep -q "$separator"; then
+  first_word=$(echo "$last_commit" | sed "s/$separator.*//")
+  #-- still doesn't seem to work...
+  #first_word=$(echo "$last_commit" | awk -F "$separator" '{print $1}')
+  #first_word=$(echo "$last_commit" | awk -F "$separator" "{print $1}")
+  #first_word=$(echo "$last_commit" | cut -d "$separator" -f1)
+  #IFS="$separator" read -r first_word _ <<< "$last_commit" #-- no good for LINUX
 fi
 
 prefix_prompt="___ADD A PREFIX?___"
 echo "$prefix_prompt"
 
-if [[ -z "$first_word" ]]; then
+if [ -z "$first_word" ]; then
   read prefix
 else
   echo "$first_word ? [Y=enter]"

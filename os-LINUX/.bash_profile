@@ -68,7 +68,6 @@ alias ga='echo "// git add <files>"; git add '
 alias gaa='echo "// git add . (ALL)"; git add .;' 
 alias grs='echo "// git restore --staged <files> to UNSTAGE"; git restore --staged ' 
 
-
 create_alias()
 {
   alias_command=$1

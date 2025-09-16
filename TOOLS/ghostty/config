@@ -1,0 +1,42 @@
+#_ GHOSTTY TERMINAL CONFIG
+
+##_ RELOADING CONFIG
+# ctrl+shift+,
+
+##_ OFFLINE DOCS
+# $ ghostty +show-config --default --docs
+
+##_ WINDOW MANAGEMENT
+# new window: ctrl+enter
+# toggle full screen: ctrl+enter
+
+##_ CLIPBOARD
+# copy: ctrl+shift+c
+# paste: ctrl+shift+v
+
+##_ FONT SIZE
+# increase: ctrl++
+# decrease: ctrl+-
+
+theme = xcodedarkhc
+
+background-opacity = 0.95
+#-- opacity doesnt do much in full screen
+
+# window-padding-y = 8
+#-- doesn't really do much
+
+# font-size = 18
+#-- didn't work; cmd/ctrl +/- instead
+
+cursor-style = block
+
+##_ HOTKEYS
+#keybind = ctrl+c=copy_to_clipboard
+#keybind = ctrl+v=paste_from_clipboard
+
+##_ CLIPBOARD
+copy-on-select = false
+# = clipboard / true / false
+clipboard-read = allow
+clipboard-write = allow
