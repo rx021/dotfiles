@@ -1,11 +1,10 @@
 # SHELL SETUP
 
 source ~/dotfiles/os-SHARED/.utils.sh
-
-# modifying the bash prompt to something simpler
-# PS1="\u@\W\$"
+#-- overwrite defaults in .utils.sh
 color_prompt=yes
 #color_prompt=no
+cli_prefix="💧 "
 
 source ~/dotfiles/os-SHARED/.cli.sh
 
@@ -27,5 +26,6 @@ source ~/dotfiles/os-SHARED/.alias_filesystem.sh
 source ~/dotfiles/os-SHARED/.alias_git.sh
 source ~/dotfiles/os-SHARED/.alias_tmux.sh
 
+#-- OS SPECIFIC
 
 # END OF FILE

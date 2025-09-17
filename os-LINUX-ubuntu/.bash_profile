@@ -2,6 +2,7 @@
 
 source ~/dotfiles/os-SHARED/.utils.sh
 #-- overwrite defaults in .utils.sh
+#color_prompt=no
 color_prompt=yes
 cli_prefix="💧 "
 
