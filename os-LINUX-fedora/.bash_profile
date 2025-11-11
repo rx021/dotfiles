@@ -14,6 +14,7 @@ source ~/dotfiles/os-SHARED/.alias_tmux.sh
 source ~/dotfiles/os-SHARED/.x.sh
 
 #-- OS SPECIFIC
+source ~/dotfiles/os-SHARED/.cli_fedora.sh
 source ~/dotfiles/os-SHARED/.alias_filesystem_fedora.sh
 source ~/dotfiles/os-SHARED/.alias_git_fedora.sh
 
