@@ -9,6 +9,7 @@ echo "CHECKING WHITELIST:"
 declare -a whitelist=(
   "OBSIDIAN"
   "dotfiles"
+  "OS25"
   #"rentatee"
   #"OSS"
 )
