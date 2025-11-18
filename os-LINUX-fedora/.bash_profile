@@ -18,3 +18,5 @@ source ~/dotfiles/os-SHARED/.cli_fedora.sh
 source ~/dotfiles/os-SHARED/.alias_filesystem_fedora.sh
 source ~/dotfiles/os-SHARED/.alias_git_fedora.sh
 
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
