@@ -6,10 +6,12 @@ echo "//test inputs [$INPUT]"
 echo "_______________"
 echo "CHECKING WHITELIST:"
 # TODO: doesn't work for UBUNTU
+# works for FEDORA
 declare -a whitelist=(
   "OBSIDIAN"
   "dotfiles"
   "OS25"
+  ".os26"
   #"rentatee"
   #"OSS"
 )
