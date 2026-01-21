@@ -12,6 +12,7 @@ declare -a whitelist=(
   "dotfiles"
   "OS25"
   ".os26"
+  ".osYR"
   #"rentatee"
   #"OSS"
 )
