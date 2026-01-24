@@ -1,5 +1,10 @@
 # SHARED SHELL - CLI
 
+# HOW TO GET IP ADDRESS
+# how to get ip address
+#hostname -I
+#ip addr show
+
 ## SHELL PROMPT SETTINGS:
 
 #color_prompt=yes #-- see .utils.sh
