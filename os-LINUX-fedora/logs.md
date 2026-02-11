@@ -1,4 +1,4 @@
-# LINUX FEDORA setup
+# LINUX FEDORA logs
 
 ## 2026 0211 WEDNESDAY
 - using the built in terminal
