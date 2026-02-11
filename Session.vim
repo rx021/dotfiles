@@ -63,10 +63,10 @@ badd +5 os-SHARED/alias_tmux.bash
 badd +4 os-SHARED/.alias_tmux.bash
 badd +16 os-SHARED/.alias_filesystem.sh
 badd +71 os-SHARED/.cli.sh
-badd +123 os-SHARED/.alias_git.sh
+badd +133 os-SHARED/.alias_git.sh
 badd +12 os-LINUX-fedora/config-bash.sh
 badd +1 os-SHARED/.alias_tmux.sh
-badd +19 os-SHARED/.utils.sh
+badd +11 os-SHARED/.utils.sh
 badd +1 os-SHARED/.x.sh
 badd +141 os-LINUX-fedora/.tmux.conf
 badd +1 os-LINUX-fedora/config-tmux.sh
@@ -74,6 +74,9 @@ badd +1 os-LINUX-fedora/config-vim.sh
 badd +1 thelp
 badd +1 os-LINUX-ubuntu/.bash_profile
 badd +1 os-LINUX-ubuntu/.bashrc
+badd +0 os-LINUX/README.md
+badd +1 os-LINUX-fedora/README.md
+badd +0 os-LINUX-ubuntu/README.md
 argglobal
 %argdel
 set stal=2
@@ -283,11 +286,11 @@ keepjumps 132
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-SHARED/.alias_git.sh", ":p")) | buffer os-SHARED/.alias_git.sh | else | edit os-SHARED/.alias_git.sh | endif
+if bufexists(fnamemodify("os-LINUX/README.md", ":p")) | buffer os-LINUX/README.md | else | edit os-LINUX/README.md | endif
 if &buftype ==# 'terminal'
-  silent file os-SHARED/.alias_git.sh
+  silent file os-LINUX/README.md
 endif
-balt os-ANDROID/.bash_profile
+balt os-SHARED/.alias_git.sh
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -296,11 +299,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 133 - ((0 * winheight(0) + 7) / 14)
+let s:l = 1 - ((0 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 133
+keepjumps 1
 normal! 0
 wincmd w
 argglobal
@@ -317,7 +320,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 8 - ((0 * winheight(0) + 5) / 10)
+let s:l = 8 - ((4 * winheight(0) + 5) / 10)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -348,11 +351,11 @@ normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-SHARED/.utils.sh", ":p")) | buffer ~/dotfiles/os-SHARED/.utils.sh | else | edit ~/dotfiles/os-SHARED/.utils.sh | endif
+if bufexists(fnamemodify("~/dotfiles/os-LINUX-ubuntu/README.md", ":p")) | buffer ~/dotfiles/os-LINUX-ubuntu/README.md | else | edit ~/dotfiles/os-LINUX-ubuntu/README.md | endif
 if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-SHARED/.utils.sh
+  silent file ~/dotfiles/os-LINUX-ubuntu/README.md
 endif
-balt ~/dotfiles/os-SHARED/.cli.sh
+balt ~/dotfiles/os-LINUX-fedora/README.md
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -361,15 +364,15 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 11 - ((0 * winheight(0) + 4) / 9)
+let s:l = 1 - ((0 * winheight(0) + 4) / 9)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 11
+keepjumps 1
 normal! 0
 lcd ~/dotfiles
 wincmd w
-6wincmd w
+7wincmd w
 exe '1resize ' . ((&lines * 15 + 16) / 33)
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe '2resize ' . ((&lines * 14 + 16) / 33)
