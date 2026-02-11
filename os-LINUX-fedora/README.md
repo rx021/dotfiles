@@ -1,6 +1,18 @@
 # LINUX FEDORA
 
-in order to copy something in the Terminal:
-- use ctrl+shift+c
-in order to paste something in the Terminal:
-- use ctrl+shift+v
+to COPY TEXT in the Terminal: `ctrl+shift+c`
+- note: does NOT work in tmux
+to PASTE TEXT in the Terminal: `ctrl+shift+v`
+
+to check OS version use one of the following:
+```bash
+hostnamectl
+lsb_release
+cat /etc/os-release
+
+#-- for linux kernal version 
+uname
+uname -r
+```
+
+# .
