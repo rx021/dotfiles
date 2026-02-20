@@ -39,6 +39,8 @@ sudo apt install ripgrep fzf
 # and open a new tmux session 
 # and get going from here
 # ...
+#
+# INSTALL GOLANG for lazysql
 
 # EXTRAs
 
