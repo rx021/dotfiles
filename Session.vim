@@ -53,7 +53,7 @@ badd +1 os-LINUX-fedora/.bashrc
 badd +1 os-SHARED/config-hooks.sh
 badd +13 os-SHARED/.bash-shared
 badd +3 os-SHARED/.bashx
-badd +8 os-LINUX-fedora/.bash_profile
+badd +11 os-LINUX-fedora/.bash_profile
 badd +3 os-SHARED/.basha
 badd +4 os-SHARED/.x.bash
 badd +3 os-SHARED/.alias-git.bash
@@ -74,7 +74,8 @@ badd +1 os-LINUX-fedora/config-vim.sh
 badd +1 thelp
 badd +1 os-LINUX-ubuntu/.bash_profile
 badd +1 os-LINUX-ubuntu/.bashrc
-badd +0 Session.vim
+badd +1 Session.vim
+badd +4 os-SHARED/.cli_fedora.sh
 argglobal
 %argdel
 set stal=2
@@ -305,11 +306,11 @@ keepjumps 133
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-LINUX-fedora/.bash_profile", ":p")) | buffer os-LINUX-fedora/.bash_profile | else | edit os-LINUX-fedora/.bash_profile | endif
+if bufexists(fnamemodify("os-SHARED/.cli_fedora.sh", ":p")) | buffer os-SHARED/.cli_fedora.sh | else | edit os-SHARED/.cli_fedora.sh | endif
 if &buftype ==# 'terminal'
-  silent file os-LINUX-fedora/.bash_profile
+  silent file os-SHARED/.cli_fedora.sh
 endif
-balt os-LINUX-fedora/.bashrc
+balt os-LINUX-fedora/.bash_profile
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -318,12 +319,12 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 8 - ((0 * winheight(0) + 6) / 12)
+let s:l = 11 - ((5 * winheight(0) + 6) / 12)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
-normal! 0
+keepjumps 11
+normal! 020|
 lcd ~/dotfiles
 wincmd w
 argglobal
@@ -340,11 +341,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 6) / 12)
+let s:l = 2 - ((1 * winheight(0) + 6) / 12)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 2
 normal! 0
 lcd ~/dotfiles
 wincmd w
@@ -362,15 +363,15 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 11 - ((0 * winheight(0) + 5) / 11)
+let s:l = 7 - ((0 * winheight(0) + 5) / 11)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 11
+keepjumps 7
 normal! 0
 lcd ~/dotfiles
 wincmd w
-6wincmd w
+5wincmd w
 exe '1resize ' . ((&lines * 19 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe '2resize ' . ((&lines * 17 + 20) / 40)
