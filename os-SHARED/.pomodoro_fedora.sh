@@ -6,6 +6,10 @@
 #   Requires
 #   https://github.com/caarlos0/timer
 #   to be installed.
+#     - DL latest release
+#       https://github.com/caarlos0/timer/releases
+#     - cd ~/Downloads //- where I DL'd to
+#     - sudo dnf install ./timer-1.4.6-1.x86_64.rpm
 # - spd-say should ship with your distro
 #
 #- reference: https://gist.github.com/bashbunni/3880e4194e3f800c4c494de286ebc1d7
