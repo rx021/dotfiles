@@ -127,8 +127,15 @@ alias glshow="$(create_alias "git log -p")"
 # git cherry-pick <commmit-id-1>~..<commmit-id-n>
 
 #-- to change remote after the fact
-# $ git remote -v 
-# $ git remote add origin git@github-personal:reinhardt021/dotfiles.git
+#$ git remote -v 
+
+#$ git remote add origin git@github-personal:reinhardt021/dotfiles.git
+#$ git remote -v 
+#-- `origin` remote should be gone
+
+#$ git remote remove rx
+#$ git remote -v 
+#-- `rx` remote should be gone
 
 
 ## SCRIPTS
