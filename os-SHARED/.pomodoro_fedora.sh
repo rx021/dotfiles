@@ -19,7 +19,6 @@ pomo_options["build"]="45"
 pomo_options["break"]="10"
 
 pomodoro () {
-  #echo "$1 -- test";
   if [ -n "$1" ] && [ -n "${pomo_options[$1]}" ]; then
     val=$1
     echo "$val" | lolcat
@@ -30,5 +29,3 @@ pomodoro () {
 
 alias pmbuild="pomodoro 'build'"
 alias pmbreak="pomodoro 'break'"
-#alias pmbuild="echo 'build'"
-#alias pmbreak="echo 'break'"
