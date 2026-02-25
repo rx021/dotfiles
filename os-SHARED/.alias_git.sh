@@ -126,6 +126,9 @@ alias glshow="$(create_alias "git log -p")"
 #-- to cherry pick a range of commits inclusive of the first commit
 # git cherry-pick <commmit-id-1>~..<commmit-id-n>
 
+#-- to change remote after the fact
+# $ git remote -v 
+# $ git remote add origin git@github-personal:reinhardt021/dotfiles.git
 
 
 ## SCRIPTS
