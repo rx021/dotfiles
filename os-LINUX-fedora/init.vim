@@ -16,17 +16,18 @@
 " to format JSON in a .json file
 " :%!python -m json.tool
 "
-" // how to start recording a macro
-" // where <letter> is anything from a-z
-" q <letter>
-" // to stop recording a macro
+" MACROS
+"-- how to start recording a macro
+"-- where <letter> is anything from a-z
+" q <letter/number>
+"-- to stop recording a macro
 " q
-" // to replay macro
-" @ <letter>
+"-- to replay macro
+" @ <letter/number>
 
-" // to suspend vim 
+"-- to suspend vim 
 " C-z (ctrl-z)
-" // to re-active vim 
+"-- to re-active vim 
 " fg
 
 """"""""""""""" 
@@ -37,56 +38,44 @@
 " :q // to CLOSE a VIM window
 " :qa // to CLOSE ALL of VIM
 
-" :echo expand('%') // for relative path
-" :echo expand('%:p') // for absolute path
-" :let @" = expand("%:p") // copy current file path / filename
+" :echo expand('%') -- for relative path
+" :echo expand('%:p') -- for absolute path
+" :let @" = expand("%:p") -- copy current file path / filename
 
 "" SETTINGS
-"
-"colorcolumn=80,120 "//doesn't work
-"cursorline "//doesn't work
-"cursorcolumn "//doesn't work
 
-" :set wrap! // toggle text WRAP
+"set wrap! -- toggle text WRAP
+set number " shows line# in file
+set relativenumber " shows relative line#
 
-" shows the file line numbers
-set number
-" enable relative line numbers
-set relativenumber
-
-" sets the command prompt window size
-set cmdheight=1
-
-" set line length soft limit
-set colorcolumn=80,120
-
-" allows auto indentation
-set autoindent
+set autoindent " allows auto indentation
 " spaces used for indenting even when pressing TAB
-set expandtab 
-" //toggle between spaces & tabs
+set expandtab " toggle between spaces & tabs
 " set expandtab!
 
-" //show tabs or spaces
-" set list //show tabs
-" set nolist //hide tabs
+set cmdheight=1 " command prompt window 
 
-" best to have these matching
+set colorcolumn=80,120 " line length limits
+
+
+"-- show tabs or spaces
+" set list -- show tabs
+" set nolist -- hide tabs
+
 " num of spaces for a line indent
 set tabstop=2
 "set tabstop=4
 " identation when using `>>` or `<<` (4=single 'tab')
 set shiftwidth=2
 "set shiftwidth=4
+" NOTE: best to have these matching
 
-" highlights the current line
-set cursorline
-" highlights the current column but slows vim for biggers files
-"set cursorcolumn
-" // can set this in :set cursorcolumn!
+set cursorline " highlights row
+" NOTE: slows vim for biggers files
+"set cursorcolumn " hightlights column
+" ex: set cursorcolumn!
 
-" adds syntax highlighting
-syntax on
+syntax on " adds syntax highlighting
 
 set foldmethod=indent "fold based on indent 
 set nofoldenable "defaults no folding on first open
@@ -110,14 +99,14 @@ set nofoldenable "defaults no folding on first open
 
 "" TABS
 "
-" // to list the tabs open
+"-- to list the tabs open
 " :tabs
 "
-" // to create a new tab
+"-- to create a new tab
 " :tabnew
-" // to open current window (pane) into new tab but keep old window as is
+"-- to open current window (pane) into new tab but keep old window as is
 " :tabnew %
-" // to open current window (pane) into new tab
+"-- open current window (pane) into new tab
 " ctrl-w T
 "
 " // to go to next tab
