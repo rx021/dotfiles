@@ -12,6 +12,8 @@
 " SETTINGS:
 """"""""""""""" 
 
+source ~/dotfiles/VIM/general/settings-status-line.vim
+
 "-- SIMPLE SETUP for new systems
 "set number relativenumber
 "set autoindent expandtab
@@ -57,6 +59,7 @@ set nofoldenable "defaults no folding on 1st open
         "zR -- RESET fold levels to 0
 
 syntax on " adds syntax highlighting
+
 
 
 """"""""""""""" 
