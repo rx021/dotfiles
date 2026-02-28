@@ -1,5 +1,5 @@
 """"""""""""""" 
-" MAPPINGS
+" MAPPINGS:
 """"""""""""""" 
 
 " (IN SYSTEM CLIPBOARD)
