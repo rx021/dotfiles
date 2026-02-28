@@ -53,13 +53,13 @@ set cursorline " highlights row
 set foldmethod=indent "fold based on indent 
 set nofoldenable "defaults no folding on 1st open
 "set foldcolumn=1 "creates column for fold levels
-    "za -- TOGGLE FOLD
-        "zo -- OPEN fold
-        "zc -- CLOSE fold
-    "zm -- add MORE fold levels
-        "zM -- MAX fold levels
-    "zr -- REDUCE fold levels
-        "zR -- RESET fold levels to 0
+"za -- TOGGLE FOLD
+    "zo -- OPEN fold
+    "zc -- CLOSE fold
+"zm -- add MORE fold levels
+    "zM -- MAX fold levels
+"zr -- REDUCE fold levels
+    "zR -- RESET fold levels to 0
 
 syntax on " adds syntax highlighting
 
