@@ -155,6 +155,14 @@ set nofoldenable "defaults no folding on first open
 " // repeats the command you did recently
 " .
 
+" C-e "-- scroll down 
+" C-y "-- scroll up
+"
+" JUMPLIST jumplist
+" C-i  "-- jump back
+" C-o  "-- jump forward
+" ''   "-- toggle to last place
+
 "" NAVIGATION
 "   WINDOWS
 " // to open new VIM window next to the existing one
