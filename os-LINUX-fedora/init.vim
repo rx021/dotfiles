@@ -64,11 +64,15 @@ set tabline=%!MyTabLine() "// filenames get too big
 
 " (IN SYSTEM CLIPBOARD)
 "-- os-LINUX-fedora:
-" `"+y` // vim visual mode select COPY to OS clipboard
+"
+" `"+y` 
+"-- vim VISUAL MODE select COPY to OS clipboard
 vnoremap <C-y> "+y
-" `"+x` // vim visual mode select CUT to OS clipboard
+" `"+x` 
+"-- vim VISUAL MODE select CUT to OS clipboard
 vnoremap <C-x> "+x
-" ctrl+shift+v // Insert Mode paste clipboard 
+" ctrl+shift+v
+"-- INSERT MODE PASTE clipboard 
 
 
 "" SELECT ALL:

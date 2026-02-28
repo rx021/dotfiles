@@ -13,6 +13,7 @@
 """"""""""""""" 
 
 source ~/dotfiles/VIM/general/settings-status-line.vim
+source ~/dotfiles/VIM/general/settings-mappings.vim
 
 "-- SIMPLE SETUP for new systems
 "set number relativenumber
