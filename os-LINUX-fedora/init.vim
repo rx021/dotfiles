@@ -71,12 +71,8 @@ vnoremap <C-x> "+x
 " ctrl+shift+v // Insert Mode paste clipboard 
 
 
-"" SELECT ALL
+"" SELECT ALL:
 "nnoremap <C-a> ggVG "-- turn off for now
-
-"" TIMETRAVEL
-" u // to undo recent change
-" ctrl+r // to redo change
 
 " to make the <Leader> key the ',' key (tilda ~ key)
 let mapleader = ','

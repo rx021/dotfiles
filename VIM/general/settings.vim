@@ -130,6 +130,9 @@ syntax on " adds syntax highlighting
 " dw -- DELETES a WORD
 " dd -- DELETES a LINE
 "
+" TIMETRAVEL:
+" u      -- to UNDO RECENT CHANGE
+" ctrl+r -- to REDO RECENT CHANGE
 
 
 """"""""""""""" 
