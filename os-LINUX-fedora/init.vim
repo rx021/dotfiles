@@ -8,28 +8,11 @@ source ~/dotfiles/VIM/general/settings.vim
 """"""""""""""" 
 " NORMAL MODE
 """"""""""""""" 
-" % --  to jump between brackes
-" cmd + / -- to show cursor (MacOS)
 
-" // repeats the command you did recently
-" .
 
 "
 
 "" NAVIGATION
-
-"   WINDOWS
-" // to open new VIM window next to the existing one
-" ctrl+w v
-" // to open new VIM window below the existing one
-" ctrl+w s
-
-""   PANES
-" // to go between panes/windows in vim 
-" ctrl+w w 
-" // to go [left/down/up/right] between panes
-" ctrl+w [h/j/k/l]
-
 
 "" BUFFERS
 
@@ -66,8 +49,6 @@ source ~/dotfiles/VIM/general/settings.vim
 "=218 // remaining
 
 
-"" WINDOWS COMMAND MODE
-" <C-w> ...
 
 "" RESIZE
 " // to resize the width of a pane
@@ -84,39 +65,9 @@ source ~/dotfiles/VIM/general/settings.vim
 " // to equalize width and height 
 " <C-w> = 
 
-"" REORGANIZE
-" // to rotate the panes count-clockwise
-" <C-w> r
-" // to rotate the panes clockwise
-" <C-w> R
 
-"" SEARCH
-" (in file)
-" `/` // to search forward
-" `?` // to search backward
-" n // to go to next occurence
-" N // to go to previous occurence
 
-" (in project)
-" :Rg
-" // can then type to complete and find file needed
 
-"" INSERT
-" I // to insert at beginning of line
-" i // to insert at current position
-" a // to append just after current position
-" A // to append at end of line
-
-" O // to open new live above the current line
-" o // to open new line below the current line
-
-"" EDIT
-" J // to simplify and merge the next line with your current line
-
-"" DELETE
-" x // to delete a character
-" dw // to delete a word
-" dd // to delete a line
 
 "" ADVANCED COMMANDS
 " ~ // toggle character casing
@@ -135,43 +86,10 @@ source ~/dotfiles/VIM/general/settings.vim
 " vi{~ // COMBO: select everything in { and toggle casing
 " f.ct( // COMBO: on character . change everything until (
 
-"" UPPERCASE & lowercase
-"" uppsercase & lowercase
-" visual mode select characters
-" U for UPPERCASE
-" u for lowercase
-
-"" SELECT + INDENT/ COPY/ CUT/ PASTE
-" v // to select a character
-" shift+v // to select a line
-" [j/k] // move [up/down] 
-
-" > // to indent
-
-" (in vim clipboard)
-" y // to copy
-" d // to cut
-" P // to paste before the cursor
-" p // to paste after the cursor
 
 
 
-""""""""""""""" 
-" VISUAL MODE
-""""""""""""""" 
-" // to jump to beginning or end of selection
-" o || O
-" // vertically select column of items
-" C-v (ctrl-v)
-" // then can go up or down with j/k
-" great for incrementing a list (ex: week dates)
 
-
-
-""""""""""""""" 
-" INSERT MODE
-""""""""""""""" 
-" just type normally
 
 
 

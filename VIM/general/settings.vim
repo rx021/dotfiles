@@ -1,5 +1,5 @@
 """"""""""""""" 
-" VIM SETUP
+" VIM SETUP:
 """"""""""""""" 
 " ~/.vimrc is for regular vim
 " ~/.config/nvim/init.vim
@@ -9,7 +9,7 @@
 " -- to format JSON in a .json file
 
 """"""""""""""" 
-" SETTINGS
+" SETTINGS:
 """"""""""""""" 
 
 "-- SIMPLE SETUP for new systems
@@ -60,7 +60,7 @@ syntax on " adds syntax highlighting
 
 
 """"""""""""""" 
-" SESSIONS
+" SESSIONS:
 " Layer 1
 " whenever you open vim
 """"""""""""""" 
@@ -73,7 +73,7 @@ syntax on " adds syntax highlighting
 
 
 """"""""""""""" 
-" TABS
+" SESSION TABS:
 " Layer 2
 " within a Session
 """"""""""""""" 
@@ -98,29 +98,84 @@ syntax on " adds syntax highlighting
 " :tabmove 2
 " :tabm -1
 
-" :tabclose " CLOSE TAB (incl all panes)
+" :tabclose " CLOSE TAB (incl all windows)
 " :tabcl
 
 
 """"""""""""""" 
 " MODES
-" per PANE
+" PER WINDOW:
 """"""""""""""" 
 
 """"""""""""""" 
-" NORMAL MODE
+" NORMAL MODE:
 """"""""""""""" 
-" MACROS
+" MACROS:
 " q <letter/number> " SART recording
 " q                 " STOP recording
 " @ <letter/number> " REPLAY macro
-
+"
+" SUSPEND VIM:
 " C-z (ctrl-z) " SUSPEND vim 
 " fg           " REACTIVATE vim 
+"
+" EDIT:
+" J -- CONCATS NEXT LINE onto CURRENT LINE
+"
+" DELETE:
+" x  -- DELETES a CHARACTER
+" dw -- DELETES a WORD
+" dd -- DELETES a LINE
+"
+
 
 """"""""""""""" 
-" NORMAL MODE: NAVIGATION - WINDOWS
+" NORMAL MODE WINDOWS:
 """"""""""""""" 
+" ctrl+w v
+" :vs
+"-- to SPLIT current WINDOW VERTICALLY
+"
+" ctrl+w s
+" :sp
+"-- to SPLIT current WINDOW HORIZONTALLY
+"
+" cmd + /
+"-- to show cursor (MacOS)
+"
+" .  -- repeats the command you did recently
+
+
+""""""""""""""" 
+" NORMAL MODE WINDOWS SEARCH:
+""""""""""""""" 
+" IN CURRENT FILE:
+" `/` -- to search forward
+" `?` -- to search backward
+"   n   -- to go to next occurence
+"   N   -- to go to previous occurence
+"
+" IN PROJECT:
+" :Rg
+"-- can then type to complete & scroll files
+
+""""""""""""""" 
+" NORMAL MODE WINDOWS REORGANIZE:
+""""""""""""""" 
+" <C-w> r
+"-- to rotate the panes count-clockwise
+" <C-w> R
+"-- to rotate the panes clockwise
+
+
+""""""""""""""" 
+" NORMAL MODE WINDOWS NAVIGATION:
+""""""""""""""" 
+" ctrl+w w 
+"-- to ROTATE between WINDOWS
+" ctrl+w [h/j/k/l]
+"-- to go [LEFT/DOWN/UP/RIGHT] between WINDOWS
+"
 " C-e "-- scroll down 
 " C-y "-- scroll up
 "
@@ -129,18 +184,21 @@ syntax on " adds syntax highlighting
 " C-o  "-- jump forward
 " ''   "-- toggle to last place
 "
-" cmd + / -- to show cursor (MacOS)
-"
 " %  --  to JUMP BETWEEN BRACKES
 " $% -- to JUMP from OPEN BRACKET to CLOSE
 " ^% -- to JUMP from CLOSE BRACKET to OPEN
 " $  -- to JUMP to the END of the LINE
 " ^  -- to JUMP to the START of the LINE
-"
-" .  -- repeats the command you did recently
+
 
 """"""""""""""" 
-" COMMAND MODE
+" NORMAL MODE NAVIGATION BUFFERS:
+""""""""""""""" 
+
+
+
+""""""""""""""" 
+" COMMAND MODE:
 " type : from NORMAL mode
 """"""""""""""" 
 " :w " to save changes from a buffer
@@ -152,3 +210,53 @@ syntax on " adds syntax highlighting
 " :echo expand('%:p') -- for absolute path
 " :let @" = expand("%:p") -- copy current file path / filename
 
+
+
+""""""""""""""" 
+" INSERT MODE:
+" type a key listed below from NORMAL mode
+" to add text like normal
+""""""""""""""" 
+" o -- to open new line BELOW the current line
+" O -- to open new live ABOVE the current line
+"
+" I -- to insert at beginning of line
+" i -- to insert at current position
+" a -- to append just after current position
+" A -- to append at end of line
+
+
+""""""""""""""" 
+" VISUAL MODE:
+" type v/V from NORMAL mode
+""""""""""""""" 
+" SELECTION:
+" v     -- to SELECT a CHARACTER
+" V     -- to SELECT a LINE
+" C-v (ctrl-v)
+"-- VERTICALLY SELECT column of items
+"
+" [j/k] -- MOVE [up/down] 
+"-- great for incrementing a list (ex: week dates)
+"
+" o/O   -- TOGGLE btwn start & end of selected
+
+" INDENT:
+" >     -- to indent
+
+" CLIPBOARD VIM:
+" y     -- to COPY
+" x     -- to CUT
+" d     -- to DELETE
+" P     -- to PASTE BEFORE the cursor
+" p     -- to PASTE AFTER the cursor
+
+" UPPERCASE LOWERCASE:
+" uppsercase & lowercase
+" U     -- for UPPERCASE
+" u     -- for lowercase
+"-- after text selected with visual mode:
+
+
+
+".
