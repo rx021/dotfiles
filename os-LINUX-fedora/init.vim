@@ -463,7 +463,6 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
     Plug 'doums/darcula' " my prefered syntax color scheme 
-    "Plug 'preservim/nerdtree' " to see filetree
     Plug 'airblade/vim-gitgutter' " to see git if line changed
 
     Plug 'preservim/nerdcommenter' " allows commenting out 
@@ -598,10 +597,6 @@ call plug#begin('~/.config/nvim/plugged')
     " // BLADE template highlighting
     Plug 'jwalton512/vim-blade'
 
-    " // shows minimap on the right side for your code
-    Plug 'wfxr/minimap.vim'
-    " :MinimapToggle
-
     " //to install any plugins
     " :source % //to register a newly added plugin
     " :PlugInstall 
@@ -629,11 +624,6 @@ colorscheme darcula
 """"""""""""""" 
 " PLUG-IN MAPPINGS
 """"""""""""""" 
-
-" ctrl+o // to open nerd tree 
-map <C-o> :NERDTreeToggle<CR>
-"let NERDTreeShowHidden=1
-" `r` is used to reload the directory to have the new file show
 
 " ctrl-p for fzf between files
 map <C-p> :Files<CR>
@@ -719,7 +709,3 @@ map <C-l> :GitGutterLineHighlightsToggle<CR>
     "au FileType php nmap <buffer> <Leader>ua :PhpactorImportMissingClasses<CR>
 "augroup END
 
-" Minimap
-"let g:minimap_auto_start = 1
-"let g:minimap_auto_start_win_enter = 1
-let g:minimap_git_colors = 1
