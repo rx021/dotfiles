@@ -297,9 +297,13 @@ syntax on " adds syntax highlighting
 " :q  " to CLOSE a VIM window
 " :qa " to CLOSE ALL of VIM
 
+" HOW TO GET THE PATH OF THE CURRENT FILE OPENED IN BUFFER:
 " :echo expand('%') -- for relative path
 " :echo expand('%:p') -- for absolute path
+"
 " :let @" = expand("%:p") -- copy current file path / filename
+"-- `%` ~ for relative file path
+"-- `%:p` ~ for full file path not relative
 
 
 
