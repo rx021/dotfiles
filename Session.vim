@@ -48,7 +48,7 @@ badd +1 os-MAC/config-vim.sh
 badd +1 os-MAC/init.vim
 badd +3 os-ANDROID/.tmux.conf
 badd +1 .tmux.conf.x-leader
-badd +7 os-LINUX-fedora/init.vim
+badd +4 os-LINUX-fedora/init.vim
 badd +18 os-LINUX-fedora/.bashrc
 badd +1 os-SHARED/config-hooks.sh
 badd +13 os-SHARED/.bash-shared
@@ -81,9 +81,14 @@ badd +1 os-ANDROID/init.vim
 badd +21 os-SHARED/.pomodoro-fedora.sh
 badd +23 os-SHARED/.pomodoro_fedora.sh
 badd +1 TOOLS/docker.md
-badd +10 os-LINUX-ubuntu/init.vim
+badd +335 os-LINUX-ubuntu/init.vim
 badd +1 VIM/plugins
-badd +0 VIM/general/settings.vim
+badd +15 VIM/general/settings.vim
+badd +1 VIM/general/settings-status-line.vim
+badd +6 VIM/general/settings-mappings.vim
+badd +1 VIM/general/settings-tabs.vim
+badd +1 VIM/plugins.vim
+badd +0 VIM/settings.vim
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -322,11 +327,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 128 - ((0 * winheight(0) + 7) / 15)
+let s:l = 127 - ((0 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 128
+keepjumps 127
 normal! 0
 lcd ~/dotfiles
 wincmd w
@@ -493,12 +498,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 11 - ((10 * winheight(0) + 9) / 18)
+let s:l = 13 - ((12 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 11
-normal! 0
+keepjumps 13
+normal! $
 lcd ~/dotfiles
 wincmd w
 argglobal
@@ -515,19 +520,20 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 2 - ((1 * winheight(0) + 9) / 18)
+let s:l = 6 - ((5 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
+keepjumps 6
 normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/VIM/general/settings.vim", ":p")) | buffer ~/dotfiles/VIM/general/settings.vim | else | edit ~/dotfiles/VIM/general/settings.vim | endif
+if bufexists(fnamemodify("~/dotfiles/VIM/settings.vim", ":p")) | buffer ~/dotfiles/VIM/settings.vim | else | edit ~/dotfiles/VIM/settings.vim | endif
 if &buftype ==# 'terminal'
-  silent file ~/dotfiles/VIM/general/settings.vim
+  silent file ~/dotfiles/VIM/settings.vim
 endif
+balt ~/dotfiles/VIM/plugins.vim
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -536,20 +542,20 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 29 - ((28 * winheight(0) + 18) / 37)
+let s:l = 29 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 29
-normal! 0
+normal! 023|
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/init.vim", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/init.vim | else | edit ~/dotfiles/os-LINUX-fedora/init.vim | endif
+if bufexists(fnamemodify("~/dotfiles/os-LINUX-ubuntu/init.vim", ":p")) | buffer ~/dotfiles/os-LINUX-ubuntu/init.vim | else | edit ~/dotfiles/os-LINUX-ubuntu/init.vim | endif
 if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-LINUX-fedora/init.vim
+  silent file ~/dotfiles/os-LINUX-ubuntu/init.vim
 endif
-balt ~/dotfiles/os-LINUX-ubuntu/init.vim
+balt ~/dotfiles/os-LINUX-fedora/init.vim
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -558,15 +564,15 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+let s:l = 2 - ((1 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 2
+normal! 03|
 lcd ~/dotfiles
 wincmd w
-4wincmd w
+3wincmd w
 exe '1resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe '2resize ' . ((&lines * 18 + 20) / 40)
