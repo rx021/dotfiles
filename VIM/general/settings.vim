@@ -15,6 +15,7 @@
 source ~/dotfiles/VIM/general/settings-status-line.vim
 source ~/dotfiles/VIM/general/settings-mappings.vim
 source ~/dotfiles/VIM/general/settings-tabs.vim
+source ~/dotfiles/VIM/plugins.vim
 
 "-- SIMPLE SETUP for new systems
 "set number relativenumber
