@@ -1,9 +1,15 @@
 " GET INITIAL DIRECTORY
 "let g:init_dir = fnamemodify($MYVIMRC, ':p:h')
-let g:init_dir = expand('<sfile>:p:h')
+"let g:init_dir = expand('<sfile>:p:h')
 
-" SOURCE SUBFILES
-execute 'source ' . g:init_dir . '/general/settings.vim'
+ "SOURCE SUBFILES
+"execute 'source ' . g:init_dir . '/general/settings.vim'
+source ~/dotfiles/VIM/general/settings.vim
+" paths not ideal 
+" but will need to consider how to make this composable
+" for each OS
+" perhaps all within NVIM/?
+" then single source?
 
 """"""""""""""" 
 " COMMAND MODE
