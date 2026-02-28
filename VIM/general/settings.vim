@@ -180,20 +180,49 @@ syntax on " adds syntax highlighting
 " C-y "-- scroll up
 "
 " JUMPLIST jumplist
-" C-i  "-- jump back
-" C-o  "-- jump forward
-" ''   "-- toggle to last place
+" C-i  -- jump back
+" C-o  -- jump forward
+" ''   -- toggle to last place
+" zz   -- recenter window to cursor 
 "
 " %  --  to JUMP BETWEEN BRACKES
 " $% -- to JUMP from OPEN BRACKET to CLOSE
 " ^% -- to JUMP from CLOSE BRACKET to OPEN
 " $  -- to JUMP to the END of the LINE
 " ^  -- to JUMP to the START of the LINE
+" 0  -- to JUMP to the START of the LINE
 
 
 """"""""""""""" 
 " NORMAL MODE NAVIGATION BUFFERS:
 """"""""""""""" 
+
+
+""""""""""""""" 
+" NORMAL MODE NAVIGATION ADVANCED COMMANDS:
+""""""""""""""" 
+" t<char>  -- TILL CHARACTER
+"
+" f<char>  -- ON CHARACTER
+" COMBO EX: f.ct( 
+" ~> on character . change everything until (
+"
+" vi<char> -- visual mode (select) in character
+" COMBO EX: vi{~
+" ~> select everything in { and toggle casing
+"
+" ci<char> -- CHANGE in CHARACTER 
+" EX: ci"
+" ~> means CHANGE characters withIN "..."
+"
+" di<char> -- DELETE in CHARACTER 
+" EX: di{
+" ~> means DELETE withIN {...}
+"
+" da<char> -- DELETE ALL INCLUDING CHARACTER 
+" EX:
+" da{
+" ~> means delete {...} & everything in them
 
 
 
@@ -255,7 +284,12 @@ syntax on " adds syntax highlighting
 " uppsercase & lowercase
 " U     -- for UPPERCASE
 " u     -- for lowercase
-"-- after text selected with visual mode:
+" ~     -- TOGGLE character casing
+"-- after text selected with visual mode
+" 
+" MODIFIER:
+" C-a -- ctrl+a INCREMENTS number
+" C-x -- ctrl+x DECREMENTS number
 
 
 
