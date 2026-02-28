@@ -5,69 +5,6 @@ source ~/dotfiles/VIM/general/settings.vim
 " then single source?
 
 
-""""""""""""""" 
-" NORMAL MODE
-""""""""""""""" 
-
-"" BUFFERS
-
-" :ls // to see active buffers (or :buffers / :files)
-" :bufferN // to open buffer# N
-" ctrl+shift+^ // to toggle between last buffer
-" :bdelete | :bd // to delete a buffer
-" :%bdelete|edit#|bd# // to delete all open buffers and reopens current buffer/file
-"   :%bd|e#|bd#
-" :w // to save changes to file
-
-" GET COUNT OF BUFFERS
-":echo len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
-"--- 
-":echo 'buffers['.len(filter(range(1, bufnr('$')), 'buflisted(v:val)')).']'
-
-" GET COUNT OF INACTIVE BUFFERS
-":echo len(filter(range(1, bufnr('$')), 'buflisted(v:val) && !bufloaded(v:val)'))
-"--- 
-":echo 'inactive['.len(filter(range(1, bufnr('$')), 'buflisted(v:val) && !bufloaded(v:val)')).']'
-
-" GET COUNT OF ACTIVE BUFFERS
-":echo 'active['.len(filter(range(1, bufnr('$')), 'buflisted(v:val) && bufloaded(v:val)')).']'
-
-" GET BUFFER COUNTS
-":echo 'buffers['.len(filter(range(1, bufnr('$')), 'buflisted(v:val)')).'] active['.len(filter(range(1, bufnr('$')), 'buflisted(v:val) && bufloaded(v:val)')).'] inactive['.len(filter(range(1, bufnr('$')), 'buflisted(v:val) && !bufloaded(v:val)')).']'
-
-" HOW TO DELETE INACTIVE BUFFERS
-":for buf in filter(range(1, bufnr('$')), 'buflisted(v:val) && !bufloaded(v:val)') | execute 'bdelete' buf | endfor
-
-" EXAMPLE:
-"1088 // buffers
-"870 // inactive
-"=218 // remaining
-
-
-
-"" RESIZE
-" // to resize the width of a pane
-" :vertical resize (+/-) n
-" // to resize by 1 character wider or narrower
-" <C-w> (>/<)
-"
-" // to resize the height of a pane
-" :resize (+/-) n
-" :res (+/-) n 
-" // to vertical resize by 1 line 
-" <C-w> (+/-)
-"
-" // to equalize width and height 
-" <C-w> = 
-
-
-
-
-
-"STATUS LINE
-
-
-
 
 """"""""""""""" 
 " SCRIPTS
@@ -135,12 +72,7 @@ vnoremap <C-x> "+x
 
 
 "" SELECT ALL
-" ggVG 
-" // `gg` to go to top of page
-" // `V` to select line
-" // `G` to go to bottom of the page
-"nnoremap <C-a> ggVG
-" // turn off for now
+"nnoremap <C-a> ggVG "-- turn off for now
 
 "" TIMETRAVEL
 " u // to undo recent change
