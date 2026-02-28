@@ -66,7 +66,7 @@ syntax on " adds syntax highlighting
 """"""""""""""" 
 " :mksession path/to/file/<filename>.vim
 " :mks! ... // short form
-"-- SAVE session (all tabs/panes/buffers)
+"-- SAVE session (all tabs/windows/buffers)
 "
 " :source path/to/file/<filename>.vim
 "-- RESTORE session
@@ -77,8 +77,29 @@ syntax on " adds syntax highlighting
 " Layer 2
 " within a Session
 """"""""""""""" 
-" :tabs
-"-- to list the tabs open
+" :tabs " to list the tabs open
+" :tabnew " to create a new tab
+
+" :tabnew % " copy current BUFFER into NEW TAB
+" ctrl-w T " move current BUFFER into NEW TAB
+
+" gt (or :tabn) " GO to NEXT TAB
+" gT (or :tabp) " GO to PREVIOUS TAB
+" <i>gt " GO to TAB i
+" EX: 3gt to show TAB 3
+
+" :tabmove <index|relative-index>
+" :tabm <index|relative-index>
+" MOVE a TAB to a NEW POSITION in the tab list
+" to move current tab to a certain index
+" NOTE: starts 0 index by default
+" EX:
+" :tabmove 3
+" :tabmove 2
+" :tabm -1
+
+" :tabclose " CLOSE TAB (incl all panes)
+" :tabcl
 
 
 """"""""""""""" 
@@ -97,15 +118,35 @@ syntax on " adds syntax highlighting
 " C-z (ctrl-z) " SUSPEND vim 
 " fg           " REACTIVATE vim 
 
+""""""""""""""" 
+" NORMAL MODE: NAVIGATION - WINDOWS
+""""""""""""""" 
+" C-e "-- scroll down 
+" C-y "-- scroll up
+"
+" JUMPLIST jumplist
+" C-i  "-- jump back
+" C-o  "-- jump forward
+" ''   "-- toggle to last place
+"
+" cmd + / -- to show cursor (MacOS)
+"
+" %  --  to JUMP BETWEEN BRACKES
+" $% -- to JUMP from OPEN BRACKET to CLOSE
+" ^% -- to JUMP from CLOSE BRACKET to OPEN
+" $  -- to JUMP to the END of the LINE
+" ^  -- to JUMP to the START of the LINE
+"
+" .  -- repeats the command you did recently
 
 """"""""""""""" 
 " COMMAND MODE
 " type : from NORMAL mode
 """"""""""""""" 
-" :w // to save changes from a buffer
+" :w " to save changes from a buffer
 
-" :q // to CLOSE a VIM window
-" :qa // to CLOSE ALL of VIM
+" :q  " to CLOSE a VIM window
+" :qa " to CLOSE ALL of VIM
 
 " :echo expand('%') -- for relative path
 " :echo expand('%:p') -- for absolute path

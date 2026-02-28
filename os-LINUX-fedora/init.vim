@@ -5,58 +5,15 @@ source ~/dotfiles/VIM/general/settings.vim
 " then single source?
 
 
-"" TABS
-"
-"
-"-- to create a new tab
-" :tabnew
-"-- to open current window (pane) into new tab but keep old window as is
-" :tabnew %
-"-- open current window (pane) into new tab
-" ctrl-w T
-"
-" // to go to next tab
-" gt (or :tabn)
-"
-" // to go to previous tab
-" gT (or :tabp)
-"
-" // to go to tab i
-" <i>gt 
-" //ex: 3gt to go to tab 3
-"
-" // MOVE a TAB to a new position in the tab list
-" // note: uses 0 index
-" :tabmove 3
-" // to move current tab to a certain index
-" :tabmove <index|relative-index>
-" :tabm <index|relative-index>
-" ex:
-" :tabmove 2
-" :tabm -1
-
-
-" :tabclose // to close all panes on tab
-
-
 """"""""""""""" 
 " NORMAL MODE
 """"""""""""""" 
-" // to jump between brackes
-" %
-" // to show cursor
-" cmd + /
+" % --  to jump between brackes
+" cmd + / -- to show cursor (MacOS)
 
 " // repeats the command you did recently
 " .
 
-" C-e "-- scroll down 
-" C-y "-- scroll up
-"
-" JUMPLIST jumplist
-" C-i  "-- jump back
-" C-o  "-- jump forward
-" ''   "-- toggle to last place
 "
 
 "" NAVIGATION
