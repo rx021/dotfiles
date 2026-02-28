@@ -1,13 +1,6 @@
-" GET INITIAL DIRECTORY
-"let g:init_dir = fnamemodify($MYVIMRC, ':p:h')
-"let g:init_dir = expand('<sfile>:p:h')
-
- "SOURCE SUBFILES
-"execute 'source ' . g:init_dir . '/general/settings.vim'
+" SOURCE SUBFILES
 source ~/dotfiles/VIM/general/settings.vim
-" paths not ideal 
-" but will need to consider how to make this composable
-" for each OS
+" paths not ideal but composable per OS
 " perhaps all within NVIM/?
 " then single source?
 
@@ -24,32 +17,10 @@ source ~/dotfiles/VIM/general/settings.vim
 " :let @" = expand("%:p") -- copy current file path / filename
 
 
-set autoindent " allows auto indentation
-" spaces used for indenting even when pressing TAB
-set expandtab " toggle between spaces & tabs
-" set expandtab!
-
-set cmdheight=1 " command prompt window 
-
-set colorcolumn=80,120 " line length limits
-
 
 "-- show tabs or spaces
 " set list -- show tabs
 " set nolist -- hide tabs
-
-" num of spaces for a line indent
-set tabstop=2
-"set tabstop=4
-" identation when using `>>` or `<<` (4=single 'tab')
-set shiftwidth=2
-"set shiftwidth=4
-" NOTE: best to have these matching
-
-set cursorline " highlights row
-" NOTE: slows vim for biggers files
-"set cursorcolumn " hightlights column
-" ex: set cursorcolumn!
 
 syntax on " adds syntax highlighting
 
