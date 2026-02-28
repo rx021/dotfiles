@@ -32,7 +32,7 @@ badd +1 os-ANDROID/.bash_profile
 badd +76 os-LINUX-remote/.bash_profile
 badd +87 SCRIPTS/.sync.sh
 badd +1 os-MAC/apps-02-config.sh
-badd +194 os-MAC/apps-01-install.sh
+badd +1 os-MAC/apps-01-install.sh
 badd +1 os-ANDROID/apps-01-install.sh
 badd +2 os-LINUX-remote/apps-01-install.sh
 badd +17 TOOLS/ghostty.md
@@ -44,11 +44,11 @@ badd +1 os-LINUX/config-tmux.sh
 badd +7 os-LINUX/config-vim.sh
 badd +1 os-LINUX/.bash_profile
 badd +1 os-LINUX/init.vim
-badd +11 os-MAC/config-vim.sh
+badd +1 os-MAC/config-vim.sh
 badd +1 os-MAC/init.vim
 badd +3 os-ANDROID/.tmux.conf
 badd +1 .tmux.conf.x-leader
-badd +2 os-LINUX-fedora/init.vim
+badd +7 os-LINUX-fedora/init.vim
 badd +18 os-LINUX-fedora/.bashrc
 badd +1 os-SHARED/config-hooks.sh
 badd +13 os-SHARED/.bash-shared
@@ -80,7 +80,10 @@ badd +1 os-ANDROID/config-tmux.sh
 badd +1 os-ANDROID/init.vim
 badd +21 os-SHARED/.pomodoro-fedora.sh
 badd +23 os-SHARED/.pomodoro_fedora.sh
-badd +0 TOOLS/docker.md
+badd +1 TOOLS/docker.md
+badd +10 os-LINUX-ubuntu/init.vim
+badd +1 VIM/plugins
+badd +0 VIM/general/settings.vim
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -235,11 +238,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 2 - ((1 * winheight(0) + 7) / 15)
+let s:l = 1 - ((0 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
+keepjumps 1
 normal! 0
 wincmd w
 argglobal
@@ -319,11 +322,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 130 - ((2 * winheight(0) + 7) / 15)
+let s:l = 128 - ((0 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 130
+keepjumps 128
 normal! 0
 lcd ~/dotfiles
 wincmd w
@@ -521,11 +524,32 @@ normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-MAC/.zshrc", ":p")) | buffer ~/dotfiles/os-MAC/.zshrc | else | edit ~/dotfiles/os-MAC/.zshrc | endif
+if bufexists(fnamemodify("~/dotfiles/VIM/general/settings.vim", ":p")) | buffer ~/dotfiles/VIM/general/settings.vim | else | edit ~/dotfiles/VIM/general/settings.vim | endif
 if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-MAC/.zshrc
+  silent file ~/dotfiles/VIM/general/settings.vim
 endif
-balt ~/dotfiles/os-LINUX-fedora/config-vim.sh
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 29 - ((28 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 29
+normal! 0
+lcd ~/dotfiles
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/init.vim", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/init.vim | else | edit ~/dotfiles/os-LINUX-fedora/init.vim | endif
+if &buftype ==# 'terminal'
+  silent file ~/dotfiles/os-LINUX-fedora/init.vim
+endif
+balt ~/dotfiles/os-LINUX-ubuntu/init.vim
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -541,27 +565,6 @@ normal! zt
 keepjumps 1
 normal! 0
 lcd ~/dotfiles
-wincmd w
-argglobal
-if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/init.vim", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/init.vim | else | edit ~/dotfiles/os-LINUX-fedora/init.vim | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-LINUX-fedora/init.vim
-endif
-balt ~/dotfiles/os-MAC/init.vim
-setlocal foldmethod=indent
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal nofoldenable
-let s:l = 708 - ((18 * winheight(0) + 18) / 37)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 708
-normal! 0
 wincmd w
 4wincmd w
 exe '1resize ' . ((&lines * 18 + 20) / 40)
@@ -703,11 +706,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 30 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
-exe '2resize ' . ((&lines * 30 + 20) / 40)
 exe 'vert 2resize ' . ((&columns * 51 + 79) / 158)
-exe '3resize ' . ((&lines * 30 + 20) / 40)
 exe 'vert 3resize ' . ((&columns * 53 + 79) / 158)
 argglobal
 balt ~/dotfiles/os-MAC/apps-02-config.sh
@@ -719,11 +719,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 251 - ((0 * winheight(0) + 15) / 30)
+let s:l = 250 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 251
+keepjumps 250
 normal! 0
 wincmd w
 argglobal
@@ -731,6 +731,7 @@ if bufexists(fnamemodify("~/dotfiles/os-ANDROID/apps-01-install.sh", ":p")) | bu
 if &buftype ==# 'terminal'
   silent file ~/dotfiles/os-ANDROID/apps-01-install.sh
 endif
+balt ~/dotfiles/os-MAC/apps-01-install.sh
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -739,7 +740,7 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 15) / 30)
+let s:l = 1 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -761,18 +762,15 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 15) / 30)
+let s:l = 1 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 030|
 wincmd w
-exe '1resize ' . ((&lines * 30 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
-exe '2resize ' . ((&lines * 30 + 20) / 40)
 exe 'vert 2resize ' . ((&columns * 51 + 79) / 158)
-exe '3resize ' . ((&lines * 30 + 20) / 40)
 exe 'vert 3resize ' . ((&columns * 53 + 79) / 158)
 tabnext
 edit ~/dotfiles/TOOLS/docker.md
@@ -785,11 +783,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 19 - ((18 * winheight(0) + 18) / 37)
+let s:l = 20 - ((19 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 19
+keepjumps 20
 normal! 045|
 lcd ~/dotfiles
 tabnext 4
