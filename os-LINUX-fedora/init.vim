@@ -4,50 +4,9 @@ source ~/dotfiles/VIM/general/settings.vim
 " perhaps all within NVIM/?
 " then single source?
 
-""""""""""""""" 
-" COMMAND MODE
-""""""""""""""" 
-" :w // to save changes from a buffer
-
-" :q // to CLOSE a VIM window
-" :qa // to CLOSE ALL of VIM
-
-" :echo expand('%') -- for relative path
-" :echo expand('%:p') -- for absolute path
-" :let @" = expand("%:p") -- copy current file path / filename
-
-
-
-"-- show tabs or spaces
-" set list -- show tabs
-" set nolist -- hide tabs
-
-syntax on " adds syntax highlighting
-
-set foldmethod=indent "fold based on indent 
-set nofoldenable "defaults no folding on first open
-"set foldcolumn=1 "creates column for fold levels
-    "za //to toggle fold
-        "zo //to OPEN fold
-        "zc //to CLOSE fold
-    "zm //to have MORE fold levels
-        "zM //to have the MOST fold levels
-    "zr //to have REDUCED fold levels
-        "zR //to have the MOST REDUCED fold levels
-
-"" SESSIONS
-"
-" // to save session (all buffers /panes as before)
-" :mksession path/to/file/<filename>.vim
-" :mks! ... // short form
-"
-" // to restore session
-" :source path/to/file/<filename>.vim
 
 "" TABS
 "
-"-- to list the tabs open
-" :tabs
 "
 "-- to create a new tab
 " :tabnew

@@ -41,34 +41,50 @@ set cursorline " highlights row
 "set cursorcolumn " hightlights column
 " EX: set cursorcolumn!
 
-"-- show tabs or spaces
 " set list -- show tabs
 " set nolist -- hide tabs
+"-- show tabs or spaces
 
 set foldmethod=indent "fold based on indent 
-set nofoldenable "defaults no folding on first open
+set nofoldenable "defaults no folding on 1st open
 "set foldcolumn=1 "creates column for fold levels
-    "za //to toggle fold
-        "zo //to OPEN fold
-        "zc //to CLOSE fold
-    "zm //to have MORE fold levels
-        "zM //to have the MOST fold levels
-    "zr //to have REDUCED fold levels
-        "zR //to have the MOST REDUCED fold levels
+    "za -- TOGGLE FOLD
+        "zo -- OPEN fold
+        "zc -- CLOSE fold
+    "zm -- add MORE fold levels
+        "zM -- MAX fold levels
+    "zr -- REDUCE fold levels
+        "zR -- RESET fold levels to 0
 
 syntax on " adds syntax highlighting
 
+
 """"""""""""""" 
 " SESSIONS
+" Layer 1
 " whenever you open vim
 """"""""""""""" 
-"-- SAVE session (all tabs/panes/buffers)
 " :mksession path/to/file/<filename>.vim
 " :mks! ... // short form
+"-- SAVE session (all tabs/panes/buffers)
 "
-"-- RESTORE session
 " :source path/to/file/<filename>.vim
+"-- RESTORE session
 
+
+""""""""""""""" 
+" TABS
+" Layer 2
+" within a Session
+""""""""""""""" 
+" :tabs
+"-- to list the tabs open
+
+
+""""""""""""""" 
+" MODES
+" per PANE
+""""""""""""""" 
 
 """"""""""""""" 
 " NORMAL MODE
