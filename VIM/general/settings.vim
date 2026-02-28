@@ -139,10 +139,12 @@ syntax on " adds syntax highlighting
 """"""""""""""" 
 " NORMAL MODE WINDOWS:
 """"""""""""""" 
+" <C-w> v
 " ctrl+w v
 " :vs
 "-- to SPLIT current WINDOW VERTICALLY
 "
+" <C-w> s
 " ctrl+w s
 " :sp
 "-- to SPLIT current WINDOW HORIZONTALLY
@@ -183,10 +185,13 @@ syntax on " adds syntax highlighting
 " ctrl+w [h/j/k/l]
 "-- to go [LEFT/DOWN/UP/RIGHT] between WINDOWS
 "
-" C-e "-- scroll down 
-" C-y "-- scroll up
+" NAVIGATION FILE:
+" C-y  -- scroll up
+" C-e  -- scroll down 
+" C-u  -- PAGE UP
+" C-d  -- PAGE DOWN 
 "
-" JUMPLIST jumplist
+" NAVIGATION JUMPLIST: jumplist
 " C-i  -- jump back
 " C-o  -- jump forward
 " ''   -- toggle to last place
