@@ -1,34 +1,9 @@
-""""""""""""""" 
-" VIM SETUP
-""""""""""""""" 
-" not that this is the file to setup nvim
-" ~/.config/nvim/init.vim
-" ~/.vimrc is for regular vim
-" - [ ] move this to a file and have it map to .vimrc as well an init.vim on machine when setup
-"
-"// mininmal ONE LINE SETUP for REMOTE LINUX
-"set number relativenumber autoindent expandtab tabstop=2 shiftwidth=2
-"
-"set number relativenumber
-"set autoindent expandtab
-"set tabstop=2 shiftwidth=2
-"
-" to format JSON in a .json file
-" :%!python -m json.tool
-"
-" MACROS
-"-- how to start recording a macro
-"-- where <letter> is anything from a-z
-" q <letter/number>
-"-- to stop recording a macro
-" q
-"-- to replay macro
-" @ <letter/number>
+" GET INITIAL DIRECTORY
+"let g:init_dir = fnamemodify($MYVIMRC, ':p:h')
+let g:init_dir = expand('<sfile>:p:h')
 
-"-- to suspend vim 
-" C-z (ctrl-z)
-"-- to re-active vim 
-" fg
+" SOURCE SUBFILES
+execute 'source ' . g:init_dir . '/general/settings.vim'
 
 """"""""""""""" 
 " COMMAND MODE
@@ -42,11 +17,6 @@
 " :echo expand('%:p') -- for absolute path
 " :let @" = expand("%:p") -- copy current file path / filename
 
-"" SETTINGS
-
-"set wrap! -- toggle text WRAP
-set number " shows line# in file
-set relativenumber " shows relative line#
 
 set autoindent " allows auto indentation
 " spaces used for indenting even when pressing TAB
