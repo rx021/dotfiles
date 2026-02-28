@@ -162,8 +162,10 @@ set nofoldenable "defaults no folding on first open
 " C-i  "-- jump back
 " C-o  "-- jump forward
 " ''   "-- toggle to last place
+"
 
 "" NAVIGATION
+
 "   WINDOWS
 " // to open new VIM window next to the existing one
 " ctrl+w v
@@ -176,7 +178,9 @@ set nofoldenable "defaults no folding on first open
 " // to go [left/down/up/right] between panes
 " ctrl+w [h/j/k/l]
 
+
 "" BUFFERS
+
 " :ls // to see active buffers (or :buffers / :files)
 " :bufferN // to open buffer# N
 " ctrl+shift+^ // to toggle between last buffer
@@ -453,9 +457,6 @@ vnoremap <C-x> "+x
 " to make the <Leader> key the ',' key (tilda ~ key)
 let mapleader = ','
 
-" scrolling down and up, respectively
-nnoremap <C-j> 3jzz
-nnoremap <C-k> 3kzz
 
 
 """"""""""""""" 
