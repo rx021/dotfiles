@@ -13,7 +13,7 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 TOOLS/laravel-vapor.md
+badd +5 TOOLS/laravel-vapor.md
 badd +5 FRAMEWORKS/next-react.md
 badd +2 LIBRARIES/stripe.md
 badd +1 LANGUAGES/javascript.md
@@ -81,14 +81,14 @@ badd +1 os-ANDROID/init.vim
 badd +21 os-SHARED/.pomodoro-fedora.sh
 badd +23 os-SHARED/.pomodoro_fedora.sh
 badd +1 TOOLS/docker.md
-badd +335 os-LINUX-ubuntu/init.vim
+badd +2 os-LINUX-ubuntu/init.vim
 badd +1 VIM/plugins
 badd +15 VIM/general/settings.vim
 badd +1 VIM/general/settings-status-line.vim
 badd +6 VIM/general/settings-mappings.vim
 badd +1 VIM/general/settings-tabs.vim
 badd +1 VIM/plugins.vim
-badd +0 VIM/settings.vim
+badd +1 VIM/settings.vim
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -542,12 +542,12 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 29 - ((0 * winheight(0) + 18) / 37)
+let s:l = 2 - ((1 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 29
-normal! 023|
+keepjumps 2
+normal! 012|
 lcd ~/dotfiles
 wincmd w
 argglobal
@@ -588,10 +588,7 @@ wincmd _ | wincmd |
 vsplit
 wincmd _ | wincmd |
 vsplit
-wincmd _ | wincmd |
-vsplit
-3wincmd h
-wincmd w
+2wincmd h
 wincmd w
 wincmd w
 let &splitbelow = s:save_splitbelow
@@ -603,10 +600,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 39 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 39 + 79) / 158)
-exe 'vert 3resize ' . ((&columns * 39 + 79) / 158)
-exe 'vert 4resize ' . ((&columns * 38 + 79) / 158)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
 argglobal
 balt ~/dotfiles/LIBRARIES/stripe.md
 setlocal foldmethod=indent
@@ -617,11 +613,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 7 - ((5 * winheight(0) + 18) / 37)
+let s:l = 8 - ((6 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 7
+keepjumps 8
 normal! 0
 wincmd w
 argglobal
@@ -659,38 +655,16 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-wincmd w
-argglobal
-if bufexists(fnamemodify("~/dotfiles/TOOLS/laravel-vapor.md", ":p")) | buffer ~/dotfiles/TOOLS/laravel-vapor.md | else | edit ~/dotfiles/TOOLS/laravel-vapor.md | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/TOOLS/laravel-vapor.md
-endif
-balt ~/dotfiles/FRAMEWORKS/next-react.md
-setlocal foldmethod=indent
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal nofoldenable
-let s:l = 2 - ((0 * winheight(0) + 18) / 37)
+let s:l = 2 - ((1 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 2
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 39 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 39 + 79) / 158)
-exe 'vert 3resize ' . ((&columns * 39 + 79) / 158)
-exe 'vert 4resize ' . ((&columns * 38 + 79) / 158)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
 tabnext
 edit ~/dotfiles/os-MAC/apps-01-install.sh
 let s:save_splitbelow = &splitbelow
@@ -725,11 +699,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 250 - ((0 * winheight(0) + 18) / 37)
+let s:l = 251 - ((1 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 250
+keepjumps 251
 normal! 0
 wincmd w
 argglobal
