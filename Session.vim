@@ -1,18 +1,12 @@
 let SessionLoad = 1
-let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-silent tabonly
 cd ~/dotfiles
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
-let s:shortmess_save = &shortmess
-if &shortmess =~ 'A'
-  set shortmess=aoOA
-else
-  set shortmess=aoO
-endif
+set shortmess=aoO
 badd +1 TOOLS/laravel-vapor.md
 badd +5 FRAMEWORKS/next-react.md
 badd +2 LIBRARIES/stripe.md
@@ -48,12 +42,12 @@ badd +1 os-MAC/config-vim.sh
 badd +1 os-MAC/init.vim
 badd +3 os-ANDROID/.tmux.conf
 badd +1 .tmux.conf.x-leader
-badd +4 os-LINUX-fedora/init.vim
-badd +1 os-LINUX-fedora/.bashrc
+badd +3 os-LINUX-fedora/init.vim
+badd +2 os-LINUX-fedora/.bashrc
 badd +1 os-SHARED/config-hooks.sh
 badd +13 os-SHARED/.bash-shared
 badd +3 os-SHARED/.bashx
-badd +8 os-LINUX-fedora/.bash_profile
+badd +1 os-LINUX-fedora/.bash_profile
 badd +3 os-SHARED/.basha
 badd +4 os-SHARED/.x.bash
 badd +3 os-SHARED/.alias-git.bash
@@ -63,34 +57,19 @@ badd +5 os-SHARED/alias_tmux.bash
 badd +4 os-SHARED/.alias_tmux.bash
 badd +16 os-SHARED/.alias_filesystem.sh
 badd +71 os-SHARED/.cli.sh
-badd +1 os-SHARED/.alias_git.sh
+badd +123 os-SHARED/.alias_git.sh
 badd +12 os-LINUX-fedora/config-bash.sh
 badd +1 os-SHARED/.alias_tmux.sh
-badd +11 os-SHARED/.utils.sh
+badd +19 os-SHARED/.utils.sh
 badd +1 os-SHARED/.x.sh
 badd +141 os-LINUX-fedora/.tmux.conf
 badd +1 os-LINUX-fedora/config-tmux.sh
 badd +1 os-LINUX-fedora/config-vim.sh
 badd +1 thelp
-badd +31 os-LINUX-ubuntu/.bash_profile
-badd +1 os-LINUX-ubuntu/.bashrc
-badd +4 os-LINUX/README.md
-badd +1 os-LINUX-fedora/README.md
-badd +0 os-LINUX-ubuntu/README.md
-badd +1 os-SHARED/.cli_fedora.sh
-badd +0 VIM/settings.vim
 argglobal
 %argdel
 set stal=2
-tabnew +setlocal\ bufhidden=wipe
-tabnew +setlocal\ bufhidden=wipe
-tabnew +setlocal\ bufhidden=wipe
-tabnew +setlocal\ bufhidden=wipe
-tabnew +setlocal\ bufhidden=wipe
-tabrewind
 edit README.md
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -100,11 +79,9 @@ split
 1wincmd k
 wincmd w
 wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
+set nosplitbelow
+set nosplitright
 wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
 set winminheight=0
 set winheight=1
 set winminwidth=0
@@ -116,7 +93,6 @@ exe 'vert 2resize ' . ((&columns * 71 + 79) / 158)
 exe '3resize ' . ((&lines * 30 + 20) / 40)
 exe 'vert 3resize ' . ((&columns * 86 + 79) / 158)
 argglobal
-balt LANGUAGES/javascript.md
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -127,17 +103,13 @@ setlocal fdn=20
 setlocal nofen
 let s:l = 1 - ((0 * winheight(0) + 6) / 13)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 1
+1
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("TOOLS/ghostty/README.md", ":p")) | buffer TOOLS/ghostty/README.md | else | edit TOOLS/ghostty/README.md | endif
-if &buftype ==# 'terminal'
-  silent file TOOLS/ghostty/README.md
-endif
-balt README.md
+if bufexists("TOOLS/ghostty/README.md") | buffer TOOLS/ghostty/README.md | else | edit TOOLS/ghostty/README.md | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -148,17 +120,13 @@ setlocal fdn=20
 setlocal nofen
 let s:l = 4 - ((0 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 4
+4
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("TOOLS/ghostty/config", ":p")) | buffer TOOLS/ghostty/config | else | edit TOOLS/ghostty/config | endif
-if &buftype ==# 'terminal'
-  silent file TOOLS/ghostty/config
-endif
-balt README.md
+if bufexists("TOOLS/ghostty/config") | buffer TOOLS/ghostty/config | else | edit TOOLS/ghostty/config | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -169,9 +137,9 @@ setlocal fdn=20
 setlocal nofen
 let s:l = 12 - ((8 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 12
+12
 normal! 0
 wincmd w
 exe '1resize ' . ((&lines * 13 + 20) / 40)
@@ -180,10 +148,7 @@ exe '2resize ' . ((&lines * 16 + 20) / 40)
 exe 'vert 2resize ' . ((&columns * 71 + 79) / 158)
 exe '3resize ' . ((&lines * 30 + 20) / 40)
 exe 'vert 3resize ' . ((&columns * 86 + 79) / 158)
-tabnext
-edit os-MAC/.zshrc
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
+tabedit os-MAC/.zshrc
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -197,46 +162,33 @@ wincmd w
 wincmd w
 wincmd _ | wincmd |
 split
-wincmd _ | wincmd |
-split
-2wincmd k
-wincmd w
+1wincmd k
 wincmd w
 wincmd w
 wincmd _ | wincmd |
 split
-wincmd _ | wincmd |
-split
-2wincmd k
+1wincmd k
 wincmd w
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
+set nosplitbelow
+set nosplitright
 wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
 set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
 exe '1resize ' . ((&lines * 15 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
-exe '2resize ' . ((&lines * 14 + 20) / 40)
+exe '2resize ' . ((&lines * 21 + 20) / 40)
 exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
-exe '3resize ' . ((&lines * 9 + 20) / 40)
-exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
-exe '4resize ' . ((&lines * 10 + 20) / 40)
-exe 'vert 4resize ' . ((&columns * 52 + 79) / 158)
-exe '5resize ' . ((&lines * 9 + 20) / 40)
-exe 'vert 5resize ' . ((&columns * 52 + 79) / 158)
-exe '6resize ' . ((&lines * 9 + 20) / 40)
-exe 'vert 6resize ' . ((&columns * 52 + 79) / 158)
-exe '7resize ' . ((&lines * 10 + 20) / 40)
-exe 'vert 7resize ' . ((&columns * 52 + 79) / 158)
-exe '8resize ' . ((&lines * 9 + 20) / 40)
-exe 'vert 8resize ' . ((&columns * 52 + 79) / 158)
+exe '3resize ' . ((&lines * 15 + 20) / 40)
+exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
+exe '4resize ' . ((&lines * 21 + 20) / 40)
+exe 'vert 4resize ' . ((&columns * 51 + 79) / 158)
+exe '5resize ' . ((&lines * 15 + 20) / 40)
+exe 'vert 5resize ' . ((&columns * 53 + 79) / 158)
+exe '6resize ' . ((&lines * 21 + 20) / 40)
+exe 'vert 6resize ' . ((&columns * 53 + 79) / 158)
 argglobal
-balt SCRIPTS/tmux-new-session.sh
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -245,19 +197,15 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 31 - ((0 * winheight(0) + 7) / 15)
+let s:l = 32 - ((6 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 31
+32
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-MAC/config-sh.sh", ":p")) | buffer os-MAC/config-sh.sh | else | edit os-MAC/config-sh.sh | endif
-if &buftype ==# 'terminal'
-  silent file os-MAC/config-sh.sh
-endif
-balt SCRIPTS/tmux-new-session.sh
+if bufexists("os-MAC/config-sh.sh") | buffer os-MAC/config-sh.sh | else | edit os-MAC/config-sh.sh | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -266,19 +214,15 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 6 - ((0 * winheight(0) + 7) / 14)
+let s:l = 6 - ((0 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 6
+6
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-ANDROID/.bash_profile", ":p")) | buffer os-ANDROID/.bash_profile | else | edit os-ANDROID/.bash_profile | endif
-if &buftype ==# 'terminal'
-  silent file os-ANDROID/.bash_profile
-endif
-balt os-MAC/config-sh.sh
+if bufexists("os-ANDROID/.bash_profile") | buffer os-ANDROID/.bash_profile | else | edit os-ANDROID/.bash_profile | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -287,19 +231,15 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 132 - ((0 * winheight(0) + 4) / 9)
+let s:l = 132 - ((5 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 132
+132
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-LINUX/README.md", ":p")) | buffer os-LINUX/README.md | else | edit os-LINUX/README.md | endif
-if &buftype ==# 'terminal'
-  silent file os-LINUX/README.md
-endif
-balt os-SHARED/.alias_git.sh
+if bufexists("os-SHARED/.alias_git.sh") | buffer os-SHARED/.alias_git.sh | else | edit os-SHARED/.alias_git.sh | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -308,19 +248,15 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 4 - ((2 * winheight(0) + 5) / 10)
+let s:l = 133 - ((0 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 4
+133
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-LINUX/README.md", ":p")) | buffer os-LINUX/README.md | else | edit os-LINUX/README.md | endif
-if &buftype ==# 'terminal'
-  silent file os-LINUX/README.md
-endif
-balt os-SHARED/.alias_git.sh
+if bufexists("os-LINUX-fedora/.bash_profile") | buffer os-LINUX-fedora/.bash_profile | else | edit os-LINUX-fedora/.bash_profile | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -329,41 +265,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 4) / 9)
+let s:l = 4 - ((2 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 1
-normal! 0
-wincmd w
-argglobal
-if bufexists(fnamemodify("os-LINUX-fedora/.bash_profile", ":p")) | buffer os-LINUX-fedora/.bash_profile | else | edit os-LINUX-fedora/.bash_profile | endif
-if &buftype ==# 'terminal'
-  silent file os-LINUX-fedora/.bash_profile
-endif
-balt os-LINUX-fedora/.bashrc
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 12 - ((0 * winheight(0) + 4) / 9)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 12
+4
 normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-LINUX-ubuntu/.bash_profile", ":p")) | buffer ~/dotfiles/os-LINUX-ubuntu/.bash_profile | else | edit ~/dotfiles/os-LINUX-ubuntu/.bash_profile | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-LINUX-ubuntu/.bash_profile
-endif
-balt ~/dotfiles/os-SHARED/.cli_fedora.sh
+if bufexists("~/dotfiles/os-SHARED/.utils.sh") | buffer ~/dotfiles/os-SHARED/.utils.sh | else | edit ~/dotfiles/os-SHARED/.utils.sh | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -372,56 +283,28 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 31 - ((8 * winheight(0) + 5) / 10)
+let s:l = 11 - ((0 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 31
+11
 normal! 0
 lcd ~/dotfiles
 wincmd w
-argglobal
-if bufexists(fnamemodify("~/dotfiles/os-LINUX-ubuntu/README.md", ":p")) | buffer ~/dotfiles/os-LINUX-ubuntu/README.md | else | edit ~/dotfiles/os-LINUX-ubuntu/README.md | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-LINUX-ubuntu/README.md
-endif
-balt ~/dotfiles/os-LINUX-fedora/README.md
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 4) / 9)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-lcd ~/dotfiles
-wincmd w
+5wincmd w
 exe '1resize ' . ((&lines * 15 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
-exe '2resize ' . ((&lines * 14 + 20) / 40)
+exe '2resize ' . ((&lines * 21 + 20) / 40)
 exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
-exe '3resize ' . ((&lines * 9 + 20) / 40)
-exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
-exe '4resize ' . ((&lines * 10 + 20) / 40)
-exe 'vert 4resize ' . ((&columns * 52 + 79) / 158)
-exe '5resize ' . ((&lines * 9 + 20) / 40)
-exe 'vert 5resize ' . ((&columns * 52 + 79) / 158)
-exe '6resize ' . ((&lines * 9 + 20) / 40)
-exe 'vert 6resize ' . ((&columns * 52 + 79) / 158)
-exe '7resize ' . ((&lines * 10 + 20) / 40)
-exe 'vert 7resize ' . ((&columns * 52 + 79) / 158)
-exe '8resize ' . ((&lines * 9 + 20) / 40)
-exe 'vert 8resize ' . ((&columns * 52 + 79) / 158)
-tabnext
-edit ~/dotfiles/SCRIPTS/tmux-new-session.sh
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
+exe '3resize ' . ((&lines * 15 + 20) / 40)
+exe 'vert 3resize ' . ((&columns * 51 + 79) / 158)
+exe '4resize ' . ((&lines * 21 + 20) / 40)
+exe 'vert 4resize ' . ((&columns * 51 + 79) / 158)
+exe '5resize ' . ((&lines * 15 + 20) / 40)
+exe 'vert 5resize ' . ((&columns * 53 + 79) / 158)
+exe '6resize ' . ((&lines * 21 + 20) / 40)
+exe 'vert 6resize ' . ((&columns * 53 + 79) / 158)
+tabedit ~/dotfiles/SCRIPTS/tmux-new-session.sh
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -430,20 +313,20 @@ vsplit
 2wincmd h
 wincmd w
 wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
+set nosplitbelow
+set nosplitright
 wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
 set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
-exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
+exe '1resize ' . ((&lines * 30 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 58 + 79) / 158)
+exe '2resize ' . ((&lines * 30 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 41 + 79) / 158)
+exe '3resize ' . ((&lines * 30 + 20) / 40)
+exe 'vert 3resize ' . ((&columns * 57 + 79) / 158)
 argglobal
-balt ~/dotfiles/os-LINUX-fedora/config-tmux.sh
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -452,19 +335,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 15 - ((14 * winheight(0) + 18) / 37)
+let s:l = 15 - ((0 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 15
+15
 normal! 0
+lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-MAC/.tmux.conf", ":p")) | buffer ~/dotfiles/os-MAC/.tmux.conf | else | edit ~/dotfiles/os-MAC/.tmux.conf | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-MAC/.tmux.conf
-endif
-balt ~/dotfiles/os-ANDROID/.tmux.conf
+if bufexists("~/dotfiles/os-MAC/.tmux.conf") | buffer ~/dotfiles/os-MAC/.tmux.conf | else | edit ~/dotfiles/os-MAC/.tmux.conf | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -473,19 +353,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 6 - ((5 * winheight(0) + 18) / 37)
+let s:l = 77 - ((8 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 6
+77
 normal! 0
+lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/.tmux.conf", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/.tmux.conf | else | edit ~/dotfiles/os-LINUX-fedora/.tmux.conf | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-LINUX-fedora/.tmux.conf
-endif
-balt ~/dotfiles/.tmux.conf.x-leader
+if bufexists("~/dotfiles/os-LINUX-fedora/.tmux.conf") | buffer ~/dotfiles/os-LINUX-fedora/.tmux.conf | else | edit ~/dotfiles/os-LINUX-fedora/.tmux.conf | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -494,20 +371,21 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 148 - ((8 * winheight(0) + 18) / 37)
+let s:l = 140 - ((0 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 148
-normal! 017|
+140
+normal! 07|
+lcd ~/dotfiles
 wincmd w
-exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
-exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
-tabnext
-edit ~/dotfiles/os-MAC/config-vim.sh
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
+exe '1resize ' . ((&lines * 30 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 58 + 79) / 158)
+exe '2resize ' . ((&lines * 30 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 41 + 79) / 158)
+exe '3resize ' . ((&lines * 30 + 20) / 40)
+exe 'vert 3resize ' . ((&columns * 57 + 79) / 158)
+tabedit ~/dotfiles/os-MAC/config-vim.sh
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -516,20 +394,20 @@ vsplit
 2wincmd h
 wincmd w
 wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
+set nosplitbelow
+set nosplitright
 wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
 set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
-exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
+exe '1resize ' . ((&lines * 30 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 58 + 79) / 158)
+exe '2resize ' . ((&lines * 30 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 40 + 79) / 158)
+exe '3resize ' . ((&lines * 30 + 20) / 40)
+exe 'vert 3resize ' . ((&columns * 58 + 79) / 158)
 argglobal
-balt ~/dotfiles/os-MAC/config-tmux.sh
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -539,21 +417,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let &fdl = &fdl
-let s:l = 3 - ((1 * winheight(0) + 18) / 37)
+let s:l = 4 - ((3 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 3
+4
 normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/config-vim.sh", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/config-vim.sh | else | edit ~/dotfiles/os-LINUX-fedora/config-vim.sh | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-LINUX-fedora/config-vim.sh
-endif
-balt ~/dotfiles/os-MAC/config-vim.sh
+if bufexists("~/dotfiles/os-LINUX-fedora/config-vim.sh") | buffer ~/dotfiles/os-LINUX-fedora/config-vim.sh | else | edit ~/dotfiles/os-LINUX-fedora/config-vim.sh | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -562,20 +435,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 4 - ((0 * winheight(0) + 18) / 37)
+let s:l = 4 - ((3 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 4
+4
 normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/VIM/settings.vim", ":p")) | buffer ~/dotfiles/VIM/settings.vim | else | edit ~/dotfiles/VIM/settings.vim | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/VIM/settings.vim
-endif
-balt ~/dotfiles/os-LINUX-fedora/init.vim
+if bufexists("~/dotfiles/os-LINUX-fedora/init.vim") | buffer ~/dotfiles/os-LINUX-fedora/init.vim | else | edit ~/dotfiles/os-LINUX-fedora/init.vim | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -584,21 +453,21 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 252 - ((8 * winheight(0) + 18) / 37)
+let s:l = 260 - ((13 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 252
+260
 normal! 019|
+lcd ~/dotfiles
 wincmd w
-3wincmd w
-exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
-exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
-tabnext
-edit ~/dotfiles/LANGUAGES/javascript.md
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
+exe '1resize ' . ((&lines * 30 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 58 + 79) / 158)
+exe '2resize ' . ((&lines * 30 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 40 + 79) / 158)
+exe '3resize ' . ((&lines * 30 + 20) / 40)
+exe 'vert 3resize ' . ((&columns * 58 + 79) / 158)
+tabedit ~/dotfiles/LANGUAGES/javascript.md
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -610,11 +479,9 @@ vsplit
 wincmd w
 wincmd w
 wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
+set nosplitbelow
+set nosplitright
 wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
 set winminheight=0
 set winheight=1
 set winminwidth=0
@@ -624,7 +491,6 @@ exe 'vert 2resize ' . ((&columns * 43 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 27 + 79) / 158)
 exe 'vert 4resize ' . ((&columns * 42 + 79) / 158)
 argglobal
-balt ~/dotfiles/LIBRARIES/stripe.md
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -635,17 +501,14 @@ setlocal fdn=20
 setlocal nofen
 let s:l = 7 - ((5 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 7
+7
 normal! 0
+lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/LIBRARIES/stripe.md", ":p")) | buffer ~/dotfiles/LIBRARIES/stripe.md | else | edit ~/dotfiles/LIBRARIES/stripe.md | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/LIBRARIES/stripe.md
-endif
-balt ~/dotfiles/LANGUAGES/javascript.md
+if bufexists("~/dotfiles/LIBRARIES/stripe.md") | buffer ~/dotfiles/LIBRARIES/stripe.md | else | edit ~/dotfiles/LIBRARIES/stripe.md | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -656,17 +519,14 @@ setlocal fdn=20
 setlocal nofen
 let s:l = 1 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 1
+1
 normal! 0
+lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/FRAMEWORKS/next-react.md", ":p")) | buffer ~/dotfiles/FRAMEWORKS/next-react.md | else | edit ~/dotfiles/FRAMEWORKS/next-react.md | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/FRAMEWORKS/next-react.md
-endif
-balt ~/dotfiles/TOOLS/laravel-vapor.md
+if bufexists("~/dotfiles/FRAMEWORKS/next-react.md") | buffer ~/dotfiles/FRAMEWORKS/next-react.md | else | edit ~/dotfiles/FRAMEWORKS/next-react.md | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -677,17 +537,14 @@ setlocal fdn=20
 setlocal nofen
 let s:l = 1 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 1
+1
 normal! 0
+lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/TOOLS/laravel-vapor.md", ":p")) | buffer ~/dotfiles/TOOLS/laravel-vapor.md | else | edit ~/dotfiles/TOOLS/laravel-vapor.md | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/TOOLS/laravel-vapor.md
-endif
-balt ~/dotfiles/FRAMEWORKS/next-react.md
+if bufexists("~/dotfiles/TOOLS/laravel-vapor.md") | buffer ~/dotfiles/TOOLS/laravel-vapor.md | else | edit ~/dotfiles/TOOLS/laravel-vapor.md | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -698,19 +555,17 @@ setlocal fdn=20
 setlocal nofen
 let s:l = 2 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 2
+2
 normal! 0
+lcd ~/dotfiles
 wincmd w
 exe 'vert 1resize ' . ((&columns * 43 + 79) / 158)
 exe 'vert 2resize ' . ((&columns * 43 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 27 + 79) / 158)
 exe 'vert 4resize ' . ((&columns * 42 + 79) / 158)
-tabnext
-edit ~/dotfiles/os-MAC/apps-01-install.sh
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
+tabedit ~/dotfiles/os-MAC/apps-01-install.sh
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -719,11 +574,9 @@ vsplit
 2wincmd h
 wincmd w
 wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
+set nosplitbelow
+set nosplitright
 wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
 set winminheight=0
 set winheight=1
 set winminwidth=0
@@ -732,7 +585,6 @@ exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 2resize ' . ((&columns * 51 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 53 + 79) / 158)
 argglobal
-balt ~/dotfiles/os-MAC/apps-02-config.sh
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -741,19 +593,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 253 - ((0 * winheight(0) + 18) / 37)
+let s:l = 254 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 253
+254
 normal! 0
+lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-ANDROID/apps-01-install.sh", ":p")) | buffer ~/dotfiles/os-ANDROID/apps-01-install.sh | else | edit ~/dotfiles/os-ANDROID/apps-01-install.sh | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-ANDROID/apps-01-install.sh
-endif
-balt ~/dotfiles/os-ANDROID/config-bash.sh
+if bufexists("~/dotfiles/os-ANDROID/apps-01-install.sh") | buffer ~/dotfiles/os-ANDROID/apps-01-install.sh | else | edit ~/dotfiles/os-ANDROID/apps-01-install.sh | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -764,17 +613,14 @@ setlocal fdn=20
 setlocal nofen
 let s:l = 1 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 1
+1
 normal! 0
+lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/SCRIPTS/.sync.sh", ":p")) | buffer ~/dotfiles/SCRIPTS/.sync.sh | else | edit ~/dotfiles/SCRIPTS/.sync.sh | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/SCRIPTS/.sync.sh
-endif
-balt ~/dotfiles/SCRIPTS/tmux-new-session.sh
+if bufexists("~/dotfiles/SCRIPTS/.sync.sh") | buffer ~/dotfiles/SCRIPTS/.sync.sh | else | edit ~/dotfiles/SCRIPTS/.sync.sh | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -785,30 +631,27 @@ setlocal fdn=20
 setlocal nofen
 let s:l = 1 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
+exe s:l
 normal! zt
-keepjumps 1
+1
 normal! 030|
+lcd ~/dotfiles
 wincmd w
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 2resize ' . ((&columns * 51 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 53 + 79) / 158)
-tabnext 4
+tabnext 2
 set stal=1
-if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
-set winheight=1 winwidth=20
-let &shortmess = s:shortmess_save
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
+set winheight=1 winwidth=20 winminheight=0 winminwidth=0 shortmess=filnxtToOFI
 let s:sx = expand("<sfile>:p:r")."x.vim"
-if filereadable(s:sx)
+if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
-let &g:so = s:so_save | let &g:siso = s:siso_save
-set hlsearch
+let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
