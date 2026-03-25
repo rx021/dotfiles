@@ -56,4 +56,12 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # // install mosh to allow using mosh to tunnel into the server from any computer
 # // for better SSH when on mobile or just for spotty connections
 sudo apt-get install mosh
-# OPTIONAL
+
+# OPTIONAL:
+#
+# TODO:
+# - [ ] install TAILSCALE 
+#   - allows for remote access to home network
+#
+#
+# .
