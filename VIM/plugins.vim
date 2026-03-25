@@ -177,7 +177,8 @@ endfunction
 autocmd! ColorScheme darcula call s:tweak_darcula_colors()
 " prefered syntax color scheme
 " TODO CHECK IF PLUGIN INSTALLED
-colorscheme darcula
+"colorscheme darcula
+colorscheme retrobox
 
 
 """"""""""""""" 
