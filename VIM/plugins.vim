@@ -18,7 +18,6 @@ endif
 " :source % 
 " :PlugClean 
 call plug#begin('~/.config/nvim/plugged')
-    Plug 'doums/darcula' " my prefered syntax color scheme 
     Plug 'airblade/vim-gitgutter' " to see git if line changed
 
     Plug 'preservim/nerdcommenter' " allows commenting out 
@@ -168,16 +167,7 @@ call plug#end()
 syntax enable
 filetype plugin indent on
 
-function! s:tweak_darcula_colors()
-  " darcula customizations
-  " adds Truecolor to the terminal if supported
-  set termguicolors
-  let g:lightline = { 'colorscheme': 'darculaOriginal' }
-endfunction
-autocmd! ColorScheme darcula call s:tweak_darcula_colors()
 " prefered syntax color scheme
-" TODO CHECK IF PLUGIN INSTALLED
-"colorscheme darcula
 colorscheme retrobox
 
 
