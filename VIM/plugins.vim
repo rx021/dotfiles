@@ -10,6 +10,13 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+
+" NOTE: to INSTALL any plugins
+" :source % // to register a newly added plugin
+" :PlugInstall 
+" NOTE: to UN-INSTALL any plugins
+" :source % 
+" :PlugClean 
 call plug#begin('~/.config/nvim/plugged')
     Plug 'doums/darcula' " my prefered syntax color scheme 
     Plug 'airblade/vim-gitgutter' " to see git if line changed
@@ -22,6 +29,15 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     " // enables :Files
+
+    " dep required
+    Plug 'nvim-lua/plenary.nvim'
+    " dep suggested; needs gcc
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+    " main plugin
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': 'v0.2.1' }
+
+
     Plug 'jparise/vim-graphql' " graphQL syntax highlighting
     Plug 'StanAngeloff/php.vim' " php syntax highlighting // archived DEC 2020
     Plug 'adoy/vim-php-refactoring-toolbox'
@@ -146,12 +162,6 @@ call plug#begin('~/.config/nvim/plugged')
     " // BLADE template highlighting
     Plug 'jwalton512/vim-blade'
 
-    " //to install any plugins
-    " :source % //to register a newly added plugin
-    " :PlugInstall 
-    " //to un-install any plugins
-    " :source % 
-    " :PlugClean 
 call plug#end()
 
 " for full rust-lang parsing functionality
