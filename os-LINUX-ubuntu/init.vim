@@ -45,6 +45,7 @@
 """"""""""""""" 
 " SETTINGS:
 """"""""""""""" 
+
 source ~/dotfiles/VIM/settings-status-line.vim
 
 "colorcolumn=80,120 "//doesn't work
