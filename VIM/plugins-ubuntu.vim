@@ -19,7 +19,6 @@ endif
 " :PlugClean 
 call plug#begin('~/.config/nvim/plugged')
     Plug 'doums/darcula' " my prefered syntax color scheme 
-    Plug 'preservim/nerdtree' " to see filetree
     Plug 'airblade/vim-gitgutter' " to see git if line changed
 
     Plug 'preservim/nerdcommenter' " allows commenting out 
@@ -181,11 +180,6 @@ colorscheme darcula
 " PLUG_IN:
 " MAPPINGS:
 """"""""""""""" 
-
-" ctrl+o // to open nerd tree 
-map <C-o> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-" `r` is used to reload the directory to have the new file show
 
 " ctrl-p for fzf between files
 map <C-p> :Files<CR>

@@ -329,7 +329,4 @@ syntax on " adds syntax highlighting
 
 
 
-""""""""""""""" 
-" PLUG-IN MAPPINGS
-""""""""""""""" 
 
