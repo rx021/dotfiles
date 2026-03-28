@@ -6,7 +6,6 @@
     #echo "it does not exists";
 #fi
 
-curr_shell=$SHELL
 if [[ "$SHELL" == *"bash" ]]; then
   echo "HAVE BASH"
 elif [[ "$SHELL" == *"zsh" ]]; then

@@ -14,7 +14,17 @@ create_script_alias()
   script_path=$1
   alias_msg="echo '// TRYING SCRIPT: ${script_path}'"
   fallback_msg="echo '> no ${script_path} file'"
-  script_attempt="[ -f $script_path ] && sh $script_path || $fallback_msg"
+
+  if [[ "$SHELL" == *"bash" ]]; then
+    echo "HAVE BASH"
+    script_attempt="[ -f $script_path ] && bash $script_path || $fallback_msg"
+  elif [[ "$SHELL" == *"zsh" ]]; then
+    echo "HAVE ZSH"
+    script_attempt="[ -f $script_path ] && zsh $script_path || $fallback_msg"
+  else
+    echo "no SHELL"
+    script_attempt="$fallback_msg"
+  fi
   
   #-- returns the echo & command to run in CLI
   echo "$alias_msg; $script_attempt"
