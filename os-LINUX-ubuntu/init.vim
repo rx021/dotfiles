@@ -364,10 +364,6 @@ vnoremap <C-x> "*x
 " to make the <Leader> key the ',' key (tilda ~ key)
 let mapleader = ','
 
-" scrolling down and up, respectively
-nnoremap <C-j> 3jzz
-nnoremap <C-k> 3kzz
-
 
 """"""""""""""" 
 " PLUG-INs (using vim-plug)
