@@ -1,34 +1,36 @@
 """"""""""""""" 
 " VIM SETUP:
 """"""""""""""" 
-" not that this is the file to setup nvim
 " ~/.vimrc is for regular vim
 " ~/.config/nvim/init.vim
-" - [ ] move this to a file and have it map to .vimrc as well an init.vim on machine when setup
-"
-"-- mininmal ONE LINE SETUP for REMOTE LINUX
-"set number relativenumber autoindent expandtab tabstop=2 shiftwidth=2
-"
-"-- SIMPLE SETUP for new systems
-"set number relativenumber
-"set autoindent expandtab
-"set tabstop=2 shiftwidth=2
+" NOTE: that this is the file to setup nvim
 "
 " to format JSON in a .json file
 " :%!python -m json.tool
 "
-" // how to start recording a macro
-" // where <letter> is anything from a-z
-" q <letter>
-" // to stop recording a macro
-" q
-" // to replay macro
-" @ <letter>
-
-" // to suspend vim 
-" C-z (ctrl-z)
-" // to re-active vim 
-" fg
+""""""""""""""" 
+" NORMAL MODE:
+""""""""""""""" 
+" MACROS:
+" q <letter/number> " SART recording
+" q                 " STOP recording
+" @ <letter/number> " REPLAY macro
+"
+" SUSPEND VIM:
+" C-z (ctrl-z) " SUSPEND vim 
+" fg           " REACTIVATE vim 
+"
+" EDIT:
+" J -- CONCATS NEXT LINE onto CURRENT LINE
+"
+" DELETE:
+" x  -- DELETES a CHARACTER
+" dw -- DELETES a WORD
+" dd -- DELETES a LINE
+"
+" TIMETRAVEL:
+" u      -- to UNDO RECENT CHANGE
+" ctrl+r -- to REDO RECENT CHANGE
 
 """"""""""""""" 
 " COMMAND MODE:
@@ -55,6 +57,11 @@ source ~/dotfiles/VIM/settings-status-line.vim
 source ~/dotfiles/VIM/settings-mappings-ubuntu.vim
 source ~/dotfiles/VIM/settings-tabs.vim
 source ~/dotfiles/VIM/plugins-ubuntu.vim
+
+"-- SIMPLE SETUP for new systems
+"set number relativenumber
+"set autoindent expandtab
+"set tabstop=2 shiftwidth=2
 
 "set wrap! " toggle text WRAP
 set number " shows line# in file
