@@ -18,6 +18,8 @@ endif
 " :source % 
 " :PlugClean 
 call plug#begin('~/.config/nvim/plugged')
+    Plug 'doums/darcula' " my prefered syntax color scheme 
+    Plug 'preservim/nerdtree' " to see filetree
     Plug 'airblade/vim-gitgutter' " to see git if line changed
 
     Plug 'preservim/nerdcommenter' " allows commenting out 
@@ -28,15 +30,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     " // enables :Files
-
-    " dep required
-    Plug 'nvim-lua/plenary.nvim'
-    " dep suggested; needs gcc
-    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-    " main plugin
-    Plug 'nvim-telescope/telescope.nvim', { 'tag': 'v0.2.1' }
-
-
     Plug 'jparise/vim-graphql' " graphQL syntax highlighting
     Plug 'StanAngeloff/php.vim' " php syntax highlighting // archived DEC 2020
     Plug 'adoy/vim-php-refactoring-toolbox'
@@ -161,14 +154,27 @@ call plug#begin('~/.config/nvim/plugged')
     " // BLADE template highlighting
     Plug 'jwalton512/vim-blade'
 
+    " // shows minimap on the right side for your code
+    Plug 'wfxr/minimap.vim'
+    " :MinimapToggle
+
 call plug#end()
+
 
 " for full rust-lang parsing functionality
 syntax enable
 filetype plugin indent on
 
+function! s:tweak_darcula_colors()
+  " darcula customizations
+  " adds Truecolor to the terminal if supported
+  set termguicolors
+  let g:lightline = { 'colorscheme': 'darculaOriginal' }
+endfunction
+autocmd! ColorScheme darcula call s:tweak_darcula_colors()
 " prefered syntax color scheme
-colorscheme retrobox
+" TODO CHECK IF PLUGIN INSTALLED
+colorscheme darcula
 
 
 """"""""""""""" 
@@ -176,9 +182,13 @@ colorscheme retrobox
 " MAPPINGS:
 """"""""""""""" 
 
+" ctrl+o // to open nerd tree 
+map <C-o> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+" `r` is used to reload the directory to have the new file show
+
 " ctrl-p for fzf between files
-"map <C-p> :Files<CR>
-map <C-p> :Telescope find_files<CR>
+map <C-p> :Files<CR>
 
 map <C-i> :GitGutterSignsToggle<CR> 
 map <C-l> :GitGutterLineHighlightsToggle<CR>
@@ -261,4 +271,7 @@ map <C-l> :GitGutterLineHighlightsToggle<CR>
     "au FileType php nmap <buffer> <Leader>ua :PhpactorImportMissingClasses<CR>
 "augroup END
 
-
+" Minimap
+"let g:minimap_auto_start = 1
+"let g:minimap_auto_start_win_enter = 1
+let g:minimap_git_colors = 1
