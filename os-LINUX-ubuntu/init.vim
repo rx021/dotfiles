@@ -31,16 +31,21 @@
 " fg
 
 """"""""""""""" 
-" COMMAND MODE
+" COMMAND MODE:
+" type : from NORMAL mode
 """"""""""""""" 
-" :w // to save changes from a buffer
+" :w " to save changes from a buffer
 
-" :q // to CLOSE a VIM window
-" :qa // to CLOSE ALL of VIM
+" :q  " to CLOSE a VIM window
+" :qa " to CLOSE ALL of VIM
 
-" :echo expand('%') // for relative path
-" :echo expand('%:p') // for absolute path
-" :let @" = expand("%:p") // copy current file path / filename
+" HOW TO GET THE PATH OF THE CURRENT FILE OPENED IN BUFFER:
+" :echo expand('%') -- for relative path
+" :echo expand('%:p') -- for absolute path
+"
+" :let @" = expand("%:p") -- copy current file path / filename
+"-- `%` ~ for relative file path
+"-- `%:p` ~ for full file path not relative
 
 """"""""""""""" 
 " SETTINGS:
@@ -49,63 +54,54 @@
 source ~/dotfiles/VIM/settings-status-line.vim
 source ~/dotfiles/VIM/settings-tabs.vim
 
-"colorcolumn=80,120 "//doesn't work
-"cursorline "//doesn't work
-"cursorcolumn "//doesn't work
+"set wrap! " toggle text WRAP
+set number " shows line# in file
+set relativenumber " shows relative line#
 
-" :set wrap! // toggle text WRAP
-
-" shows the file line numbers
-set number
-" enable relative line numbers
-set relativenumber
-
-" sets the command prompt window size
-set cmdheight=1
-
-" set line length soft limit
-set colorcolumn=80,120
-
-" allows auto indentation
-set autoindent
+set autoindent " allows auto indentation
 " spaces used for indenting even when pressing TAB
-set expandtab 
-" //toggle between spaces & tabs
+set expandtab " toggle between spaces & tabs
 " set expandtab!
 
-" //show tabs or spaces
-" set list //show tabs
-" set nolist //hide tabs
-
-" best to have these matching
-" num of spaces for a line indent
-set tabstop=2
+set tabstop=2 " # of spaces per line indent
+set shiftwidth=2 " identation for `>>`/`<<`
 "set tabstop=4
-" identation when using `>>` or `<<` (4=single 'tab')
-set shiftwidth=2
 "set shiftwidth=4
+" NOTE: (4 spaces = 1 'tab')
+" NOTE: best to have these matching
 
-" highlights the current line
-set cursorline
-" highlights the current column but slows vim for biggers files
-"set cursorcolumn
-" // can set this in :set cursorcolumn!
+set cmdheight=1 " command prompt window 
 
-" adds syntax highlighting
-syntax on
+set colorcolumn=80,120 " line length limits
+"set cursorline " highlights row
+" NOTE: slows vim for biggers files
+"set cursorcolumn " hightlights column
+" EX: set cursorcolumn!
+
+
+" set list -- show tabs
+" set nolist -- hide tabs
+"-- show tabs or spaces
 
 set foldmethod=indent "fold based on indent 
-set nofoldenable "defaults no folding on first open
+set nofoldenable "defaults no folding on 1st open
 "set foldcolumn=1 "creates column for fold levels
-    "za //to toggle fold
-        "zo //to OPEN fold
-        "zc //to CLOSE fold
-    "zm //to have MORE fold levels
-        "zM //to have the MOST fold levels
-    "zr //to have REDUCED fold levels
-        "zR //to have the MOST REDUCED fold levels
+"za -- TOGGLE FOLD
+    "zo -- OPEN fold
+    "zc -- CLOSE fold
+"zm -- add MORE fold levels
+    "zM -- MAX fold levels
+"zr -- REDUCE fold levels
+    "zR -- RESET fold levels to 0
 
-"" SESSIONS
+syntax on " adds syntax highlighting
+
+
+""""""""""""""" 
+" SESSIONS:
+" Layer 1
+" whenever you open vim
+""""""""""""""" 
 "
 " // to save session (all buffers /panes as before)
 " :mksession path/to/file/<filename>.vim
