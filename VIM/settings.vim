@@ -41,7 +41,7 @@ set shiftwidth=2 " identation for `>>`/`<<`
 set cmdheight=1 " command prompt window 
 
 set colorcolumn=80,120 " line length limits
-set cursorline " highlights row
+"set cursorline " highlights row
 " NOTE: slows vim for biggers files
 "set cursorcolumn " hightlights column
 " EX: set cursorcolumn!
