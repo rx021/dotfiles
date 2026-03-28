@@ -18,18 +18,6 @@ vnoremap <C-x> "*x
 " ctrl+shift+v // Insert Mode paste clipboard
 
 
-"" SELECT ALL
-" ggVG 
-" // `gg` to go to top of page
-" // `V` to select line
-" // `G` to go to bottom of the page
-"nnoremap <C-a> ggVG
-" // turn off for now
-
-"" TIMETRAVEL
-" u // to undo recent change
-" ctrl+r // to redo change
-
 " to make the <Leader> key the ',' key (tilda ~ key)
 let mapleader = ','
 
