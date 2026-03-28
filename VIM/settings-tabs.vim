@@ -12,6 +12,7 @@ function MyTabLabel(n)
    "// use [tabindex]; grabs last window in tab buffer list; use last few filename letters;
   return '[' .. (a:n) .. ']' .. bufname(buflist[winnr - 1])[-14:-1]
 endfunction
+
 function MyTabLine()
   let s = ''
   for i in range(tabpagenr('$'))
