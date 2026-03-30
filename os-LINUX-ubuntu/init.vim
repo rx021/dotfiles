@@ -9,7 +9,7 @@
 " :%!python -m json.tool
 "
 " NOTE:
-" see VIM/settings for VIM notes
+" see VIM/settings-basics.vim for VIM notes
 
 """"""""""""""" 
 " SETTINGS:

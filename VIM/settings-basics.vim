@@ -46,3 +46,321 @@ set nofoldenable "defaults no folding on 1st open
 syntax on " adds syntax highlighting
 
 
+
+
+""""""""""""""" 
+" SESSIONS:
+" Layer 1
+" whenever you open vim
+""""""""""""""" 
+" :mksession path/to/file/<filename>.vim
+" :mks! ... // short form
+"-- SAVE session (all tabs/windows/buffers)
+"
+" :source path/to/file/<filename>.vim
+"-- RESTORE session
+
+
+""""""""""""""" 
+" SESSION TABS:
+" Layer 2
+" within a Session
+""""""""""""""" 
+" :tabs " to list the tabs open
+" :tabnew " to create a new tab
+
+" :tabnew % " copy current BUFFER into NEW TAB
+" ctrl-w T " move current BUFFER into NEW TAB
+
+" gt (or :tabn) " GO to NEXT TAB
+" gT (or :tabp) " GO to PREVIOUS TAB
+" <i>gt " GO to TAB i
+" EX: 3gt to show TAB 3
+
+" :tabmove <index|relative-index>
+" :tabm <index|relative-index>
+" MOVE a TAB to a NEW POSITION in the tab list
+" to move current tab to a certain index
+" NOTE: starts 0 index by default
+" EX:
+" :tabmove 3
+" :tabmove 2
+" :tabm -1
+
+" :tabclose " CLOSE TAB (incl all windows)
+" :tabcl
+
+
+""""""""""""""" 
+" MODES
+" PER WINDOW:
+""""""""""""""" 
+
+""""""""""""""" 
+" NORMAL MODE:
+""""""""""""""" 
+" MACROS:
+" q <letter/number> " SART recording
+" q                 " STOP recording
+" @ <letter/number> " REPLAY macro
+"
+" SUSPEND VIM:
+" C-z (ctrl-z) " SUSPEND vim 
+" fg           " REACTIVATE vim 
+"
+" EDIT:
+" J -- CONCATS NEXT LINE onto CURRENT LINE
+"
+" DELETE:
+" x  -- DELETES a CHARACTER
+" dw -- DELETES a WORD
+" dd -- DELETES a LINE
+"
+" TIMETRAVEL:
+" u      -- to UNDO RECENT CHANGE
+" ctrl+r -- to REDO RECENT CHANGE
+
+
+""""""""""""""" 
+" NORMAL MODE WINDOWS:
+""""""""""""""" 
+" <C-w> v
+" ctrl+w v
+" :vs
+" -- to SPLIT current WINDOW VERTICALLY
+"
+" <C-w> s
+" ctrl+w s
+" :sp
+" -- to SPLIT current WINDOW HORIZONTALLY
+"
+" cmd + /
+" -- to show cursor (MacOS)
+"
+" `.`
+" -- repeats the command you did recently
+"
+" `%`
+" -- to jump between brackes
+
+
+""""""""""""""" 
+" NORMAL MODE WINDOWS SEARCH:
+""""""""""""""" 
+" IN CURRENT FILE:
+" `/` -- to search forward
+" `?` -- to search backward
+"   n   -- to go to next occurence
+"   N   -- to go to previous occurence
+"
+" IN PROJECT:
+" :Rg
+"-- can then type to complete & scroll files
+
+""""""""""""""" 
+" NORMAL MODE WINDOWS REORGANIZE:
+""""""""""""""" 
+" <C-w> r
+"-- to rotate the panes count-clockwise
+" <C-w> R
+"-- to rotate the panes clockwise
+
+
+""""""""""""""" 
+" NORMAL MODE WINDOWS NAVIGATION:
+""""""""""""""" 
+" ctrl+w w 
+" -- to ROTATE between WINDOWS
+"
+" ctrl+w [h/j/k/l]
+" -- to go [LEFT/DOWN/UP/RIGHT] between WINDOWS
+"
+" ctrl+w v
+" -- to open new VIM window next to the existing one
+"
+" ctrl+w s
+" -- to open new VIM window below the existing one
+"
+" NAVIGATION FILE:
+" C-y  -- scroll up
+" C-e  -- scroll down 
+" C-u  -- PAGE UP
+" C-d  -- PAGE DOWN 
+"
+" NAVIGATION JUMPLIST: jumplist
+" C-i  -- jump back
+" C-o  -- jump forward
+" ''   -- toggle to last place
+" zz   -- recenter window to cursor 
+"
+" $  -- to JUMP to the END of the LINE
+" ^  -- to JUMP to the START of the LINE
+" 0  -- to JUMP to the START of the LINE
+"
+" %  -- to JUMP BETWEEN BRACKES
+" $% -- to JUMP from OPEN BRACKET to CLOSE
+" ^% -- to JUMP from CLOSE BRACKET to OPEN
+
+
+""""""""""""""" 
+" NORMAL MODE WINDOWS RESIZE:
+""""""""""""""" 
+" <C-w> = 
+"-- to equalize width and height 
+"
+" :vertical resize (+/-) n
+"-- to RESIZE the WIDTH of a pane
+" <C-w> (>/<)
+"-- to RESIZE by 1 character wider or narrower
+"
+" :resize (+/-) n
+" :res (+/-) n 
+"-- to RESIZE the HEIGHT of a pane
+" <C-w> (+/-)
+"-- to vertical resize by 1 line 
+
+
+""""""""""""""" 
+" NORMAL MODE BUFFERS:
+""""""""""""""" 
+" :ls // to see active buffers (or :buffers / :files)
+" :bufferN // to open buffer# N
+" ctrl+shift+^ // to toggle between last buffer
+" :bdelete | :bd // to delete a buffer
+" :%bdelete|edit#|bd# // to delete all open buffers and reopens current buffer/file
+"   :%bd|e#|bd#
+" :w // to save changes to file
+
+" GET COUNT OF BUFFERS
+":echo len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
+"--- 
+":echo 'buffers['.len(filter(range(1, bufnr('$')), 'buflisted(v:val)')).']'
+
+" GET COUNT OF INACTIVE BUFFERS
+":echo len(filter(range(1, bufnr('$')), 'buflisted(v:val) && !bufloaded(v:val)'))
+"--- 
+":echo 'inactive['.len(filter(range(1, bufnr('$')), 'buflisted(v:val) && !bufloaded(v:val)')).']'
+
+" GET COUNT OF ACTIVE BUFFERS
+":echo 'active['.len(filter(range(1, bufnr('$')), 'buflisted(v:val) && bufloaded(v:val)')).']'
+
+" GET BUFFER COUNTS
+":echo 'buffers['.len(filter(range(1, bufnr('$')), 'buflisted(v:val)')).'] active['.len(filter(range(1, bufnr('$')), 'buflisted(v:val) && bufloaded(v:val)')).'] inactive['.len(filter(range(1, bufnr('$')), 'buflisted(v:val) && !bufloaded(v:val)')).']'
+
+" HOW TO DELETE INACTIVE BUFFERS
+":for buf in filter(range(1, bufnr('$')), 'buflisted(v:val) && !bufloaded(v:val)') | execute 'bdelete' buf | endfor
+
+" EXAMPLE:
+"1088 // buffers
+"870 // inactive
+"=218 // remaining
+
+
+
+""""""""""""""" 
+" NORMAL MODE NAVIGATION ADVANCED COMMANDS:
+""""""""""""""" 
+" t<char>  -- TILL CHARACTER
+"
+" f<char>  -- ON CHARACTER
+" COMBO EX: f.ct( 
+" ~> on character . change everything until (
+"
+" vi<char> -- visual mode (select) in character
+" COMBO EX: vi{~
+" ~> select everything in { and toggle casing
+"
+" ci<char> -- CHANGE in CHARACTER 
+" EX: ci"
+" ~> means CHANGE characters withIN "..."
+"
+" di<char> -- DELETE in CHARACTER 
+" EX: di{
+" ~> means DELETE withIN {...}
+"
+" da<char> -- DELETE ALL INCLUDING CHARACTER 
+" EX:
+" da{
+" ~> means delete {...} & everything in them
+"
+
+
+""""""""""""""" 
+" COMMAND MODE:
+" type : from NORMAL mode
+""""""""""""""" 
+" :w " to save changes from a buffer
+
+" :q  " to CLOSE a VIM window
+" :qa " to CLOSE ALL of VIM
+
+" HOW TO GET THE PATH OF THE CURRENT FILE OPENED IN BUFFER:
+" :echo expand('%') -- for relative path
+" :echo expand('%:p') -- for absolute path
+"
+" :let @" = expand("%:p") -- copy current file path / filename
+"-- `%` ~ for relative file path
+"-- `%:p` ~ for full file path not relative
+
+
+
+""""""""""""""" 
+" INSERT MODE:
+" type a key listed below from NORMAL mode
+" to add text like normal
+""""""""""""""" 
+" o -- to open new line BELOW the current line
+" O -- to open new live ABOVE the current line
+"
+" I -- to insert at beginning of line
+" i -- to insert at current position
+" a -- to append just after current position
+" A -- to append at end of line
+
+
+""""""""""""""" 
+" VISUAL MODE:
+" type v/V from NORMAL mode
+""""""""""""""" 
+" SELECTION:
+" v     -- to SELECT a CHARACTER
+" V     -- to SELECT a LINE
+" C-v (ctrl-v)
+"-- VERTICALLY SELECT column of items
+"
+" [j/k] -- MOVE [up/down] 
+"-- great for incrementing a list (ex: week dates)
+"
+" o/O   -- TOGGLE btwn start & end of selected
+"
+" SELECT ALL:
+" ggVG
+"-- `gg` to go to top of page
+"-- `V` to select line
+"-- `G` to go to bottom of the page
+
+" INDENT:
+" >     -- to indent
+
+" CLIPBOARD VIM:
+" y     -- to COPY
+" x     -- to CUT
+" d     -- to DELETE
+" P     -- to PASTE BEFORE the cursor
+" p     -- to PASTE AFTER the cursor
+
+" UPPERCASE LOWERCASE:
+" uppsercase & lowercase
+" U     -- for UPPERCASE
+" u     -- for lowercase
+" ~     -- TOGGLE character casing
+"-- after text selected with visual mode
+" 
+" MODIFIER:
+" C-a -- ctrl+a INCREMENTS increment number
+" C-x -- ctrl+x DECREMENTS decrement number
+
+
+
+".
+
