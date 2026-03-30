@@ -11,7 +11,6 @@
 """"""""""""""" 
 " SETTINGS:
 """"""""""""""" 
-
 source ~/dotfiles/VIM/settings-status-line.vim
 source ~/dotfiles/VIM/settings-mappings-ubuntu.vim
 source ~/dotfiles/VIM/settings-tabs.vim
