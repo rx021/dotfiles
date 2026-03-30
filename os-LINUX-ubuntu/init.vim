@@ -7,9 +7,6 @@
 "
 " to format JSON in a .json file
 " :%!python -m json.tool
-"
-" NOTE:
-" see VIM/settings-basics.vim for VIM notes
 
 """"""""""""""" 
 " SETTINGS:
@@ -20,6 +17,8 @@ source ~/dotfiles/VIM/settings-mappings-ubuntu.vim
 source ~/dotfiles/VIM/settings-tabs.vim
 source ~/dotfiles/VIM/plugins-ubuntu.vim
 
+" NOTE:
+" see VIM/settings-basics.vim for VIM notes
 source ~/dotfiles/VIM/settings-basics.vim
 
 
