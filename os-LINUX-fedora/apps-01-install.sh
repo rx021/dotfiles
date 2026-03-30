@@ -40,11 +40,18 @@ sudo apt install ripgrep fzf
 # and get going from here
 # ...
 #
-# INSTALL GOLANG for lazysql
+# INSTALL GOLANG for lazysql:
 
-# EXTRAs
+# EXTRAs:
 
-#install rust 
+# INSTALL BTOP:
+# used for system monitoring
+# instead of sytem monitor (LINUX)
+# or activity monitor (MAC)
+sudo dnf install btop
+
+# INSTALL RUST:
+
 # OPTIONAL
 echo "installing rust ...";
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
