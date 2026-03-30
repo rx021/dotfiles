@@ -160,11 +160,7 @@ syntax on " adds syntax highlighting
 """"""""""""""" 
 " // to jump between brackes
 " %
-" // to show cursor
-" cmd + /
 
-" // repeats the command you did recently
-" .
 
 "" NAVIGATION
 "   WINDOWS
@@ -213,125 +209,8 @@ syntax on " adds syntax highlighting
 "=218 // remaining
 
 
-"" WINDOWS COMMAND MODE
-" <C-w> ...
-
-"" RESIZE
-" // to resize the width of a pane
-" :vertical resize (+/-) n
-" // to resize by 1 character wider or narrower
-" <C-w> (>/<)
-"
-" // to resize the height of a pane
-" :resize (+/-) n
-" :res (+/-) n 
-" // to vertical resize by 1 line 
-" <C-w> (+/-)
-"
-" // to equalize width and height 
-" <C-w> = 
-
-"" REORGANIZE
-" // to rotate the panes count-clockwise
-" <C-w> r
-" // to rotate the panes clockwise
-" <C-w> R
-
-"" SEARCH
-" (in file)
-" `/` // to search forward
-" `?` // to search backward
-" n // to go to next occurence
-" N // to go to previous occurence
-
-" (in project)
-" :Rg
-" // can then type to complete and find file needed
-
-"" INSERT
-" I // to insert at beginning of line
-" i // to insert at current position
-" a // to append just after current position
-" A // to append at end of line
-
-" O // to open new live above the current line
-" o // to open new line below the current line
-
-"" EDIT
-" J // to simplify and merge the next line with your current line
-
-"" DELETE
-" x // to delete a character
-" dw // to delete a word
-" dd // to delete a line
-
-"" ADVANCED COMMANDS
-" ~ // toggle character casing
-" 0 // go to start of line
-" $ // go to end of line
-" ctrl+a <C-a> // increment number
-" ctrl+x <C-x> // decrement number
-" t<char> // till character
-" f<char> // on character
-" vi<char> // visual mode (select) in character
-" ci<char> // change in character 
-"     - ex: ci" means change (replace characters in ")
-" di<char> // delete in character - ex: di{ means delete all within {}
-" da<char> // delete all in and including character 
-"     - ex: da{ means delete {} and everything in them
-" vi{~ // COMBO: select everything in { and toggle casing
-" f.ct( // COMBO: on character . change everything until (
-
-"" UPPERCASE & lowercase
-"" uppsercase & lowercase
-" visual mode select characters
-" U for UPPERCASE
-" u for lowercase
-
-"" SELECT + INDENT/ COPY/ CUT/ PASTE
-" v // to select a character
-" shift+v // to select a line
-" [j/k] // move [up/down] 
-
-" > // to indent
-
-" (in vim clipboard)
-" y // to copy
-" d // to cut
-" P // to paste before the cursor
-" p // to paste after the cursor
 
 
-
-""""""""""""""" 
-" VISUAL MODE
-""""""""""""""" 
-" // to jump to beginning or end of selection
-" o || O
-" // vertically select column of items
-" C-v (ctrl-v)
-" // then can go up or down with j/k
-" great for incrementing a list (ex: week dates)
-
-
-
-""""""""""""""" 
-" INSERT MODE
-""""""""""""""" 
-" just type normally
-
-
-
-
-""""""""""""""" 
-" SCRIPTS
-""""""""""""""" 
-
-
-" how to get the path of the current file opened in buffer
-":let @" = expand("%:p")
-"%" // for relative file path
-"%:p" // for full file path not relative
 
 
 

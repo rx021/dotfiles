@@ -144,17 +144,21 @@ syntax on " adds syntax highlighting
 " <C-w> v
 " ctrl+w v
 " :vs
-"-- to SPLIT current WINDOW VERTICALLY
+" -- to SPLIT current WINDOW VERTICALLY
 "
 " <C-w> s
 " ctrl+w s
 " :sp
-"-- to SPLIT current WINDOW HORIZONTALLY
+" -- to SPLIT current WINDOW HORIZONTALLY
 "
 " cmd + /
-"-- to show cursor (MacOS)
+" -- to show cursor (MacOS)
 "
-" .  -- repeats the command you did recently
+" `.`
+" -- repeats the command you did recently
+"
+" `%`
+" -- to jump between brackes
 
 
 """"""""""""""" 
@@ -183,9 +187,9 @@ syntax on " adds syntax highlighting
 " NORMAL MODE WINDOWS NAVIGATION:
 """"""""""""""" 
 " ctrl+w w 
-"-- to ROTATE between WINDOWS
+" -- to ROTATE between WINDOWS
 " ctrl+w [h/j/k/l]
-"-- to go [LEFT/DOWN/UP/RIGHT] between WINDOWS
+" -- to go [LEFT/DOWN/UP/RIGHT] between WINDOWS
 "
 " NAVIGATION FILE:
 " C-y  -- scroll up
@@ -199,12 +203,13 @@ syntax on " adds syntax highlighting
 " ''   -- toggle to last place
 " zz   -- recenter window to cursor 
 "
-" %  --  to JUMP BETWEEN BRACKES
-" $% -- to JUMP from OPEN BRACKET to CLOSE
-" ^% -- to JUMP from CLOSE BRACKET to OPEN
 " $  -- to JUMP to the END of the LINE
 " ^  -- to JUMP to the START of the LINE
 " 0  -- to JUMP to the START of the LINE
+"
+" %  -- to JUMP BETWEEN BRACKES
+" $% -- to JUMP from OPEN BRACKET to CLOSE
+" ^% -- to JUMP from CLOSE BRACKET to OPEN
 
 
 """"""""""""""" 
@@ -287,6 +292,10 @@ syntax on " adds syntax highlighting
 " EX:
 " da{
 " ~> means delete {...} & everything in them
+"
+" x        -- DELETE CHARACTER
+" dw       -- DELETE a WORD
+" dd       -- DELETE a LINE
 
 
 
@@ -362,8 +371,8 @@ syntax on " adds syntax highlighting
 "-- after text selected with visual mode
 " 
 " MODIFIER:
-" C-a -- ctrl+a INCREMENTS number
-" C-x -- ctrl+x DECREMENTS number
+" C-a -- ctrl+a INCREMENTS increment number
+" C-x -- ctrl+x DECREMENTS decrement number
 
 
 
