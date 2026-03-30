@@ -16,8 +16,7 @@ source ~/dotfiles/VIM/settings-mappings-ubuntu.vim
 source ~/dotfiles/VIM/settings-tabs.vim
 source ~/dotfiles/VIM/plugins-ubuntu.vim
 
-" NOTE:
-" see VIM/settings-basics.vim for VIM notes
+" NOTE: see this file for VIM notes
 source ~/dotfiles/VIM/settings-basics.vim
 
 
