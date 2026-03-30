@@ -20,13 +20,4 @@ source ~/dotfiles/VIM/plugins-ubuntu.vim
 source ~/dotfiles/VIM/settings-basics.vim
 
 
-
-
-
-
-
-
-
-
-
-
+".

@@ -25,6 +25,3 @@ source ~/dotfiles/VIM/settings-basics.vim
 
 
 ".
-
-
-
