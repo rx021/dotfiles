@@ -66,16 +66,17 @@ syntax on " adds syntax highlighting
 " Layer 2
 " within a Session
 """"""""""""""" 
-" :tabs " to list the tabs open
+" :tabs   " to list the tabs open
 " :tabnew " to create a new tab
 
 " :tabnew % " copy current BUFFER into NEW TAB
-" ctrl-w T " move current BUFFER into NEW TAB
+" ctrl-w T  " move current BUFFER into NEW TAB
 
 " gt (or :tabn) " GO to NEXT TAB
 " gT (or :tabp) " GO to PREVIOUS TAB
-" <i>gt " GO to TAB i
-" EX: 3gt to show TAB 3
+" <i>gt         " GO to TAB i
+" EX: 3gt       " to show TAB 3
+" g<tab>        " GO to LAST TAB
 
 " :tabmove <index|relative-index>
 " :tabm <index|relative-index>
@@ -155,15 +156,15 @@ syntax on " adds syntax highlighting
 "
 " IN PROJECT:
 " :Rg
-"-- can then type to complete & scroll files
+" -- can then type to complete & scroll files
 
 """"""""""""""" 
 " NORMAL MODE WINDOWS REORGANIZE:
 """"""""""""""" 
 " <C-w> r
-"-- to rotate the panes count-clockwise
+" -- to rotate the panes count-clockwise
 " <C-w> R
-"-- to rotate the panes clockwise
+" -- to rotate the panes clockwise
 
 
 """"""""""""""" 
@@ -206,30 +207,33 @@ syntax on " adds syntax highlighting
 " NORMAL MODE WINDOWS RESIZE:
 """"""""""""""" 
 " <C-w> = 
-"-- to equalize width and height 
+" -- to equalize width and height 
 "
 " :vertical resize (+/-) n
-"-- to RESIZE the WIDTH of a pane
+" -- to RESIZE the WIDTH of a pane
 " <C-w> (>/<)
-"-- to RESIZE by 1 character wider or narrower
+" -- to RESIZE by 1 character wider or narrower
 "
 " :resize (+/-) n
 " :res (+/-) n 
-"-- to RESIZE the HEIGHT of a pane
+" -- to RESIZE the HEIGHT of a pane
 " <C-w> (+/-)
-"-- to vertical resize by 1 line 
+" -- to vertical resize by 1 line 
 
 
 """"""""""""""" 
 " NORMAL MODE BUFFERS:
 """"""""""""""" 
-" :ls // to see active buffers (or :buffers / :files)
-" :bufferN // to open buffer# N
-" ctrl+shift+^ // to toggle between last buffer
-" :bdelete | :bd // to delete a buffer
-" :%bdelete|edit#|bd# // to delete all open buffers and reopens current buffer/file
-"   :%bd|e#|bd#
-" :w // to save changes to file
+" :ls          " to see active buffers (or :buffers / :files)
+" :bufferN     " to open buffer# N
+"
+" ctrl+shift+^ " to TOGGLE between LAST BUFFER
+"
+" :bdelete (or :bd)      " to delete a buffer
+" :%bdelete|edit#|bd# (or :%bd|e#|bd#)
+" -- to delete all open buffers and reopens current buffer/file
+"
+" :w " to save changes to file
 
 " GET COUNT OF BUFFERS
 ":echo len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
@@ -251,9 +255,9 @@ syntax on " adds syntax highlighting
 ":for buf in filter(range(1, bufnr('$')), 'buflisted(v:val) && !bufloaded(v:val)') | execute 'bdelete' buf | endfor
 
 " EXAMPLE:
-"1088 // buffers
-"870 // inactive
-"=218 // remaining
+"1088 -- buffers
+"870  -- inactive
+"=218 -- remaining
 
 
 
@@ -289,7 +293,7 @@ syntax on " adds syntax highlighting
 " COMMAND MODE:
 " type : from NORMAL mode
 """"""""""""""" 
-" :w " to save changes from a buffer
+" :w  " to save changes from a buffer
 
 " :q  " to CLOSE a VIM window
 " :qa " to CLOSE ALL of VIM
@@ -299,8 +303,8 @@ syntax on " adds syntax highlighting
 " :echo expand('%:p') -- for absolute path
 "
 " :let @" = expand("%:p") -- copy current file path / filename
-"-- `%` ~ for relative file path
-"-- `%:p` ~ for full file path not relative
+" -- `%` ~ for relative file path
+" -- `%:p` ~ for full file path not relative
 
 
 
@@ -326,18 +330,18 @@ syntax on " adds syntax highlighting
 " v     -- to SELECT a CHARACTER
 " V     -- to SELECT a LINE
 " C-v (ctrl-v)
-"-- VERTICALLY SELECT column of items
+" -- VERTICALLY SELECT column of items
 "
 " [j/k] -- MOVE [up/down] 
-"-- great for incrementing a list (ex: week dates)
+" -- great for incrementing a list (ex: week dates)
 "
 " o/O   -- TOGGLE btwn start & end of selected
 "
 " SELECT ALL:
 " ggVG
-"-- `gg` to go to top of page
-"-- `V` to select line
-"-- `G` to go to bottom of the page
+" -- `gg` to go to top of page
+" -- `V` to select line
+" -- `G` to go to bottom of the page
 
 " INDENT:
 " >     -- to indent
@@ -354,7 +358,7 @@ syntax on " adds syntax highlighting
 " U     -- for UPPERCASE
 " u     -- for lowercase
 " ~     -- TOGGLE character casing
-"-- after text selected with visual mode
+" -- after text selected with visual mode
 " 
 " MODIFIER:
 " C-a -- ctrl+a INCREMENTS increment number
