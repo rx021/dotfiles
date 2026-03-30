@@ -32,9 +32,13 @@ git clone git@github.com:reinhardtcgr/dotfiles.git
 # and get going from here
 # ...
 
-# EXTRAs
+# EXTRAs:
 
-#install rust 
+# INSTALL BTOP
+# -- for monitoring system resources
+sudo apt install btop
+
+# INSTALL RUST:
 echo "installing rust ...";
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # // see the website: https://www.rust-lang.org/tools/install
