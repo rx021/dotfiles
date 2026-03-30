@@ -188,8 +188,15 @@ syntax on " adds syntax highlighting
 """"""""""""""" 
 " ctrl+w w 
 " -- to ROTATE between WINDOWS
+"
 " ctrl+w [h/j/k/l]
 " -- to go [LEFT/DOWN/UP/RIGHT] between WINDOWS
+"
+" ctrl+w v
+" -- to open new VIM window next to the existing one
+"
+" ctrl+w s
+" -- to open new VIM window below the existing one
 "
 " NAVIGATION FILE:
 " C-y  -- scroll up
@@ -293,10 +300,6 @@ syntax on " adds syntax highlighting
 " da{
 " ~> means delete {...} & everything in them
 "
-" x        -- DELETE CHARACTER
-" dw       -- DELETE a WORD
-" dd       -- DELETE a LINE
-
 
 
 """"""""""""""" 
