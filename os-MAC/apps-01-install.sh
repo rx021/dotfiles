@@ -399,4 +399,7 @@
 #127.0.0.1       youtube.com
 #127.0.0.1       www.youtube.com
 #```
+#
+# INSTALL BTOP - activity monitor TUI alternative
+brew install btop
 
