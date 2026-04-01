@@ -168,8 +168,9 @@ syntax enable
 filetype plugin indent on
 
 " prefered syntax color scheme
-colorscheme retrobox
-
+colorscheme retrobox " #1
+"colorscheme slate " #2
+"colorscheme habamax " #3
 
 """"""""""""""" 
 " PLUG_IN:
