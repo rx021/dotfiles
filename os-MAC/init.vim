@@ -18,7 +18,7 @@
 source ~/dotfiles/VIM/settings-status-line.vim
 source ~/dotfiles/VIM/settings-mappings.vim
 source ~/dotfiles/VIM/settings-tabs.vim
-source ~/dotfiles/VIM/plugins-ubuntu.vim
+source ~/dotfiles/VIM/plugins-mac.vim
 
 " NOTE: see this file for VIM notes
 source ~/dotfiles/VIM/settings-basics.vim
