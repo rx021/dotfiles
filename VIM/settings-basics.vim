@@ -110,7 +110,9 @@ syntax on " adds syntax highlighting
 " fg           " REACTIVATE vim 
 "
 " EDIT:
-" J -- CONCATS NEXT LINE onto CURRENT LINE
+" J 
+" CONCATS NEXT LINE onto CURRENT LINE
+" simplify & merge the next line with the current line
 "
 " DELETE:
 " x  -- DELETES a CHARACTER
@@ -142,7 +144,7 @@ syntax on " adds syntax highlighting
 " -- repeats the command you did recently
 "
 " `%`
-" -- to jump between brackes
+" -- to jump between brackets
 
 
 """"""""""""""" 
@@ -194,8 +196,8 @@ syntax on " adds syntax highlighting
 " ''   -- toggle to last place
 " zz   -- recenter window to cursor 
 "
-" $  -- to JUMP to the END of the LINE
-" ^  -- to JUMP to the START of the LINE
+" $  -- to JUMP to the END/end of the LINE
+" ^  -- to JUMP to the START/start of the LINE/line
 " 0  -- to JUMP to the START of the LINE
 "
 " %  -- to JUMP BETWEEN BRACKES
@@ -347,6 +349,7 @@ syntax on " adds syntax highlighting
 " >     -- to indent
 
 " CLIPBOARD VIM:
+" clipboard vim
 " y     -- to COPY
 " x     -- to CUT
 " d     -- to DELETE
@@ -354,11 +357,11 @@ syntax on " adds syntax highlighting
 " p     -- to PASTE AFTER the cursor
 
 " UPPERCASE LOWERCASE:
-" uppsercase & lowercase
+" uppercase & lowercase
 " U     -- for UPPERCASE
 " u     -- for lowercase
 " ~     -- TOGGLE character casing
-" -- after text selected with visual mode
+" after text selected with visual mode
 " 
 " MODIFIER:
 " C-a -- ctrl+a INCREMENTS increment number
