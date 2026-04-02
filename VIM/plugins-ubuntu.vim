@@ -186,6 +186,7 @@ call plug#begin('~/.config/nvim/plugged')
     " main plugin
     "Plug 'nvim-telescope/telescope.nvim', { 'tag': 'v0.2.1' } 
 
+    Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 call plug#end()
 
