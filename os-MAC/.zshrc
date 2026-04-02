@@ -140,7 +140,7 @@ alias wgb='watch -n 10 git branch;'
 alias wgsl='watch -n 10 git stash list;'
 alias wgs='watch -n 10 git status;'
 
-# MYSQL
+# MYSQL:
 #-- // to run mysql on mac
 #-- $ brew services start mysql
 #
