@@ -170,8 +170,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'jwalton512/vim-blade'
 
     " shows MINIMAP on the right side for your code
-    Plug 'wfxr/minimap.vim'
+    "Plug 'wfxr/minimap.vim'
     " :MinimapToggle
+    " turning off for now
 
     "Plug 'nvim-lua/plenary.vim'
     " issues install this
@@ -208,7 +209,7 @@ endfunction
 autocmd! ColorScheme darcula call s:tweak_darcula_colors()
 " prefered syntax color scheme
 " TODO CHECK IF PLUGIN INSTALLED
-colorscheme darcula
+colorscheme darcula 
 
 "-- the following is for init.vim
 "lua << EOF
@@ -324,4 +325,5 @@ map <C-l> :GitGutterLineHighlightsToggle<CR>
 " Minimap
 "let g:minimap_auto_start = 1
 "let g:minimap_auto_start_win_enter = 1
-let g:minimap_git_colors = 1
+"let g:minimap_git_colors = 1
+" turning off for now
