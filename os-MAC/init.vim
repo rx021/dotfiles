@@ -18,6 +18,7 @@
 source ~/dotfiles/VIM/settings-status-line.vim
 source ~/dotfiles/VIM/settings-mappings.vim
 source ~/dotfiles/VIM/settings-tabs.vim
+source ~/dotfiles/VIM/plugins.vim
 
 
 "
@@ -327,8 +328,6 @@ set nofoldenable "defaults no folding on first open
 """"""""""""""" 
 " SCRIPTS
 """"""""""""""" 
-
-
 " how to get the path of the current file opened in buffer
 ":let @" = expand("%:p")
 "%" // for relative file path
@@ -339,30 +338,9 @@ set nofoldenable "defaults no folding on first open
 " PLUG-INs (using vim-plug)
 """"""""""""""" 
 
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd!
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
 
 call plug#begin('~/.config/nvim/plugged')
-    Plug 'doums/darcula' " my prefered syntax color scheme 
-    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
-    "Plug 'preservim/nerdtree' " to see filetree
-    "-- turning off to better understand netrw
-
-    Plug 'airblade/vim-gitgutter' " to see git if line changed
-
-    Plug 'preservim/nerdcommenter' " allows commenting out 
-    " ,cc //to comment all within thin same column
-    " ,ci //to comment invert (toggle)
-
-    "Plug 'ctrlpvim/ctrlp.vim' " using fzf instead now
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    " // enables :Files
 
     Plug 'nvim-lua/plenary.vim'
     "-- issues install this

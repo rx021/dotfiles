@@ -19,6 +19,11 @@ endif
 " :PlugClean 
 call plug#begin('~/.config/nvim/plugged')
     Plug 'doums/darcula' " my prefered syntax color scheme 
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+    
+    "Plug 'preservim/nerdtree' " to see filetree
+    " -- turning off to better understand netrw
+
     Plug 'airblade/vim-gitgutter' " to see git if line changed
 
     Plug 'preservim/nerdcommenter' " allows commenting out 
@@ -28,7 +33,7 @@ call plug#begin('~/.config/nvim/plugged')
     "Plug 'ctrlpvim/ctrlp.vim' " using fzf instead now
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    " // enables :Files
+    " -- enables :Files
     Plug 'jparise/vim-graphql' " graphQL syntax highlighting
     Plug 'StanAngeloff/php.vim' " php syntax highlighting // archived DEC 2020
     Plug 'adoy/vim-php-refactoring-toolbox'
