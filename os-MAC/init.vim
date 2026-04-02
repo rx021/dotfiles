@@ -4,6 +4,9 @@
 " ~/.vimrc is for regular vim
 " ~/.config/nvim/init.vim
 " not that this is the file to setup nvim
+"
+" :%!python -m json.tool
+" -- to format JSON in a .json file
 
 """"""""""""""" 
 " SETTINGS:
@@ -23,9 +26,6 @@ source ~/dotfiles/VIM/settings-status-line.vim
 "set number relativenumber
 "set autoindent expandtab
 "set tabstop=2 shiftwidth=2
-"
-" to format JSON in a .json file
-" :%!python -m json.tool
 "
 " // how to start recording a macro
 " // where <letter> is anything from a-z
@@ -321,10 +321,6 @@ set nofoldenable "defaults no folding on first open
 " just type normally
 
 
-
-""""""""""""""" 
-" STATUS LINE:
-""""""""""""""" 
 
 
 """"""""""""""" 
