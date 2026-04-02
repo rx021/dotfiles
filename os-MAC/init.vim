@@ -3,7 +3,7 @@
 """"""""""""""" 
 " ~/.vimrc is for regular vim
 " ~/.config/nvim/init.vim
-" not that this is the file to setup nvim
+" NOTE: that this is the file to setup nvim
 "
 " :%!python -m json.tool
 " -- to format JSON in a .json file
