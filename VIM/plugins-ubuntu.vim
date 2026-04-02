@@ -218,14 +218,19 @@ colorscheme darcula
 " MAPPINGS:
 """"""""""""""" 
 
+" ctrl+o // to open nerd tree 
+"map <C-o> :NERDTreeToggle<CR>
+"let NERDTreeShowHidden=1
+" `r` is used to reload the directory to have the new file show
+
 " ctrl-p for fzf between files
 map <C-p> :Files<CR>
 
 map <C-i> :GitGutterSignsToggle<CR> 
 map <C-l> :GitGutterLineHighlightsToggle<CR>
 
-"// turning off for now bc of node server
-" // code completion (coc.vim) 
+" turning off for now bc of node server
+" CODE COMPLETION (COC.VIM) 
 " issues
 "inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 "inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -234,11 +239,13 @@ map <C-l> :GitGutterLineHighlightsToggle<CR>
 " format on enter, <cr> could be remapped by other vim plugin
 "inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               "\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+                              "
 " // GoTo code navigation.
 "nmap <silent> gd <Plug>(coc-definition)
 "nmap <silent> gy <Plug>(coc-type-definition)
 "nmap <silent> gi <Plug>(coc-implementation)
 "nmap <silent> gr <Plug>(coc-references)
+"
 " // darcula links to coc.vim
 "hi! link CocErrorSign ErrorSign
 "hi! link CocWarningSign WarningSign
