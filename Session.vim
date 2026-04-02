@@ -91,7 +91,6 @@ tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
-tabnew +setlocal\ bufhidden=wipe
 tabrewind
 edit README.md
 let s:save_splitbelow = &splitbelow
@@ -141,11 +140,11 @@ keepjumps 1
 normal! 05|
 wincmd w
 argglobal
-if bufexists(fnamemodify("TOOLS/ghostty/README.md", ":p")) | buffer TOOLS/ghostty/README.md | else | edit TOOLS/ghostty/README.md | endif
+if bufexists(fnamemodify("TOOLS/ghostty/config", ":p")) | buffer TOOLS/ghostty/config | else | edit TOOLS/ghostty/config | endif
 if &buftype ==# 'terminal'
-  silent file TOOLS/ghostty/README.md
+  silent file TOOLS/ghostty/config
 endif
-balt README.md
+balt TOOLS/ghostty/README.md
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -154,11 +153,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 4 - ((0 * winheight(0) + 9) / 18)
+let s:l = 12 - ((8 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 4
+keepjumps 12
 normal! 0
 wincmd w
 argglobal
@@ -183,11 +182,10 @@ keepjumps 4
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("TOOLS/ghostty/config", ":p")) | buffer TOOLS/ghostty/config | else | edit TOOLS/ghostty/config | endif
+if bufexists(fnamemodify("SCRIPTS/.sync.sh", ":p")) | buffer SCRIPTS/.sync.sh | else | edit SCRIPTS/.sync.sh | endif
 if &buftype ==# 'terminal'
-  silent file TOOLS/ghostty/config
+  silent file SCRIPTS/.sync.sh
 endif
-balt README.md
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -196,14 +194,14 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 12 - ((0 * winheight(0) + 18) / 37)
+let s:l = 1 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 12
+keepjumps 1
 normal! 0
+lcd ~/dotfiles
 wincmd w
-3wincmd w
 exe '1resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe '2resize ' . ((&lines * 18 + 20) / 40)
@@ -211,7 +209,7 @@ exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 4resize ' . ((&columns * 52 + 79) / 158)
 tabnext
-edit os-MAC/.zshrc
+edit ~/dotfiles/os-MAC/.zshrc
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -256,7 +254,7 @@ exe 'vert 5resize ' . ((&columns * 58 + 79) / 158)
 exe '6resize ' . ((&lines * 16 + 20) / 40)
 exe 'vert 6resize ' . ((&columns * 58 + 79) / 158)
 argglobal
-balt README.md
+balt ~/dotfiles/README.md
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -265,19 +263,19 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 142 - ((14 * winheight(0) + 10) / 20)
+let s:l = 140 - ((12 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 142
+keepjumps 140
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-SHARED/.alias_git.sh", ":p")) | buffer os-SHARED/.alias_git.sh | else | edit os-SHARED/.alias_git.sh | endif
+if bufexists(fnamemodify("~/dotfiles/os-SHARED/.alias_git.sh", ":p")) | buffer ~/dotfiles/os-SHARED/.alias_git.sh | else | edit ~/dotfiles/os-SHARED/.alias_git.sh | endif
 if &buftype ==# 'terminal'
-  silent file os-SHARED/.alias_git.sh
+  silent file ~/dotfiles/os-SHARED/.alias_git.sh
 endif
-balt os-MAC/config-sh.sh
+balt ~/dotfiles/os-MAC/config-sh.sh
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -294,11 +292,11 @@ keepjumps 157
 normal! 046|
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-ANDROID/.bash_profile", ":p")) | buffer os-ANDROID/.bash_profile | else | edit os-ANDROID/.bash_profile | endif
+if bufexists(fnamemodify("~/dotfiles/os-ANDROID/.bash_profile", ":p")) | buffer ~/dotfiles/os-ANDROID/.bash_profile | else | edit ~/dotfiles/os-ANDROID/.bash_profile | endif
 if &buftype ==# 'terminal'
-  silent file os-ANDROID/.bash_profile
+  silent file ~/dotfiles/os-ANDROID/.bash_profile
 endif
-balt os-MAC/.zshrc
+balt ~/dotfiles/os-MAC/.zshrc
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -307,19 +305,19 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 136 - ((11 * winheight(0) + 10) / 20)
+let s:l = 135 - ((10 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 136
+keepjumps 135
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-SHARED/.alias_git.sh", ":p")) | buffer os-SHARED/.alias_git.sh | else | edit os-SHARED/.alias_git.sh | endif
+if bufexists(fnamemodify("~/dotfiles/os-SHARED/.alias_git.sh", ":p")) | buffer ~/dotfiles/os-SHARED/.alias_git.sh | else | edit ~/dotfiles/os-SHARED/.alias_git.sh | endif
 if &buftype ==# 'terminal'
-  silent file os-SHARED/.alias_git.sh
+  silent file ~/dotfiles/os-SHARED/.alias_git.sh
 endif
-balt os-SHARED/.alias_filesystem.sh
+balt ~/dotfiles/os-SHARED/.alias_filesystem.sh
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -336,11 +334,11 @@ keepjumps 169
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("os-LINUX-fedora/.bashrc", ":p")) | buffer os-LINUX-fedora/.bashrc | else | edit os-LINUX-fedora/.bashrc | endif
+if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/.bashrc", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/.bashrc | else | edit ~/dotfiles/os-LINUX-fedora/.bashrc | endif
 if &buftype ==# 'terminal'
-  silent file os-LINUX-fedora/.bashrc
+  silent file ~/dotfiles/os-LINUX-fedora/.bashrc
 endif
-balt os-LINUX-fedora/.bash_profile
+balt ~/dotfiles/os-LINUX-fedora/.bash_profile
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -625,10 +623,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 37 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 37 + 79) / 158)
-exe 'vert 3resize ' . ((&columns * 45 + 79) / 158)
-exe 'vert 4resize ' . ((&columns * 36 + 79) / 158)
+exe 'vert 1resize ' . ((&columns * 39 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 39 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 39 + 79) / 158)
+exe 'vert 4resize ' . ((&columns * 38 + 79) / 158)
 argglobal
 balt ~/dotfiles/os-MAC/config-vim.sh
 setlocal foldmethod=indent
@@ -705,7 +703,7 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 2 - ((0 * winheight(0) + 18) / 37)
+let s:l = 2 - ((1 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -713,36 +711,20 @@ keepjumps 2
 normal! 0
 lcd ~/dotfiles
 wincmd w
-exe 'vert 1resize ' . ((&columns * 37 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 37 + 79) / 158)
-exe 'vert 3resize ' . ((&columns * 45 + 79) / 158)
-exe 'vert 4resize ' . ((&columns * 36 + 79) / 158)
-tabnext
-edit ~/dotfiles/SCRIPTS/.sync.sh
-argglobal
-balt ~/dotfiles/os-MAC/apps-01-install.sh
-setlocal foldmethod=indent
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 030|
-lcd ~/dotfiles
-tabnext 1
+4wincmd w
+exe 'vert 1resize ' . ((&columns * 39 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 39 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 39 + 79) / 158)
+exe 'vert 4resize ' . ((&columns * 38 + 79) / 158)
+tabnext 5
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
