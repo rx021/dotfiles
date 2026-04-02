@@ -188,6 +188,7 @@ call plug#begin('~/.config/nvim/plugged')
     "Plug 'nvim-telescope/telescope.nvim', { 'tag': 'v0.2.1' } 
 
     Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+    Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -209,7 +210,8 @@ endfunction
 autocmd! ColorScheme darcula call s:tweak_darcula_colors()
 " prefered syntax color scheme
 " TODO CHECK IF PLUGIN INSTALLED
-colorscheme darcula 
+"colorscheme darcula 
+colorscheme gruvbox 
 
 "-- the following is for init.vim
 "lua << EOF
