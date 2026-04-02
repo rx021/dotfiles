@@ -14,6 +14,10 @@ source ~/dotfiles/os-SHARED/.alias_tmux.sh
 source ~/dotfiles/os-SHARED/.alias_filesystem_mac.sh
 source ~/dotfiles/os-SHARED/.alias_git_mac.sh
 
+# HOW to SSH ADD a specific ssh key
+# ssh-add ~/.ssh/id_ed25519-JP_MBP-GH_RX_250915
+
+
 # // how to check the shell you are using
 # $ echo $SHELL
 
@@ -546,8 +550,6 @@ export PATH=/Users/Shared/DBngin/mysql/8.0.33/bin:$PATH
 
 
 #.
-
-
 
 # HERD herd
 # Herd injected PHP 8.3 configuration.
