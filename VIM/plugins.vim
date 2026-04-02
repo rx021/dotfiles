@@ -169,7 +169,7 @@ filetype plugin indent on
 
 " prefered syntax color scheme
 colorscheme retrobox " #1
-"colorscheme slate " #2
+"colorscheme slate   " #2
 "colorscheme habamax " #3
 
 """"""""""""""" 
