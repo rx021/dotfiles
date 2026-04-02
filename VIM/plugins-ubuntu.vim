@@ -173,13 +173,13 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'wfxr/minimap.vim'
     " :MinimapToggle
 
-    Plug 'nvim-lua/plenary.vim'
+    "Plug 'nvim-lua/plenary.vim'
     " issues install this
     " even did
     " git config --global url.ssh://git@github.com/.insteadOf https://github.com/
 
     " dep required
-    "Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-lua/plenary.nvim'
     " dep suggested; needs gcc
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
     " main plugin
