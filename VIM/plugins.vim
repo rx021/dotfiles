@@ -29,14 +29,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf.vim'
     " // enables :Files
 
-    " dep required
-    Plug 'nvim-lua/plenary.nvim'
-    " dep suggested; needs gcc
-    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-    " main plugin
-    Plug 'nvim-telescope/telescope.nvim', { 'tag': 'v0.2.1' }
-
-
     Plug 'jparise/vim-graphql' " graphQL syntax highlighting
     Plug 'StanAngeloff/php.vim' " php syntax highlighting // archived DEC 2020
     Plug 'adoy/vim-php-refactoring-toolbox'
@@ -160,6 +152,14 @@ call plug#begin('~/.config/nvim/plugged')
 
     " // BLADE template highlighting
     Plug 'jwalton512/vim-blade'
+
+    " dep required
+    Plug 'nvim-lua/plenary.nvim'
+    " dep suggested; needs gcc
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+    " main plugin
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': 'v0.2.1' }
+
 
 call plug#end()
 
