@@ -107,65 +107,9 @@ alias otrash='open ~/.Trash/'
 
 # GIT VERSION CONTROL
 
-# git branch -d <branch-name> // to delete local branch
-# git branch -D <branch-name> // to force delete local branch
 
-# // to delete the remote branch (merged or unmerged)
-# git push <remote> --delete <branch-name>
-# example:
-# git push origin --delete <branch-name>
-
-
-#// when only changing the FILENAME casing in git
-#git mv <filename>
-#NOTE: windows & mac OS are case-insensitive
-#linux is case-sensitive
-#git will also have trouble with this if the OS does
-
-
-
-## GIT MERGE
-
-# // to merge another branch into your current branch
-# git merge incomingBranch
-
-## GIT REBASE
-
-# // to rebase your current branch with another branch
-# git rebase incomingBranch
-
-# // to rebase your current branch from the remote branch
-# git fetch
-# git rebase origin/master
 
 ## Squash Commits on your branch
-
-# // to find the number of commits to squash
-# git log
-# // to open interactive to squash commits and give a better commit message
-# git rebase -i HEAD~<number-of-commits>
-# git rebase -i HEAD~9
-# // NOTE: should NOT have the file open in vim when rebasing
-# // change the 'pick' to 'reword' (or some other command like squash) then :wq
-# // once new editor opened you can make the new changes
-# // To push up the changes
-# git push --force origin feature/COR-7412-edocs-re-write-create-feature-switch
-
-### Rebase your branch to resolve merge conflicts 
-#&& to consolidate your changes on top of the branch you want to merge into
-#"git rebase feature/DEP-118"
-#>>
-#Make sure your local has all the latest changes of the destination branch (ex: DEP-118) 
-#>>
-#Then change back to your branch to rebase
-
-# git log // to see if your current changes match the remote
-alias glog='echo "// git log"; git log'
-
-
-# // to see which commits are on origin/master (remote) but not yet on master (local)
-# git log master..origin/master
-alias glr='echo "// git log diff on remote not local"; git log main..origin/main'
 
 
 #@monorepo$ watch -n 5 'git log --format="%C(dim white)%d%C(reset) %s %C(dim white)[%ae %h %cr]%C(reset)" --graph'
