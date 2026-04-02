@@ -210,8 +210,9 @@ endfunction
 autocmd! ColorScheme darcula call s:tweak_darcula_colors()
 " prefered syntax color scheme
 " TODO CHECK IF PLUGIN INSTALLED
-"colorscheme darcula 
-colorscheme gruvbox 
+colorscheme gruvbox  " #1
+"colorscheme darcula " #2
+"colorscheme slate   " #3
 " NOTE: gruvbox is better for Goyo than darcula
 
 "-- the following is for init.vim
