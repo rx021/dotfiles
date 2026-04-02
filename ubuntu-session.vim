@@ -167,15 +167,14 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+let s:l = 3 - ((2 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+3
 normal! 0
 lcd ~/dotfiles
 wincmd w
-4wincmd w
 exe '1resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe '2resize ' . ((&lines * 18 + 20) / 40)
@@ -210,18 +209,18 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 20 + 20) / 40)
-exe 'vert 1resize ' . ((&columns * 49 + 79) / 158)
-exe '2resize ' . ((&lines * 16 + 20) / 40)
-exe 'vert 2resize ' . ((&columns * 49 + 79) / 158)
-exe '3resize ' . ((&lines * 20 + 20) / 40)
-exe 'vert 3resize ' . ((&columns * 49 + 79) / 158)
-exe '4resize ' . ((&lines * 16 + 20) / 40)
-exe 'vert 4resize ' . ((&columns * 49 + 79) / 158)
-exe '5resize ' . ((&lines * 20 + 20) / 40)
-exe 'vert 5resize ' . ((&columns * 58 + 79) / 158)
-exe '6resize ' . ((&lines * 16 + 20) / 40)
-exe 'vert 6resize ' . ((&columns * 58 + 79) / 158)
+exe '1resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe '2resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
+exe '3resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
+exe '4resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 4resize ' . ((&columns * 52 + 79) / 158)
+exe '5resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 5resize ' . ((&columns * 52 + 79) / 158)
+exe '6resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 6resize ' . ((&columns * 52 + 79) / 158)
 argglobal
 setlocal fdm=indent
 setlocal fde=0
@@ -231,12 +230,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 140 - ((12 * winheight(0) + 10) / 20)
+let s:l = 140 - ((11 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 140
 normal! 0
+lcd ~/dotfiles
 wincmd w
 argglobal
 if bufexists("~/dotfiles/os-SHARED/.alias_git.sh") | buffer ~/dotfiles/os-SHARED/.alias_git.sh | else | edit ~/dotfiles/os-SHARED/.alias_git.sh | endif
@@ -248,12 +248,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 157 - ((6 * winheight(0) + 8) / 16)
+let s:l = 157 - ((13 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 157
 normal! 046|
+lcd ~/dotfiles
 wincmd w
 argglobal
 if bufexists("~/dotfiles/os-ANDROID/.bash_profile") | buffer ~/dotfiles/os-ANDROID/.bash_profile | else | edit ~/dotfiles/os-ANDROID/.bash_profile | endif
@@ -265,12 +266,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 135 - ((10 * winheight(0) + 10) / 20)
+let s:l = 135 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 135
 normal! 0
+lcd ~/dotfiles
 wincmd w
 argglobal
 if bufexists("~/dotfiles/os-SHARED/.alias_git.sh") | buffer ~/dotfiles/os-SHARED/.alias_git.sh | else | edit ~/dotfiles/os-SHARED/.alias_git.sh | endif
@@ -282,12 +284,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 169 - ((5 * winheight(0) + 8) / 16)
+let s:l = 169 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 169
 normal! 0
+lcd ~/dotfiles
 wincmd w
 argglobal
 if bufexists("~/dotfiles/os-LINUX-fedora/.bashrc") | buffer ~/dotfiles/os-LINUX-fedora/.bashrc | else | edit ~/dotfiles/os-LINUX-fedora/.bashrc | endif
@@ -299,7 +302,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 15 - ((14 * winheight(0) + 10) / 20)
+let s:l = 15 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -317,7 +320,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 25 - ((9 * winheight(0) + 8) / 16)
+let s:l = 25 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -325,18 +328,18 @@ normal! zt
 normal! 06|
 lcd ~/dotfiles
 wincmd w
-exe '1resize ' . ((&lines * 20 + 20) / 40)
-exe 'vert 1resize ' . ((&columns * 49 + 79) / 158)
-exe '2resize ' . ((&lines * 16 + 20) / 40)
-exe 'vert 2resize ' . ((&columns * 49 + 79) / 158)
-exe '3resize ' . ((&lines * 20 + 20) / 40)
-exe 'vert 3resize ' . ((&columns * 49 + 79) / 158)
-exe '4resize ' . ((&lines * 16 + 20) / 40)
-exe 'vert 4resize ' . ((&columns * 49 + 79) / 158)
-exe '5resize ' . ((&lines * 20 + 20) / 40)
-exe 'vert 5resize ' . ((&columns * 58 + 79) / 158)
-exe '6resize ' . ((&lines * 16 + 20) / 40)
-exe 'vert 6resize ' . ((&columns * 58 + 79) / 158)
+exe '1resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe '2resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
+exe '3resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
+exe '4resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 4resize ' . ((&columns * 52 + 79) / 158)
+exe '5resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 5resize ' . ((&columns * 52 + 79) / 158)
+exe '6resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 6resize ' . ((&columns * 52 + 79) / 158)
 tabedit ~/dotfiles/os-MAC/.tmux.conf
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -447,11 +450,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 234 - ((9 * winheight(0) + 9) / 18)
+let s:l = 233 - ((8 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-234
+233
 normal! 044|
 lcd ~/dotfiles
 wincmd w
@@ -547,11 +550,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 5 - ((3 * winheight(0) + 18) / 37)
+let s:l = 4 - ((2 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
+4
 normal! 0
 lcd ~/dotfiles
 wincmd w
@@ -613,7 +616,7 @@ exe 'vert 1resize ' . ((&columns * 39 + 79) / 158)
 exe 'vert 2resize ' . ((&columns * 39 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 39 + 79) / 158)
 exe 'vert 4resize ' . ((&columns * 38 + 79) / 158)
-tabnext 1
+tabnext 5
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
