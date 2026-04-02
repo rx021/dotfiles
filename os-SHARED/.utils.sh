@@ -16,13 +16,13 @@ create_script_alias()
   fallback_msg="echo '> no ${script_path} file'"
 
   if [[ "$SHELL" == *"bash" ]]; then
-    echo "HAVE BASH"
+    #echo "HAVE BASH"
     script_attempt="[ -f $script_path ] && bash $script_path || $fallback_msg"
   elif [[ "$SHELL" == *"zsh" ]]; then
-    echo "HAVE ZSH"
+    #echo "HAVE ZSH"
     script_attempt="[ -f $script_path ] && zsh $script_path || $fallback_msg"
   else
-    echo "no SHELL"
+    #echo "no SHELL"
     script_attempt="$fallback_msg"
   fi
   

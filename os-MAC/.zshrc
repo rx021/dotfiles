@@ -32,8 +32,6 @@ source ~/dotfiles/os-SHARED/.alias_git_mac.sh
 # // show hidden files
 # cmd + shift + .
 
-# SYNC IF SYNC FILE EXISTS
-#alias sy='echo "// trying sync script"; [ -f ~/dotfiles/SCRIPTS/.sync.sh ] && sh ~/dotfiles/SCRIPTS/.sync.sh || echo "> no ~/dotfiles/SCRIPTS/.sync.sh file"'
 
 #TODO: create vim man pages for hotkeys?
 #TODO: shell man pages for hotkeys?
