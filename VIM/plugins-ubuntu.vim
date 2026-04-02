@@ -178,12 +178,13 @@ call plug#begin('~/.config/nvim/plugged')
     " even did
     " git config --global url.ssh://git@github.com/.insteadOf https://github.com/
 
+    " doesn't work because NVIM < 0.11.7
     " dep required
-    Plug 'nvim-lua/plenary.nvim'
+    "Plug 'nvim-lua/plenary.nvim'
     " dep suggested; needs gcc
-    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+    "Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
     " main plugin
-    Plug 'nvim-telescope/telescope.nvim', { 'tag': 'v0.2.1' } 
+    "Plug 'nvim-telescope/telescope.nvim', { 'tag': 'v0.2.1' } 
 
 
 call plug#end()
@@ -232,8 +233,8 @@ colorscheme darcula
 " `r` is used to reload the directory to have the new file show
 
 " ctrl-p for fzf between files
-"map <C-p> :Files<CR>
-map <C-p> :Telescope find_files<CR>
+map <C-p> :Files<CR>
+"map <C-p> :Telescope find_files<CR>
 
 
 map <C-i> :GitGutterSignsToggle<CR> 
