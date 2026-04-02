@@ -22,145 +22,161 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     
     "Plug 'preservim/nerdtree' " to see filetree
-    " -- turning off to better understand netrw
+    " turning off to better understand netrw
 
     Plug 'airblade/vim-gitgutter' " to see git if line changed
 
     Plug 'preservim/nerdcommenter' " allows commenting out 
-    " ,cc //to comment all within thin same column
-    " ,ci //to comment invert (toggle)
+    " ,cc " to comment all within thin same column
+    " ,ci " to comment invert (toggle)
 
     "Plug 'ctrlpvim/ctrlp.vim' " using fzf instead now
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    " -- enables :Files
+    " enables :Files
+
     Plug 'jparise/vim-graphql' " graphQL syntax highlighting
     Plug 'StanAngeloff/php.vim' " php syntax highlighting // archived DEC 2020
     Plug 'adoy/vim-php-refactoring-toolbox'
-    "<Leader>rlv //rename local variable
-    "<L>rcv //rename class variable
-    "<L>rm //rename method
-    "<L>eu //extract use statement
-    "<L>du //detect unused use statment
-    "<L>ec //extract const
-    "<L>ep //extract class property
-    "<L>em //extract method
-    "<L>cp //create property
-    "<L>== //align assignments (equals)
-    "<L>sg //create getters & setters
-    "<L>cog //create getters
-    "<L>da //document all using your document plugin
+    "<Leader>rlv " rename local variable
+    "<L>rcv      " rename class variable
+    "<L>rm       " rename method
+    "<L>eu       " extract use statement
+    "<L>du       " detect unused use statment
+    "<L>ec       " extract const
+    "<L>ep       " extract class property
+    "<L>em       " extract method
+    "<L>cp       " create property
+    "<L>==       " align assignments (equals)
+    "<L>sg       " create getters & setters
+    "<L>cog      " create getters
+    "<L>da       " document all using your document plugin
 
     Plug 'tpope/vim-fugitive'
-    " :Git blame // to view the commit history
-    "   <enter> // to view the selected commit 
-    " :Gclog // to view a list of commits and what you did in them
+    " :Git blame " to view the commit history
+    "   <enter>  " to view the selected commit 
+    " :Gclog     " to view a list of commits and what you did in them
 
-    " // to manage git branches
+    " TO MANAGE GIT BRANCHES
     Plug 'sodapopcan/vim-twiggy'
     " :Twiggy
     " ERROR: Unknown function FugitiveShellCommand()
 
-    " // a git commit browser
+    " A GIT COMMIT BROWSER
     Plug 'junegunn/gv.vim' 
     " :GV
     " ERROR: Vim(let):E117: Unknown function: FugitiveShellCommand
 
-    " // don't want to include tags just yet
     "Plug 'majutsushi/tagbar'
-    " // requires ctags to be included
     " :TagbarToggle
+    " requires ctags to be included
+    " don't want to include tags just yet
 
-"// turning off for now bc of node server running out of memory
     "Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " :CocInstall coc-tsserver coc-json coc-html coc-css
     " :CocInstall coc-phpls
+    " turning off for now bc of node server running out of memory
 
-    " // just turning off for now
     "Plug 'arnaud-lb/vim-php-namespace', {'for': 'php'}
+    " just turning off for now
 
-    " // autocompletion plug in
+    " AUTOCOMPLETION PLUG IN
     "Plug 'ncm2/ncm2'
     "Plug 'roxma/nvim-yarp'
-    " // NOTE: you need to install completion sources to get completions. Check
-    " // our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+    " NOTE: you need to install completion sources
+    "       to get completions.
+    "       Check our wiki page for a list of sources:
+    "       https://github.com/ncm2/ncm2/wiki
     "Plug 'ncm2/ncm2-bufword'
     "Plug 'ncm2/ncm2-path'
     "Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
     "Plug 'phpactor/ncm2-phpactor'
 
-    " // makes the start page little more informative with recent files used
+    " makes the START PAGE MORE INFORMATIVE
+    " with recent files used
     Plug 'mhinz/vim-startify'
 
-    " // Vim script for text filtering and alignment
+    " VIM SCRIPT FOR TEXT FILTERING AND ALIGNMENT
     Plug 'godlygeek/tabular'
-    " // EX: for aligning by commas (uses regex)
     ":Tabularize /, 
-    "Some short phrase         , some other phrase
-    "A much longer phrase here , and another long phrase
+    " EX: for aligning by commas (uses regex)
+    "  Some short phrase         , some other phrase
+    "  A much longer phrase here , and another long phrase
 
-    " // Syntax highlighting, matching rules and mappings for the original Markdown and extensions.
-    "Plug 'plasticboy/vim-markdown' " turning off for now bc it looks worse than default
+    " Syntax highlighting,
+    " matching rules and mappings
+    " for the original Markdown and extensions.
+    "Plug 'plasticboy/vim-markdown'
+    " turning off for now bc it looks worse than default
 
-    " // dim paragraphs above and below the active paragraph
+    " DIM PARAGRAPHS ABOVE AND BELOW THE ACTIVE PARAGRAPH
     Plug 'junegunn/limelight.vim'
     " :Limelight!
-    " // Distraction free writing by removing UI elements and centering everything
+    
+    " DISTRACTION FREE WRITING
+    " by removing UI elements and centering everything
     Plug 'junegunn/goyo.vim'
-    " :Goyo // to toggle
-    " // CALENDAR app for vim - calendar
+    " :Goyo " to toggle
+    "
+    " CALENDAR app for vim - calendar
     Plug 'itchyny/calendar.vim'
     " :Calendar
-    " // Press E key to view the event list,
-    " // and T key to view the task list.
-    " // Also, press ? key to view a quick help
+    " Press E key to view the event list,
+    " and T key to view the task list.
+    " Also, press ? key to view a quick help
     " :Calendar 2000 1 1
     " :Calendar -view=year
     " :Calendar -view=year -split=vertical -width=27
     " :Calendar -view=year -split=horizontal -position=below -height=12
     " :Calendar -view=clock
 
-    " // provides syntax highlighting and improved indentation
+    " JS SYNTAX HIGHLIGHTING and improved indentation
     Plug 'pangloss/vim-javascript'
 
-    " // svelte syntax highlighting
+    " SVELTE SYNTAX HIGHLIGHTING
     Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
-    " // vue syntax highlighting
+    " VUE SYNTAX HIGHLIGHTING
     Plug 'posva/vim-vue'
 
-    " // to allow CSV parsing
+    " CSV parsing
     "Plug 'chrisbra/csv.vim'
-    " // looks weird so commenting out for now
+    " looks weird so commenting out for now
 
-    " // to allow rust-lang parsing and syntax highlighting
+    " RUST-LANG PARSING AND SYNTAX HIGHLIGHTING
     Plug 'rust-lang/rust.vim'
 
-    " // to allow ruby lang parsing and syntax highlighting
+    " RUBY LANG PARSING AND SYNTAX HIGHLIGHTING
     Plug 'vim-ruby/vim-ruby'
-    " // to allow ruby lang parsing and syntax highlighting
+    " RAILS PARSING AND SYNTAX HIGHLIGHTING
     Plug 'tpope/vim-rails'
 
-    " // to change surrounding (matching) tags or quotations
+    " TO CHANGE SURROUNDING (MATCHING) TAGS OR QUOTATIONS
     Plug 'tpope/vim-surround'
-    " cs"] // to change from " to ]
-    " cs'<q> // to change from ' to <q> and </q>
-    " cst{ // to change from <any-tag> to } with a space
+    " cs"] -- to change from " to ]
+    " cs'<q> -- to change from ' to <q> and </q>
+    " cst{ -- to change from <any-tag> to } with a space
 
-    " // React syntax highlighting
+    " REACT SYNTAX HIGHLIGHTING
     "Plug 'mxw/vim-jsx'
 
-    " // Typescript syntax highlighting
+    " TYPESCRIPT SYNTAX HIGHLIGHTING
     Plug 'leafgarland/typescript-vim'
-    " // React JSX syntax highlighting for vim and Typescript
+
+    " REACT JSX SYNTAX HIGHLIGHTING FOR VIM AND TYPESCRIPT
     Plug 'peitalin/vim-jsx-typescript'
 
-    " // BLADE template highlighting
+    " BLADE TEMPLATE HIGHLIGHTING
     Plug 'jwalton512/vim-blade'
 
-    " // shows minimap on the right side for your code
+    " shows MINIMAP on the right side for your code
     Plug 'wfxr/minimap.vim'
     " :MinimapToggle
+
+    Plug 'nvim-lua/plenary.vim'
+    " issues install this
+    " even did
+    " git config --global url.ssh://git@github.com/.insteadOf https://github.com/
 
 call plug#end()
 
@@ -174,12 +190,28 @@ function! s:tweak_darcula_colors()
   " adds Truecolor to the terminal if supported
   set termguicolors
   let g:lightline = { 'colorscheme': 'darculaOriginal' }
+
+  "-- fix attempt for Goyo restting bad
+  "hi LineNr ...
+  "hi FoldColumn ...
 endfunction
 autocmd! ColorScheme darcula call s:tweak_darcula_colors()
 " prefered syntax color scheme
 " TODO CHECK IF PLUGIN INSTALLED
 colorscheme darcula
 
+"-- the following is for init.vim
+"lua << EOF
+  "require("catppuccin").setup({
+    "flavour = "mocha",
+  "})
+"EOF
+"colorscheme catppuccin
+"-- the following is for init.lua
+"require("catppuccin").setup({
+  "flavour = "mocha",
+"})
+"vim.cmd.colorscheme "catppuccin"
 
 """"""""""""""" 
 " PLUG_IN:
