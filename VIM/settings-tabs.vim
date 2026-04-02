@@ -2,14 +2,16 @@
 " TABS:
 """"""""""""""" 
 
-" // show tabs all the time
+" -- show tabs all the time
 set showtabline=2
-"set guitablabel=%N/\ %t\ %M "// doesn't work
-"set tabline=%N:%t\ %M "// removes the list of tabs
+"set guitablabel=%N/\ %t\ %M " doesn't work
+"set tabline=%N:%t\ %M " removes the list of tabs
 function MyTabLabel(n)
-  let buflist = tabpagebuflist(a:n) "// list of buff# for each window
-  let winnr = tabpagewinnr(a:n) "// number of windows in tab
-   "// use [tabindex]; grabs last window in tab buffer list; use last few filename letters;
+  let buflist = tabpagebuflist(a:n) " list of buff# for each window
+  let winnr = tabpagewinnr(a:n) " number of windows in tab
+   " use [tabindex];
+   " grabs last window in tab buffer list;
+   " use last few filename letters;
   return '[' .. (a:n) .. ']' .. bufname(buflist[winnr - 1])[-14:-1]
 endfunction
 
@@ -41,6 +43,6 @@ function MyTabLine()
 
   return s
 endfunction
-set tabline=%!MyTabLine() "// filenames get too big
+set tabline=%!MyTabLine() " filenames get too big
 
 
