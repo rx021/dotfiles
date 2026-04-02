@@ -129,32 +129,32 @@ alias glp="$(create_alias "git log -p")"
 # -- just another alias to make t easier to view changes
 alias glshow="$(create_alias "git log -p")"
 
-# -- to reset to a previous commit but careful as you lose everything 
+# -- to RESET to a previous commit but careful as you lose everything 
 # git reset --hard <commit-ID || HEAD>
 
-# -- to revert a certain commit or the last commit on HEAD
+# -- to REVERT a certain commit or the last commit on HEAD
 # -- the diff with reset is that this does the opposite of the given commit 
-# -- note: must use full hash that you can get from git log 
+# -- NOTE: must use full hash that you can get from git log 
 # git revert <commit-hash || HEAD>
 
-# -- to cherry pick a commit from another branch
+# -- to CHERRY PICK A COMMIT from another branch
 # git cherry-pick <commmit-hash>
 
-# -- to cherry pick a range of commits inclusive of the first commit
+# -- to CHERRY PICK A RANGE of commits inclusive of the first commit
 # git cherry-pick <commmit-id-1>~..<commmit-id-n>
 
-# -- to change remote after the fact
-# git remote -v 
+# GIT CHANGE REMOTE:
+# git remote -v -- to check remote
 
 # git remote add origin git@github-personal:reinhardt021/dotfiles.git
 # git remote -v 
-# -- `origin` remote should be gone
+# -- `origin` remote should now exist
 
 # git remote remove rx
 # git remote -v 
 # -- `rx` remote should be gone
 
-# -- when only changing the FILENAME casing in git
+# -- only changing the FILENAME casing in git:
 # git mv <filename>
 # NOTE: WINDOWS & MAC OS are case-INSENSITIVE
 #       LINUX is case-SENSITIVE

@@ -130,20 +130,6 @@ alias otrash='open ~/.Trash/'
 #- force push to rebase the remote branch
 #git push -f origin <branch>
 
-# // to reset to a previous commit but careful as you lose everything 
-# git reset --hard <commit-ID || HEAD>
-
-# // to revert a certain commit or the last commit on HEAD
-# // the diff with reset is that this does the opposite of the given commit 
-# // note: must use full hash that you can get from git log 
-# git revert <commit-hash || HEAD>
-
-#-- to cherry pick a range of commits inclusive of the first commit
-# git cherry-pick <commmit-id-1>~..<commmit-id-n>
-
-# GIT CHANGE REMOTE 
-# git remote set-url <remote-name> <ssh-remote-url>
-# git remote set-url origin git@github.com:reinhardt021/x-spotify.git
 
 
 # WATCH
