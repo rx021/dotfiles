@@ -212,6 +212,7 @@ autocmd! ColorScheme darcula call s:tweak_darcula_colors()
 " TODO CHECK IF PLUGIN INSTALLED
 "colorscheme darcula 
 colorscheme gruvbox 
+" NOTE: gruvbox is better for Goyo than darcula
 
 "-- the following is for init.vim
 "lua << EOF
