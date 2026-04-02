@@ -67,7 +67,7 @@ badd +1 os-LINUX-fedora/config-tmux.sh
 badd +4 os-LINUX-fedora/config-vim.sh
 badd +1 thelp
 badd +27 VIM/settings.vim
-badd +35 VIM/plugins.vim
+badd +37 VIM/plugins.vim
 badd +35 os-LINUX-fedora/apps-01-install.sh
 badd +23 os-LINUX-ubuntu/init.vim
 badd +1 VIM/settings-basics.vim
@@ -78,7 +78,7 @@ badd +37 VIM/settings-status-line.vim
 badd +1 _path=\$1
 badd +24 VIM/settings-mappings.vim
 badd +42 VIM/settings-tabs.vim
-badd +176 VIM/plugins-ubuntu.vim
+badd +234 VIM/plugins-ubuntu.vim
 argglobal
 %argdel
 edit README.md
@@ -450,12 +450,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 233 - ((8 * winheight(0) + 9) / 18)
+let s:l = 231 - ((6 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-233
-normal! 044|
+231
+normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
@@ -486,16 +486,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 22 - ((21 * winheight(0) + 18) / 37)
+let s:l = 21 - ((20 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
+21
 normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists("~/dotfiles/VIM/settings-basics.vim") | buffer ~/dotfiles/VIM/settings-basics.vim | else | edit ~/dotfiles/VIM/settings-basics.vim | endif
+if bufexists("~/dotfiles/VIM/plugins-ubuntu.vim") | buffer ~/dotfiles/VIM/plugins-ubuntu.vim | else | edit ~/dotfiles/VIM/plugins-ubuntu.vim | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -504,14 +504,15 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+let s:l = 233 - ((15 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 09|
+233
+normal! 0
 lcd ~/dotfiles
 wincmd w
+4wincmd w
 exe '1resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe '2resize ' . ((&lines * 18 + 20) / 40)
@@ -616,7 +617,7 @@ exe 'vert 1resize ' . ((&columns * 39 + 79) / 158)
 exe 'vert 2resize ' . ((&columns * 39 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 39 + 79) / 158)
 exe 'vert 4resize ' . ((&columns * 38 + 79) / 158)
-tabnext 5
+tabnext 4
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
