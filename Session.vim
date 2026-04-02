@@ -32,7 +32,7 @@ badd +3 os-ANDROID/.bash_profile
 badd +76 os-LINUX-remote/.bash_profile
 badd +1 SCRIPTS/.sync.sh
 badd +1 os-MAC/apps-02-config.sh
-badd +403 os-MAC/apps-01-install.sh
+badd +234 os-MAC/apps-01-install.sh
 badd +1 os-ANDROID/apps-01-install.sh
 badd +2 os-LINUX-remote/apps-01-install.sh
 badd +17 TOOLS/ghostty.md
@@ -45,10 +45,10 @@ badd +7 os-LINUX/config-vim.sh
 badd +1 os-LINUX/.bash_profile
 badd +1 os-LINUX/init.vim
 badd +8 os-MAC/config-vim.sh
-badd +1 os-MAC/init.vim
+badd +17 os-MAC/init.vim
 badd +3 os-ANDROID/.tmux.conf
 badd +1 .tmux.conf.x-leader
-badd +6 os-LINUX-fedora/init.vim
+badd +19 os-LINUX-fedora/init.vim
 badd +2 os-LINUX-fedora/.bashrc
 badd +1 os-SHARED/config-hooks.sh
 badd +13 os-SHARED/.bash-shared
@@ -63,7 +63,7 @@ badd +5 os-SHARED/alias_tmux.bash
 badd +4 os-SHARED/.alias_tmux.bash
 badd +4 os-SHARED/.alias_filesystem.sh
 badd +71 os-SHARED/.cli.sh
-badd +137 os-SHARED/.alias_git.sh
+badd +151 os-SHARED/.alias_git.sh
 badd +4 os-LINUX-fedora/config-bash.sh
 badd +1 os-SHARED/.alias_tmux.sh
 badd +19 os-SHARED/.utils.sh
@@ -73,11 +73,17 @@ badd +1 os-LINUX-fedora/config-tmux.sh
 badd +4 os-LINUX-fedora/config-vim.sh
 badd +1 thelp
 badd +27 VIM/settings.vim
-badd +187 VIM/plugins.vim
-badd +50 os-LINUX-fedora/apps-01-install.sh
+badd +35 VIM/plugins.vim
+badd +1 os-LINUX-fedora/apps-01-install.sh
 badd +66 Session.vim
 badd +1 os-SHARED/.alias_git_mac.sh
 badd +1 os-SHARED/.alias_git_fedora.sh
+badd +37 VIM/settings-status-line.vim
+badd +1 _path=\$1
+badd +24 VIM/settings-mappings.vim
+badd +1 VIM/settings-basics.vim
+badd +42 VIM/settings-tabs.vim
+badd +176 VIM/plugins-ubuntu.vim
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -442,7 +448,6 @@ keepjumps 12
 normal! 0
 lcd ~/dotfiles
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 54 + 88) / 176)
 exe 'vert 2resize ' . ((&columns * 65 + 88) / 176)
 exe 'vert 3resize ' . ((&columns * 55 + 88) / 176)
@@ -461,10 +466,6 @@ split
 1wincmd k
 wincmd w
 wincmd w
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
@@ -476,14 +477,11 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe '1resize ' . ((&lines * 17 + 19) / 38)
-exe 'vert 1resize ' . ((&columns * 55 + 88) / 176)
+exe 'vert 1resize ' . ((&columns * 58 + 88) / 176)
 exe '2resize ' . ((&lines * 17 + 19) / 38)
-exe 'vert 2resize ' . ((&columns * 55 + 88) / 176)
-exe '3resize ' . ((&lines * 17 + 19) / 38)
-exe 'vert 3resize ' . ((&columns * 54 + 88) / 176)
-exe '4resize ' . ((&lines * 17 + 19) / 38)
-exe 'vert 4resize ' . ((&columns * 54 + 88) / 176)
-exe 'vert 5resize ' . ((&columns * 65 + 88) / 176)
+exe 'vert 2resize ' . ((&columns * 58 + 88) / 176)
+exe 'vert 3resize ' . ((&columns * 58 + 88) / 176)
+exe 'vert 4resize ' . ((&columns * 58 + 88) / 176)
 argglobal
 balt ~/dotfiles/os-LINUX-fedora/apps-01-install.sh
 setlocal fdm=indent
@@ -494,20 +492,20 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 403 - ((14 * winheight(0) + 8) / 17)
+let s:l = 234 - ((9 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 403
-normal! 037|
+keepjumps 234
+normal! 044|
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-SHARED/.alias_git.sh", ":p")) | buffer ~/dotfiles/os-SHARED/.alias_git.sh | else | edit ~/dotfiles/os-SHARED/.alias_git.sh | endif
+if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/init.vim", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/init.vim | else | edit ~/dotfiles/os-LINUX-fedora/init.vim | endif
 if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-SHARED/.alias_git.sh
+  silent file ~/dotfiles/os-LINUX-fedora/init.vim
 endif
-balt ~/dotfiles/os-SHARED/.alias_git_fedora.sh
+balt ~/dotfiles/VIM/settings-basics.vim
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -516,11 +514,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 151 - ((5 * winheight(0) + 8) / 17)
+let s:l = 23 - ((12 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 151
+keepjumps 23
 normal! 0
 lcd ~/dotfiles
 wincmd w
@@ -538,67 +536,43 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 8) / 17)
+let s:l = 24 - ((23 * winheight(0) + 17) / 35)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 24
+normal! 0
+lcd ~/dotfiles
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/dotfiles/VIM/settings-basics.vim", ":p")) | buffer ~/dotfiles/VIM/settings-basics.vim | else | edit ~/dotfiles/VIM/settings-basics.vim | endif
+if &buftype ==# 'terminal'
+  silent file ~/dotfiles/VIM/settings-basics.vim
+endif
+balt ~/dotfiles/VIM/plugins-ubuntu.vim
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+let s:l = 1 - ((0 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
-normal! 0
+normal! 09|
 lcd ~/dotfiles
 wincmd w
-argglobal
-if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/init.vim", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/init.vim | else | edit ~/dotfiles/os-LINUX-fedora/init.vim | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-LINUX-fedora/init.vim
-endif
-balt ~/dotfiles/os-LINUX-fedora/config-vim.sh
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 6 - ((1 * winheight(0) + 8) / 17)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 6
-normal! 0
-lcd ~/dotfiles
-wincmd w
-argglobal
-if bufexists(fnamemodify("~/dotfiles/VIM/plugins.vim", ":p")) | buffer ~/dotfiles/VIM/plugins.vim | else | edit ~/dotfiles/VIM/plugins.vim | endif
-if &buftype ==# 'terminal'
-  silent file ~/dotfiles/VIM/plugins.vim
-endif
-balt ~/dotfiles/VIM/settings.vim
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 181 - ((26 * winheight(0) + 17) / 35)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 181
-normal! 0
-lcd ~/dotfiles
-wincmd w
+3wincmd w
 exe '1resize ' . ((&lines * 17 + 19) / 38)
-exe 'vert 1resize ' . ((&columns * 55 + 88) / 176)
+exe 'vert 1resize ' . ((&columns * 58 + 88) / 176)
 exe '2resize ' . ((&lines * 17 + 19) / 38)
-exe 'vert 2resize ' . ((&columns * 55 + 88) / 176)
-exe '3resize ' . ((&lines * 17 + 19) / 38)
-exe 'vert 3resize ' . ((&columns * 54 + 88) / 176)
-exe '4resize ' . ((&lines * 17 + 19) / 38)
-exe 'vert 4resize ' . ((&columns * 54 + 88) / 176)
-exe 'vert 5resize ' . ((&columns * 65 + 88) / 176)
+exe 'vert 2resize ' . ((&columns * 58 + 88) / 176)
+exe 'vert 3resize ' . ((&columns * 58 + 88) / 176)
+exe 'vert 4resize ' . ((&columns * 58 + 88) / 176)
 tabnext
 edit ~/dotfiles/LANGUAGES/javascript.md
 let s:save_splitbelow = &splitbelow
@@ -804,7 +778,7 @@ wincmd w
 exe 'vert 1resize ' . ((&columns * 58 + 88) / 176)
 exe 'vert 2resize ' . ((&columns * 58 + 88) / 176)
 exe 'vert 3resize ' . ((&columns * 58 + 88) / 176)
-tabnext 3
+tabnext 4
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
