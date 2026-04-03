@@ -2,4 +2,6 @@
 #enabling quick tmux binding for linux MBA
 unbind C-b;
 set-option -g prefix `;
-bind ` send-prefix
+#bind ` send-prefix
+#-- secondary prefix binding
+set-option -g prefix2 C-b;
