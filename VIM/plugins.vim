@@ -179,7 +179,7 @@ colorscheme retrobox " #1
 
 " ctrl-p for fzf between files
 "map <C-p> :Files<CR>
-map <C-p> :Telescope find_files<CR>
+map <C-p> :lua require('telescope.builtin').find_files({ hidden = true })<CR>
 
 map <C-i> :GitGutterSignsToggle<CR> 
 map <C-l> :GitGutterLineHighlightsToggle<CR>
