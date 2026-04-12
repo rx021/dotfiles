@@ -50,6 +50,10 @@ sudo apt install ripgrep fzf
 # or activity monitor (MAC)
 sudo dnf install btop
 
+# for coloring CLI output
+# just for easier setup
+sudo dnf install bat
+
 # INSTALL RUST:
 
 # OPTIONAL
