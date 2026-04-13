@@ -99,7 +99,8 @@ badd +18 TOOLS/TMUX/tmux-plugins.conf
 badd +1 os-LINUX-ubuntu/logs.md
 badd +48 os-LINUX-ubuntu/.tmux.conf
 badd +1 TOOLS/TMUX/tmux-plugins-fedora.conf
-badd +0 SYSTEMS/projects.md
+badd +14 SYSTEMS/projects.md
+badd +8 SYSTEMS/README-SYSTEMS.md
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -783,7 +784,7 @@ if bufexists(fnamemodify("~/dotfiles/TOOLS/laravel-vapor.md", ":p")) | buffer ~/
 if &buftype ==# 'terminal'
   silent file ~/dotfiles/TOOLS/laravel-vapor.md
 endif
-balt ~/dotfiles/FRAMEWORKS/next-react.md
+balt ~/dotfiles/SYSTEMS/projects.md
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -792,11 +793,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 2 - ((1 * winheight(0) + 9) / 18)
+let s:l = 1 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
+keepjumps 1
 normal! 0
 lcd ~/dotfiles
 wincmd w
@@ -805,6 +806,7 @@ if bufexists(fnamemodify("~/dotfiles/SYSTEMS/projects.md", ":p")) | buffer ~/dot
 if &buftype ==# 'terminal'
   silent file ~/dotfiles/SYSTEMS/projects.md
 endif
+balt ~/dotfiles/SYSTEMS/README-SYSTEMS.md
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -813,12 +815,12 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 16 - ((15 * winheight(0) + 18) / 37)
+let s:l = 14 - ((13 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 16
-normal! 07|
+keepjumps 14
+normal! 0
 lcd ~/dotfiles
 wincmd w
 5wincmd w
