@@ -13,9 +13,9 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 TOOLS/laravel-vapor.md
-badd +5 FRAMEWORKS/next-react.md
-badd +2 LIBRARIES/stripe.md
+badd +2 TOOLS/laravel-vapor.md
+badd +1 FRAMEWORKS/next-react.md
+badd +1 LIBRARIES/stripe.md
 badd +1 LANGUAGES/javascript.md
 badd +1 .tmux.conf
 badd +1 init.vim
@@ -32,7 +32,7 @@ badd +3 os-ANDROID/.bash_profile
 badd +76 os-LINUX-remote/.bash_profile
 badd +1 SCRIPTS/.sync.sh
 badd +1 os-MAC/apps-02-config.sh
-badd +3 os-MAC/apps-01-install.sh
+badd +1 os-MAC/apps-01-install.sh
 badd +20 os-ANDROID/apps-01-install.sh
 badd +2 os-LINUX-remote/apps-01-install.sh
 badd +17 TOOLS/ghostty.md
@@ -68,7 +68,7 @@ badd +4 os-LINUX-fedora/config-bash.sh
 badd +1 os-SHARED/.alias_tmux.sh
 badd +19 os-SHARED/.utils.sh
 badd +1 os-SHARED/.x.sh
-badd +4 os-LINUX-fedora/.tmux.conf
+badd +1 os-LINUX-fedora/.tmux.conf
 badd +1 os-LINUX-fedora/config-tmux.sh
 badd +4 os-LINUX-fedora/config-vim.sh
 badd +1 thelp
@@ -98,7 +98,7 @@ badd +8 TOOLS/TMUX/tmux-status-bar.conf
 badd +18 TOOLS/TMUX/tmux-plugins.conf
 badd +1 os-LINUX-ubuntu/logs.md
 badd +48 os-LINUX-ubuntu/.tmux.conf
-badd +0 TOOLS/TMUX/tmux-plugins-fedora.conf
+badd +1 TOOLS/TMUX/tmux-plugins-fedora.conf
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -419,6 +419,10 @@ split
 1wincmd k
 wincmd w
 wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
@@ -433,8 +437,11 @@ exe '1resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe '2resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
+exe '3resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
+exe '4resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 4resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 5resize ' . ((&columns * 52 + 79) / 158)
 argglobal
 setlocal foldmethod=indent
 setlocal foldexpr=0
@@ -444,12 +451,12 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 9 - ((7 * winheight(0) + 9) / 18)
+let s:l = 1 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 9
-normal! 053|
+keepjumps 1
+normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
@@ -488,12 +495,34 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 6 - ((5 * winheight(0) + 18) / 37)
+let s:l = 5 - ((4 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 6
+keepjumps 5
 normal! 027|
+lcd ~/dotfiles
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/dotfiles/TOOLS/TMUX/tmux-plugins-fedora.conf", ":p")) | buffer ~/dotfiles/TOOLS/TMUX/tmux-plugins-fedora.conf | else | edit ~/dotfiles/TOOLS/TMUX/tmux-plugins-fedora.conf | endif
+if &buftype ==# 'terminal'
+  silent file ~/dotfiles/TOOLS/TMUX/tmux-plugins-fedora.conf
+endif
+balt ~/dotfiles/TOOLS/TMUX/tmux-plugins.conf
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 74 - ((15 * winheight(0) + 9) / 18)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 74
+normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
@@ -518,13 +547,15 @@ keepjumps 11
 normal! 0
 lcd ~/dotfiles
 wincmd w
-3wincmd w
 exe '1resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe '2resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
+exe '3resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
+exe '4resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 4resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 5resize ' . ((&columns * 52 + 79) / 158)
 tabnext
 edit ~/dotfiles/os-MAC/apps-01-install.sh
 let s:save_splitbelow = &splitbelow
@@ -655,10 +686,15 @@ wincmd _ | wincmd |
 vsplit
 wincmd _ | wincmd |
 vsplit
+2wincmd h
 wincmd _ | wincmd |
-vsplit
-3wincmd h
+split
+1wincmd k
 wincmd w
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
 wincmd w
 wincmd w
 let &splitbelow = s:save_splitbelow
@@ -670,12 +706,17 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 39 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 39 + 79) / 158)
-exe 'vert 3resize ' . ((&columns * 38 + 79) / 158)
-exe 'vert 4resize ' . ((&columns * 39 + 79) / 158)
+exe '1resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe '2resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
+exe '3resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
+exe '4resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 4resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 5resize ' . ((&columns * 52 + 79) / 158)
 argglobal
-balt ~/dotfiles/os-MAC/config-vim.sh
+balt ~/dotfiles/LIBRARIES/stripe.md
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -684,11 +725,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 5 - ((3 * winheight(0) + 18) / 37)
+let s:l = 1 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 5
+keepjumps 1
 normal! 0
 lcd ~/dotfiles
 wincmd w
@@ -706,7 +747,7 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+let s:l = 1 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -728,7 +769,7 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+let s:l = 1 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -741,7 +782,28 @@ if bufexists(fnamemodify("~/dotfiles/TOOLS/laravel-vapor.md", ":p")) | buffer ~/
 if &buftype ==# 'terminal'
   silent file ~/dotfiles/TOOLS/laravel-vapor.md
 endif
-balt ~/dotfiles/LANGUAGES/javascript.md
+balt ~/dotfiles/FRAMEWORKS/next-react.md
+setlocal foldmethod=indent
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+let s:l = 2 - ((1 * winheight(0) + 9) / 18)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 2
+normal! 0
+lcd ~/dotfiles
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/dotfiles/TOOLS/laravel-vapor.md", ":p")) | buffer ~/dotfiles/TOOLS/laravel-vapor.md | else | edit ~/dotfiles/TOOLS/laravel-vapor.md | endif
+if &buftype ==# 'terminal'
+  silent file ~/dotfiles/TOOLS/laravel-vapor.md
+endif
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -758,11 +820,17 @@ keepjumps 2
 normal! 0
 lcd ~/dotfiles
 wincmd w
-exe 'vert 1resize ' . ((&columns * 39 + 79) / 158)
-exe 'vert 2resize ' . ((&columns * 39 + 79) / 158)
-exe 'vert 3resize ' . ((&columns * 38 + 79) / 158)
-exe 'vert 4resize ' . ((&columns * 39 + 79) / 158)
-tabnext 3
+5wincmd w
+exe '1resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
+exe '2resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
+exe '3resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
+exe '4resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 4resize ' . ((&columns * 52 + 79) / 158)
+exe 'vert 5resize ' . ((&columns * 52 + 79) / 158)
+tabnext 5
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -777,6 +845,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
