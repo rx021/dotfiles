@@ -99,6 +99,7 @@ badd +18 TOOLS/TMUX/tmux-plugins.conf
 badd +1 os-LINUX-ubuntu/logs.md
 badd +48 os-LINUX-ubuntu/.tmux.conf
 badd +1 TOOLS/TMUX/tmux-plugins-fedora.conf
+badd +0 SYSTEMS/projects.md
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -800,9 +801,9 @@ normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/TOOLS/laravel-vapor.md", ":p")) | buffer ~/dotfiles/TOOLS/laravel-vapor.md | else | edit ~/dotfiles/TOOLS/laravel-vapor.md | endif
+if bufexists(fnamemodify("~/dotfiles/SYSTEMS/projects.md", ":p")) | buffer ~/dotfiles/SYSTEMS/projects.md | else | edit ~/dotfiles/SYSTEMS/projects.md | endif
 if &buftype ==# 'terminal'
-  silent file ~/dotfiles/TOOLS/laravel-vapor.md
+  silent file ~/dotfiles/SYSTEMS/projects.md
 endif
 setlocal foldmethod=indent
 setlocal foldexpr=0
@@ -812,12 +813,12 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 2 - ((1 * winheight(0) + 18) / 37)
+let s:l = 16 - ((15 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
-normal! 0
+keepjumps 16
+normal! 07|
 lcd ~/dotfiles
 wincmd w
 5wincmd w
