@@ -7,6 +7,8 @@ Some notes on starting new projects
 - [ ] Gather the knowledge needed to start
 - [ ] Gather the material needed to execute
 - [ ] Create an OUTLINE
+- [ ] create a TODO.md for the project
+    - this can help breakdown steps 
 
 ## EXECUTION
 - [ ] Get some gum to chew
