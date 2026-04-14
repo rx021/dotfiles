@@ -54,6 +54,9 @@ sudo dnf install btop
 # just for easier setup
 sudo dnf install bat
 
+# Terminal graphics
+sudo dnf install chafa
+
 # INSTALL RUST:
 
 # OPTIONAL
