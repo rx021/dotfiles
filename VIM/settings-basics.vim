@@ -339,6 +339,11 @@ syntax on " adds syntax highlighting
 "
 " o/O   -- TOGGLE btwn start & end of selected
 "
+" SEARCH for the WORD under the CURSOR
+"   search for the word under the cursor
+" `*` forward 
+" `#` backward 
+"
 " SELECT ALL:
 " ggVG
 " -- `gg` to go to top of page
