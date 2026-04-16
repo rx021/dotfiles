@@ -16,3 +16,4 @@ Some notes on starting new projects
 
 ## REVIEW
 - [ ] Have AI or someone else review your work
+- [ ] figure out how to DEBUG the component/modules
