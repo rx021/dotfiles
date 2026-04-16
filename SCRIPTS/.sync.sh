@@ -13,6 +13,7 @@ declare -a whitelist=(
   "OS25"
   ".os26"
   ".osYR"
+  "PebbleFaceX"
   #"rentatee"
   #"OSS"
 )
