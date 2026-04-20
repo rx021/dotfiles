@@ -32,7 +32,7 @@ badd +3 os-ANDROID/.bash_profile
 badd +76 os-LINUX-remote/.bash_profile
 badd +1 SCRIPTS/.sync.sh
 badd +1 os-MAC/apps-02-config.sh
-badd +1 os-MAC/apps-01-install.sh
+badd +234 os-MAC/apps-01-install.sh
 badd +20 os-ANDROID/apps-01-install.sh
 badd +2 os-LINUX-remote/apps-01-install.sh
 badd +17 TOOLS/ghostty.md
@@ -48,7 +48,7 @@ badd +8 os-MAC/config-vim.sh
 badd +20 os-MAC/init.vim
 badd +3 os-ANDROID/.tmux.conf
 badd +1 .tmux.conf.x-leader
-badd +19 os-LINUX-fedora/init.vim
+badd +23 os-LINUX-fedora/init.vim
 badd +2 os-LINUX-fedora/.bashrc
 badd +1 os-SHARED/config-hooks.sh
 badd +13 os-SHARED/.bash-shared
@@ -99,8 +99,8 @@ badd +18 TOOLS/TMUX/tmux-plugins.conf
 badd +1 os-LINUX-ubuntu/logs.md
 badd +48 os-LINUX-ubuntu/.tmux.conf
 badd +1 TOOLS/TMUX/tmux-plugins-fedora.conf
-badd +14 SYSTEMS/projects.md
-badd +8 SYSTEMS/README-SYSTEMS.md
+badd +16 SYSTEMS/projects.md
+badd +6 SYSTEMS/README-SYSTEMS.md
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -211,12 +211,12 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+let s:l = 16 - ((15 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 16
+normal! 014|
 lcd ~/dotfiles
 wincmd w
 exe '1resize ' . ((&lines * 18 + 20) / 40)
@@ -280,11 +280,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 141 - ((13 * winheight(0) + 10) / 20)
+let s:l = 140 - ((12 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 141
+keepjumps 140
 normal! 0
 wincmd w
 argglobal
@@ -364,11 +364,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 15 - ((11 * winheight(0) + 10) / 20)
+let s:l = 16 - ((12 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 15
+keepjumps 16
 normal! 0
 lcd ~/dotfiles
 wincmd w
@@ -394,6 +394,7 @@ keepjumps 25
 normal! 06|
 lcd ~/dotfiles
 wincmd w
+5wincmd w
 exe '1resize ' . ((&lines * 20 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 49 + 79) / 158)
 exe '2resize ' . ((&lines * 16 + 20) / 40)
@@ -497,12 +498,12 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 5 - ((4 * winheight(0) + 9) / 18)
+let s:l = 54 - ((3 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 5
-normal! 027|
+keepjumps 54
+normal! 015|
 lcd ~/dotfiles
 wincmd w
 argglobal
@@ -541,7 +542,7 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 11 - ((0 * winheight(0) + 18) / 37)
+let s:l = 11 - ((10 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -559,7 +560,7 @@ exe '4resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 4resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 5resize ' . ((&columns * 52 + 79) / 158)
 tabnext
-edit ~/dotfiles/os-MAC/apps-01-install.sh
+edit ~/dotfiles/os-LINUX-fedora/apps-01-install.sh
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -590,7 +591,7 @@ exe 'vert 2resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 4resize ' . ((&columns * 52 + 79) / 158)
 argglobal
-balt ~/dotfiles/os-LINUX-fedora/apps-01-install.sh
+balt ~/dotfiles/os-MAC/apps-01-install.sh
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -599,20 +600,20 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 234 - ((9 * winheight(0) + 9) / 18)
+let s:l = 56 - ((13 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 234
-normal! 044|
+keepjumps 56
+normal! 0
 lcd ~/dotfiles
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/dotfiles/os-LINUX-fedora/init.vim", ":p")) | buffer ~/dotfiles/os-LINUX-fedora/init.vim | else | edit ~/dotfiles/os-LINUX-fedora/init.vim | endif
+if bufexists(fnamemodify("~/dotfiles/VIM/settings-basics.vim", ":p")) | buffer ~/dotfiles/VIM/settings-basics.vim | else | edit ~/dotfiles/VIM/settings-basics.vim | endif
 if &buftype ==# 'terminal'
-  silent file ~/dotfiles/os-LINUX-fedora/init.vim
+  silent file ~/dotfiles/VIM/settings-basics.vim
 endif
-balt ~/dotfiles/VIM/settings-basics.vim
+balt ~/dotfiles/os-LINUX-fedora/init.vim
 setlocal foldmethod=indent
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -621,12 +622,12 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 23 - ((13 * winheight(0) + 9) / 18)
+let s:l = 343 - ((11 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 23
-normal! 0
+keepjumps 343
+normal! 04|
 lcd ~/dotfiles
 wincmd w
 argglobal
@@ -665,7 +666,7 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 180 - ((21 * winheight(0) + 18) / 37)
+let s:l = 180 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -815,15 +816,14 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 14 - ((13 * winheight(0) + 18) / 37)
+let s:l = 19 - ((18 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 14
-normal! 0
+keepjumps 19
+normal! 051|
 lcd ~/dotfiles
 wincmd w
-5wincmd w
 exe '1resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 52 + 79) / 158)
 exe '2resize ' . ((&lines * 18 + 20) / 40)
@@ -833,7 +833,7 @@ exe 'vert 3resize ' . ((&columns * 52 + 79) / 158)
 exe '4resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 4resize ' . ((&columns * 52 + 79) / 158)
 exe 'vert 5resize ' . ((&columns * 52 + 79) / 158)
-tabnext 5
+tabnext 2
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -848,7 +848,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
