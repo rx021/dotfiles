@@ -14,6 +14,7 @@ declare -a whitelist=(
   ".os26"
   ".osYR"
   "PebbleFaceX"
+  "trmnl-plugins-x"
   #"rentatee"
   #"OSS"
 )
