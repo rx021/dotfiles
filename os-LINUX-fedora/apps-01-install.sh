@@ -76,6 +76,9 @@ sudo apt-get install mosh
 sudo dnf install rbenv
 # it seems I already have RVM
 # so I don't need this 
+# to UNINSTALL
+# rm -rf "$(rbenv root)"
+# https://github.com/rbenv/rbenv
 
 # OPTIONAL:
 #
