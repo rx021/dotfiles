@@ -71,6 +71,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # // for better SSH when on mobile or just for spotty connections
 sudo apt-get install mosh
 
+# RUBY version manager
+# this way you can have many different versions of ruby
+sudo dnf install rbenv
+
 # OPTIONAL:
 #
 # TODO:
