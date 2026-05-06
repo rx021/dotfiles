@@ -21,3 +21,6 @@ source ~/dotfiles/os-SHARED/.pomodoro_fedora.sh
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Added by `rbenv init` on Wed May  6 03:46:19 PM PDT 2026
+eval "$(rbenv init - --no-rehash bash)"
