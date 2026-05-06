@@ -73,7 +73,7 @@ sudo apt-get install mosh
 
 # RUBY version manager
 # this way you can have many different versions of ruby
-#sudo dnf install rbenv
+sudo dnf install rbenv
 # it seems I already have RVM
 # so I don't need this 
 
