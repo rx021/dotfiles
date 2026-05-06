@@ -161,6 +161,13 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'nvim-telescope/telescope.nvim', { 'tag': 'v0.2.1' }
 
 
+    "Plug 'chrisbra/csv.vim'
+    "https://github.com/chrisbra/csv.vim#using-a-plugin-manager
+    
+    "Plug 'hat0uma/csvview.nvim'
+    "lua require('csvview').setup()
+    "https://github.com/hat0uma/csvview.nvim
+
 call plug#end()
 
 " for full rust-lang parsing functionality
