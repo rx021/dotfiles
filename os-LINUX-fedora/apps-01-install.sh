@@ -80,6 +80,25 @@ sudo dnf install rbenv
 # rm -rf "$(rbenv root)"
 # https://github.com/rbenv/rbenv
 
+# INSTALL GHOSTTY:
+# install dependencies
+sudo dnf install \
+    gtk4-devel \
+    gtk4-layer-shell-devel \
+    zig \
+    libadwaita-devel \
+    gettext
+# download the latest release
+# https://github.com/ghostty-org/ghostty/releases/tag/v1.3.1
+# tar.gz file
+# un zip this
+# go into the directory
+cd ghostty-1.3.1/
+# run
+zig build -p $HOME/.local -Doptimize=ReleaseFast
+
+
+
 # OPTIONAL:
 #
 # TODO:
