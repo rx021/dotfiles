@@ -10,7 +10,7 @@
 ln -s ~/dotfiles/TOOLS/ghostty/config ~/Library/Application\ Support/com.mitchellh.ghostty/config;
 
 # os-LINUX:
-ln -s ~/dotfiles/TOOLS/ghostty/config ~/.config/ghostty/config
+ln -s ~/dotfiles/TOOLS/ghostty/config.ghostty ~/.config/ghostty/config.ghostty
 
 ```
 
