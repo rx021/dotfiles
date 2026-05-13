@@ -1,5 +1,10 @@
 #theme = Gruvbox Dark Hard
 theme = Xcode Dark hc
 
+background-opacity = 0.95
+#-- opacity doesnt do much in full screen
+#-- NOTE: doesn't work in TMUX
+#-- only works on base terminal
+
 cursor-style = block
 cursor-style-blink = false
