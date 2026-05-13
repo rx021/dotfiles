@@ -1,3 +1,5 @@
 #theme = Gruvbox Dark Hard
 theme = Xcode Dark hc
 
+cursor-style = block
+cursor-style-blink = false
