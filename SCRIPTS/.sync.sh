@@ -11,6 +11,7 @@ declare -a whitelist=(
   "OBSIDIAN"
   "dotfiles"
   "OS25"
+  ".community"
   ".os26"
   ".osYR"
   "PebbleFaceX"
