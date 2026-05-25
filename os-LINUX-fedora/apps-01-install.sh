@@ -102,6 +102,11 @@ zig build -p $HOME/.local -Doptimize=ReleaseFast
 # for static site generator
 sudo dnf install hugo
 
+# - [ ] install HOMEBREW 
+#   https://brew.sh/
+
+# install DART SASS
+brew install sass/sass/sass
 
 
 # OPTIONAL:
