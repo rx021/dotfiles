@@ -18,5 +18,3 @@ source ~/dotfiles/os-SHARED/.alias_git_fedora.sh
 source ~/dotfiles/os-SHARED/.pomodoro_fedora.sh
 
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"

@@ -17,3 +17,11 @@ export PHP_INI_SCAN_DIR="/home/reinhardt/.config/herd-lite/bin:$PHP_INI_SCAN_DIR
 eval "$(rbenv init - --no-rehash bash)"
 # commenting out for now since we'll use RVM
 # re-activating since RVM is having issues DL R-3
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
