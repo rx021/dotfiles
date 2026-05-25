@@ -98,6 +98,10 @@ cd ghostty-1.3.1/
 zig build -p $HOME/.local -Doptimize=ReleaseFast
 # then just needed to restart my laptop
 
+# HUGO
+# for static site generator
+sudo dnf install hugo
+
 
 
 # OPTIONAL:
