@@ -9,6 +9,7 @@ echo "CHECKING WHITELIST:"
 # works for FEDORA
 declare -a whitelist=(
   "OBSIDIAN"
+  ".obsidian"
   "dotfiles"
   "OS25"
   ".community"
