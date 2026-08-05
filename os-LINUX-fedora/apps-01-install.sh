@@ -116,6 +116,8 @@ brew install sass/sass/sass
 #   - allows for remote access to home network
 # EX:
 # tailscale --help
+# tailscale up #-- to get started
+#-- then you can ssh into the MBA's new IP
 #
 # go install github.com/ashish0kumar/typtea@latest
 # for typing practice
