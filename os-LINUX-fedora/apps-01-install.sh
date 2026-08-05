@@ -114,6 +114,8 @@ brew install sass/sass/sass
 # TODO:
 # - [ ] install TAILSCALE 
 #   - allows for remote access to home network
+# EX:
+# tailscale --help
 #
 # go install github.com/ashish0kumar/typtea@latest
 # for typing practice
