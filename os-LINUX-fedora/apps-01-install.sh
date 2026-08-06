@@ -120,6 +120,6 @@ brew install sass/sass/sass
 #-- then you can ssh into the MBA's new IP
 #
 # go install github.com/ashish0kumar/typtea@latest
-# for typing practice
+# for TYPING PRACTICE
 #
 # .
